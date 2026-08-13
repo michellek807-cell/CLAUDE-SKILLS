@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      /*
+        Fonts are NOT imported via a Google Fonts <link> — the HyperFrames
+        compiler resolves "Playfair Display" / "Inter" / "JetBrains Mono" from
+        the font-family declarations below and injects deterministic
+        @font-face rules at compile/render time. Adding a raw <link> here
+        both trips the google_fonts_import lint and risks a navigation
+        timeout in headless render.
+      */
+      /*
+        Design system: frame.md ("Vox Documentary — Frame").
+        Cream paper ground, matte black + Vox yellow as the only two accents,
+        Playfair Display (titles) + Inter (dates/labels/body). Do not add a
+        third color or a third typeface without updating frame.md first.
+      */
+      :root {
+        --bg-canvas: #f4f1ea;
+        --ink: #111111;
+        --accent-yellow: #fff000;
+        --text-secondary: #4a4a47;
+        --paper-shadow: rgba(17, 17, 17, 0.12);
+
+        --font-display: "Playfair Display", serif;
+        --font-body: "Inter", sans-serif;
+
+        /* House motion language (see frame.md → motion). Reference these
+           instead of hand-rolling new eases/durations per scene. */
+        --ease-primary: power2.out;
+        --dur-entrance: 0.65s;
+        --dur-reveal: 0.8s;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        margin: 0;
+        width: 1920px;
+        height: 1080px;
+        overflow: hidden;
+      }
+      body {
+        font-family: var(--font-body);
+        color: var(--ink);
+        background: var(--bg-canvas);
+      }
+      h1,
+      h2,
+      h3,
+      .title {
+        font-family: var(--font-display);
+        font-weight: 800;
+        color: var(--ink);
+        line-height: 1.05;
+      }
+      .label {
+        font-family: var(--font-body);
+        font-weight: 600;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        font-size: 14px;
+        color: var(--ink);
+      }
+      .date-label {
+        font-family: var(--font-body);
+        font-weight: 600;
+        font-size: 20px;
+        color: var(--ink);
+      }
+      .yellow-highlight {
+        background: var(--accent-yellow);
+        padding: 0 0.15em;
+      }
+      .ink-rule {
+        background: var(--ink);
+        height: 3px;
+        width: 100%;
+      }
+      code,
+      pre,
+      .monospace {
+        font-family: "JetBrains Mono", monospace;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="root"
+      data-composition-id="main"
+      data-start="0"
+      data-duration="10"
+      data-width="1920"
+      data-height="1080"
+      style="background: var(--bg-canvas)"
+    >
+
+
+      <!--
+        Scene authoring is deferred (see BRIEF.md → Notes). The full 9-scene
+        blueprint (Act 1: Raw Natural Origin / Act 2: Breakthrough Moment /
+        Act 3: Industrial Synthesis, x3 medicines) is already drafted in chat —
+        author scenes against the tokens above, e.g.:
+
+        <div id="title" class="clip title" data-start="0" data-duration="5" data-track-index="1"
+             style="font-size: 96px; padding: 40px">
+          The Pill That Changed Medicine
+        </div>
+
+        Entrance idiom (power2.out slide-in) and reveal idiom (clip-path mask)
+        are registered in the timeline below as starting patterns — see
+        /hyperframes-animation and /motion-doctrine before authoring real
+        scene transitions.
+      -->
+    </div>
+
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+
+      // House entrance idiom: power2.out slide-in.
+      // tl.from("#title", { opacity: 0, y: -60, duration: 0.65, ease: "power2.out" }, 0);
+
+      // House reveal idiom: clip-path mask reveal (e.g. for collage/photo pieces).
+      // tl.fromTo(
+      //   "#some-collage-piece",
+      //   { clipPath: "inset(0 100% 0 0)" },
+      //   { clipPath: "inset(0 0% 0 0)", duration: 0.8, ease: "power2.out" },
+      //   0
+      // );
+
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>
