@@ -44,23 +44,40 @@ stay comparable across medicines.
   back to the research already gathered in chat; do not invent or round a date.
 - This project intentionally exceeds the ~3min cap of the specialized narrative
   routes (faceless-explainer), which is why it's routed to `general-video` instead.
-- Scaffold pass 1 (first commit): `frame.md` design system + font/token wiring in
-  `index.html`, no scenes yet.
-- Mechanics-proof pass (this commit): built `#scene1` (Aspirin, Aug 10 1897) and
-  `#scene2`'s opening beat (Vitamin C, 1928-1932) as a real two-scene composition,
-  using the GSAP scene-template pattern from `/hyperframes-animation` →
-  `transitions/catalog.md` (plain `.scene` divs, not `class="clip"` — a
-  different, non-declarative model from the one first scaffolded in). A
-  push-slide transition connects them. This pair is a working proof of the
-  scene mechanics, not scene 1-2 of the full 9-scene blueprint as originally
-  timed/blocked — the full blueprint's 9 scenes still need authoring against
-  this now-verified pattern.
+- **Status: all 9 scenes built** (this commit), matching the drafted blueprint's
+  act structure and pacing exactly — Act 1 (0:00-3:00, 60s/scene): willow bark,
+  paprika/adrenal glands, mold spore. Act 2 (3:00-7:30, 90s/scene): Hoffmann 1897,
+  Szent-Györgyi 1928-1932, Fleming 1928. Act 3 (7:30-12:00, 90s/scene): Bayer
+  chemical process, Reichstein-Grüssner process, Peoria deep-tank fermentation.
+  `#root data-duration="720"` (12min), 8 push-slide transitions connecting all
+  scenes, built on the GSAP scene-template pattern from `/hyperframes-animation` →
+  `transitions/catalog.md` (plain `.scene` divs, not `class="clip"`).
+- Yellow accent discipline: exactly one yellow element per frame throughout —
+  Act 1 uses a `.yellow-highlight` word in body copy, Act 2 uses the `.date-tick`
+  component (which is itself yellow, so titles stay plain there), Act 3 uses the
+  final/product node in each reaction-flow diagram (S9 uses its `.date-tick`
+  instead, so its tank illustration stays ink-only).
 - Illustration is placeholder ink-only line art (SVG paths in `--ink` on
-  `--bg-canvas`, no third color) standing in for the bark-strip / paprika-pod
-  collage art described in the blueprint — real illustration assets are not
-  yet sourced (`/media-use`, when picked up).
-- `npm run check`: lint/motion/contrast all clean. Runtime/layout checks
-  intermittently fail in this sandbox only, because outbound access to
+  `--bg-canvas`, no third color) throughout — willow bark, paprika, adrenal gland,
+  petri dish/mold, flask, guinea-pig row, two reaction-flow diagrams, fermentation
+  tank. Real illustration assets are not yet sourced (`/media-use`, when picked up).
+- Motion currently front-loads each scene's beats in its first ~4-5s and holds
+  static for the remainder. `/hyperframes-core` → `frame-worker-core.md` recommends
+  sequencing reveals across the full shot in sync with voiceover instead — worth
+  a pass once narration exists to drive that timing; not attempted here since
+  there's no VO track yet.
+- `npm run check`: lint is clean (0 errors — one info-level Studio-selectability
+  note on the decorative overlay, expected/intentional). Motion: 0 errors.
+  Contrast: 20/20 checks pass WCAG AA. One outstanding **warning**:
+  `composition_file_too_large` (index.html is ~600 lines) — the tool recommends
+  splitting scenes into sub-compositions under `compositions/` via
+  `data-composition-src`. Deliberately not done in this pass: sub-compositions
+  can't be reached by the main timeline's selectors, so each scene's internal
+  choreography (entrance beats, camera drift) would need its own local timeline,
+  a real architectural change rather than a quick split — flagged as a
+  recommended follow-up, not attempted opportunistically alongside the 9-scene
+  build.
+- Runtime/layout checks fail in this sandbox only, because outbound access to
   `cdn.jsdelivr.net` (GSAP's CDN) is blocked by this environment's network
-  policy — not a defect in the composition; re-check wherever that CDN is
-  reachable.
+  policy (confirmed via repeated direct `curl` checks) — not a defect in the
+  composition; re-check wherever that CDN is reachable.
