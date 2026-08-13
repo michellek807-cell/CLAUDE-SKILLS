@@ -44,6 +44,23 @@ stay comparable across medicines.
   back to the research already gathered in chat; do not invent or round a date.
 - This project intentionally exceeds the ~3min cap of the specialized narrative
   routes (faceless-explainer), which is why it's routed to `general-video` instead.
-- Scaffold-only pass (this commit): `frame.md` design system + font/token wiring in
-  `index.html`. Scene authoring (all 9 scenes) is deferred to the next session per
-  explicit request — don't build them out yet.
+- Scaffold pass 1 (first commit): `frame.md` design system + font/token wiring in
+  `index.html`, no scenes yet.
+- Mechanics-proof pass (this commit): built `#scene1` (Aspirin, Aug 10 1897) and
+  `#scene2`'s opening beat (Vitamin C, 1928-1932) as a real two-scene composition,
+  using the GSAP scene-template pattern from `/hyperframes-animation` →
+  `transitions/catalog.md` (plain `.scene` divs, not `class="clip"` — a
+  different, non-declarative model from the one first scaffolded in). A
+  push-slide transition connects them. This pair is a working proof of the
+  scene mechanics, not scene 1-2 of the full 9-scene blueprint as originally
+  timed/blocked — the full blueprint's 9 scenes still need authoring against
+  this now-verified pattern.
+- Illustration is placeholder ink-only line art (SVG paths in `--ink` on
+  `--bg-canvas`, no third color) standing in for the bark-strip / paprika-pod
+  collage art described in the blueprint — real illustration assets are not
+  yet sourced (`/media-use`, when picked up).
+- `npm run check`: lint/motion/contrast all clean. Runtime/layout checks
+  intermittently fail in this sandbox only, because outbound access to
+  `cdn.jsdelivr.net` (GSAP's CDN) is blocked by this environment's network
+  policy — not a defect in the composition; re-check wherever that CDN is
+  reachable.

@@ -128,6 +128,51 @@
       .monospace {
         font-family: "JetBrains Mono", monospace;
       }
+
+      /* Scene template per /hyperframes-animation transitions/catalog.md:
+         plain .scene divs (NOT class="clip" — that's the declarative
+         data-start/data-duration model, a different pattern this project
+         doesn't use). Scene 1 visible by default; scenes 2+ start at
+         opacity:0 and GSAP reveals them. Visual layering is z-index, not
+         DOM order. */
+      .scene {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 1920px;
+        height: 1080px;
+        overflow: hidden;
+      }
+      #scene1 {
+        z-index: 1;
+      }
+      #scene2 {
+        z-index: 2;
+        opacity: 0;
+      }
+      .stage {
+        position: absolute;
+        inset: 0;
+      }
+      .scene-copy {
+        position: absolute;
+        left: 130px;
+        top: 140px;
+        max-width: 820px;
+      }
+      .scene-copy .label {
+        margin-bottom: 18px;
+      }
+      .scene-copy .vox-date {
+        margin-top: 16px;
+      }
+      /* Placeholder collage art — ink-only line/fill (no third color) until
+         real illustration assets are sourced via /media-use. */
+      .collage-placeholder {
+        position: absolute;
+        right: 160px;
+        bottom: 90px;
+      }
     </style>
   </head>
   <body>
@@ -135,20 +180,99 @@
       id="root"
       data-composition-id="main"
       data-start="0"
-      data-duration="10"
+      data-duration="6.5"
       data-width="1920"
       data-height="1080"
       style="background: var(--bg-canvas); position: relative"
     >
+      <div id="scene1" class="scene">
+        <div class="stage">
+          <div class="scene-copy">
+            <div class="label">ACT 2 — THE BREAKTHROUGH MOMENT</div>
+            <div class="vox-title">
+              Felix Hoffmann synthesizes
+              <span class="yellow-highlight">acetylsalicylic acid</span>
+            </div>
+            <div class="vox-date">August 10, 1897</div>
+          </div>
+          <!-- Willow-bark strip placeholder — ink stroke on cream, torn-edge path -->
+          <svg
+            id="aspirin-bark-photo"
+            class="collage-placeholder"
+            width="420"
+            height="560"
+            viewBox="0 0 420 560"
+          >
+            <path
+              d="M40 20 L380 45 L360 210 L390 340 L350 480 L370 540 L30 520 L60 380 L20 260 L55 130 Z"
+              fill="var(--bg-canvas)"
+              stroke="var(--ink)"
+              stroke-width="4"
+            />
+            <path
+              d="M90 90 Q210 260 150 470"
+              fill="none"
+              stroke="var(--ink)"
+              stroke-width="3"
+              opacity="0.55"
+            />
+            <path
+              d="M250 70 Q220 250 300 460"
+              fill="none"
+              stroke="var(--ink)"
+              stroke-width="3"
+              opacity="0.55"
+            />
+          </svg>
+        </div>
+      </div>
+
+      <div id="scene2" class="scene">
+        <div class="stage">
+          <div class="scene-copy">
+            <div class="label">ACT 2 — THE BREAKTHROUGH MOMENT</div>
+            <div class="vox-title">
+              Szent-Györgyi isolates the compound that
+              <span class="yellow-highlight">stops scurvy</span>
+            </div>
+            <div class="vox-date">1928 &ndash; 1932</div>
+          </div>
+          <!-- Paprika pods placeholder — ink stroke on cream -->
+          <svg
+            id="paprika-illustration"
+            class="collage-placeholder"
+            width="440"
+            height="380"
+            viewBox="0 0 440 380"
+          >
+            <path
+              d="M60 60 Q40 180 90 260 Q120 320 60 360"
+              fill="var(--bg-canvas)"
+              stroke="var(--ink)"
+              stroke-width="4"
+            />
+            <path
+              d="M180 40 Q150 170 210 250 Q245 310 175 350"
+              fill="var(--bg-canvas)"
+              stroke="var(--ink)"
+              stroke-width="4"
+            />
+            <path
+              d="M310 55 Q280 175 340 255 Q375 315 300 355"
+              fill="var(--bg-canvas)"
+              stroke="var(--ink)"
+              stroke-width="4"
+            />
+          </svg>
+        </div>
+      </div>
+
       <!--
-        Shared full-bleed paper-grain layer — NOT a clip (no data-start /
-        data-duration / data-track-index), so it stays visible for the whole
-        composition per /hyperframes-core's full-screen-motion pattern.
-        Deliberately NOT wrapped around the .clip scenes below: HyperFrames
-        requires .clip elements to be direct children of #root, so a wrapper
-        div here would silently break every scene's timing. A whole-frame
-        camera move (zoom/pan) should animate #root itself, not a nested
-        canvas div.
+        Shared full-bleed paper-grain layer — always visible (no timing
+        attributes), on top of both scenes via z-index. Stays inside #root:
+        every canonical HyperFrames example nests all rendered content
+        inside #root, which is also the fixed-size render frame — a sibling
+        placed after #root in body isn't guaranteed to be captured.
       -->
       <div
         class="paper-overlay"
@@ -161,39 +285,55 @@
           background-image: url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E&quot;);
         "
       ></div>
-
-      <!--
-        Scene authoring is deferred (see BRIEF.md → Notes). The full 9-scene
-        blueprint (Act 1: Raw Natural Origin / Act 2: Breakthrough Moment /
-        Act 3: Industrial Synthesis, x3 medicines) is already drafted in chat —
-        author scenes against the tokens above, e.g.:
-
-        <div id="title" class="clip title" data-start="0" data-duration="5" data-track-index="1"
-             style="font-size: 96px; padding: 40px">
-          The Pill That Changed Medicine
-        </div>
-
-        Entrance idiom (power2.out slide-in) and reveal idiom (clip-path mask)
-        are registered in the timeline below as starting patterns — see
-        /hyperframes-animation and /motion-doctrine before authoring real
-        scene transitions.
-      -->
     </div>
 
     <script>
       window.__timelines = window.__timelines || {};
-      const tl = gsap.timeline({ paused: true });
+      // Registered synchronously, paused, at parse time — never inside a
+      // DOMContentLoaded handler. The renderer seeks this timeline to
+      // arbitrary timestamps; it does not play it through from t=0, so
+      // window.__timelines["main"] must exist the instant this script runs.
+      const tl = gsap.timeline({ paused: true, defaults: { ease: "power2.out" } });
 
-      // House entrance idiom: power2.out slide-in.
-      // tl.from("#title", { opacity: 0, y: -60, duration: 0.65, ease: "power2.out" }, 0);
+      // --- Scene 1: Aspirin (1897) ---
+      tl.fromTo(
+        "#aspirin-bark-photo",
+        { y: 1100, rotation: -5, opacity: 0 },
+        { y: 0, rotation: -5, opacity: 1, duration: 1.0, ease: "back.out(1.2)" },
+        0.2
+      );
+      tl.fromTo(
+        "#scene1 .scene-copy .vox-title, #scene1 .scene-copy .vox-date, #scene1 .scene-copy .label",
+        { opacity: 0, x: -50 },
+        { opacity: 1, x: 0, duration: 0.7, stagger: 0.15 },
+        0.9
+      );
+      // Camera drift lives on .stage, not on the scene or #root — keeps it
+      // isolated from the push-slide's own x-tween on #scene1 below.
+      tl.to("#scene1 .stage", { scale: 1.08, x: -80, y: 20, duration: 3.0, ease: "power1.inOut" }, 1.2);
 
-      // House reveal idiom: clip-path mask reveal (e.g. for collage/photo pieces).
-      // tl.fromTo(
-      //   "#some-collage-piece",
-      //   { clipPath: "inset(0 100% 0 0)" },
-      //   { clipPath: "inset(0 0% 0 0)", duration: 0.8, ease: "power2.out" },
-      //   0
-      // );
+      // --- Transition: push slide, scene1 -> scene2 ---
+      // Outgoing and incoming animate at the SAME time T (no exit-then-enter,
+      // no onComplete callback) — the slide itself is the handoff, and this
+      // stays seek-safe because both tweens are pure position/opacity
+      // interpolation the renderer can evaluate at any timestamp.
+      const T = 4.6;
+      tl.to("#scene1", { x: -1920, duration: 0.6, ease: "power3.inOut" }, T);
+      tl.fromTo("#scene2", { x: 1920, opacity: 1 }, { x: 0, opacity: 1, duration: 0.6, ease: "power3.inOut" }, T);
+
+      // --- Scene 2: Vitamin C (1928-1932) ---
+      tl.fromTo(
+        "#paprika-illustration",
+        { rotation: 10, scale: 0.85, opacity: 0 },
+        { rotation: 0, scale: 1, opacity: 1, duration: 0.6, ease: "back.out(1.3)" },
+        T + 0.3
+      );
+      tl.fromTo(
+        "#scene2 .scene-copy .vox-title, #scene2 .scene-copy .vox-date, #scene2 .scene-copy .label",
+        { opacity: 0, x: -50 },
+        { opacity: 1, x: 0, duration: 0.7, stagger: 0.15 },
+        T + 0.4
+      );
 
       window.__timelines["main"] = tl;
     </script>
