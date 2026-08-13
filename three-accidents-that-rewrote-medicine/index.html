@@ -78,13 +78,51 @@
       }
       .yellow-highlight {
         background: var(--accent-yellow);
-        padding: 0 0.15em;
+        padding: 0 8px;
+        display: inline-block;
       }
       .ink-rule {
         background: var(--ink);
         height: 3px;
         width: 100%;
       }
+
+      /* Large-format title block — concrete instance of frame.md's
+         `title-block` component (Playfair Display bold, ink). Use `.title`
+         for smaller in-scene headings; `.vox-title` for hero/cover titles. */
+      .vox-title {
+        font-family: var(--font-display);
+        font-size: 72px;
+        font-weight: 700;
+        line-height: 1.1;
+        color: var(--ink);
+        margin-bottom: 10px;
+      }
+
+      /* Bold sans date/year stamp — heavier and larger than `.date-label`;
+         use for a standalone on-screen date callout, not small captions. */
+      .vox-date {
+        font-family: var(--font-body);
+        font-weight: 700;
+        font-size: 32px;
+        letter-spacing: -1px;
+        color: var(--ink);
+      }
+
+      /* Editorial photo treatments (frame.md → components). Both are single
+         `filter` declarations — do not split grayscale/contrast/brightness
+         from drop-shadow into two `filter` rules, the second silently wins
+         and drops the first. Apply only to real sourced images (/media-use),
+         never to invented vector/collage art. */
+      .vox-cutout-photo {
+        filter: grayscale(30%) contrast(115%) brightness(95%)
+          drop-shadow(8px 12px 16px rgba(0, 0, 0, 0.25));
+      }
+      .vox-historical-print {
+        filter: grayscale(100%) contrast(140%);
+        mix-blend-mode: multiply; /* blends into the cream paper ground */
+      }
+
       code,
       pre,
       .monospace {
@@ -100,9 +138,29 @@
       data-duration="10"
       data-width="1920"
       data-height="1080"
-      style="background: var(--bg-canvas)"
+      style="background: var(--bg-canvas); position: relative"
     >
-
+      <!--
+        Shared full-bleed paper-grain layer — NOT a clip (no data-start /
+        data-duration / data-track-index), so it stays visible for the whole
+        composition per /hyperframes-core's full-screen-motion pattern.
+        Deliberately NOT wrapped around the .clip scenes below: HyperFrames
+        requires .clip elements to be direct children of #root, so a wrapper
+        div here would silently break every scene's timing. A whole-frame
+        camera move (zoom/pan) should animate #root itself, not a nested
+        canvas div.
+      -->
+      <div
+        class="paper-overlay"
+        style="
+          position: absolute;
+          inset: 0;
+          pointer-events: none;
+          z-index: 999;
+          opacity: 0.04;
+          background-image: url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E&quot;);
+        "
+      ></div>
 
       <!--
         Scene authoring is deferred (see BRIEF.md → Notes). The full 9-scene

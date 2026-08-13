@@ -66,6 +66,16 @@ components:
     typography: "{typography.label}"
     rounded: "0"
     description: "Solid black chip with cream uppercase label text — used for act/scene tags."
+  paper-grain:
+    opacity: 0.04
+    description: "Full-bleed SVG feTurbulence noise layer, shared across the whole composition (not per-scene, not a clip) — kills flat digital rendering on the cream ground. Implemented in index.html as a non-clip sibling of the .clip scenes, never a wrapper around them."
+  cutout-photo:
+    filter: "grayscale(30%) contrast(115%) brightness(95%) drop-shadow(8px 12px 16px rgba(0,0,0,0.25))"
+    description: "Editorial treatment for real sourced photography standing in for a collage cutout — single filter declaration, soft directional shadow mimics cut-paper thickness. Never apply to invented vector art."
+  historical-print:
+    filter: "grayscale(100%) contrast(140%)"
+    blendMode: "multiply"
+    description: "Archival/period-photo treatment — desaturated, high-contrast, multiply-blended so it sits into the cream paper ground rather than floating as a flat rectangle."
 
 motion:
   easing-primary: "power2.out"
@@ -156,6 +166,8 @@ labels are uppercase and tracked; body and date-labels are not.
 - **date-tick** — timeline year marker, black Playfair numeral on a rotated yellow tag.
 - **title-block** — Playfair bold headline, left-anchored, one word optionally boxed in yellow.
 - **label-chip** — solid black chip, cream uppercase Inter label, used for act/scene tags ("ACT 1", "1897").
+- **paper-grain** — full-bleed noise texture, shared across the whole video, not per-scene.
+- **cutout-photo** / **historical-print** — the two real-photography treatments; collage/vector art never uses these.
 
 ## Composition Rules
 
@@ -193,6 +205,6 @@ unconfirmed figure as a placeholder (`— figure —`) until the script supplies
 
 ## Known Gaps
 
-- **Fonts:** Playfair Display + Inter via Google Fonts — both already wired into `index.html`.
-- **Paper texture:** the cream ground is a flat color token here; a subtle grain/noise texture overlay is a per-scene authoring decision (CSS noise filter or a sourced texture asset via `/media-use`), not fixed by this spec.
+- **Fonts:** Playfair Display + Inter, resolved by the HyperFrames compiler from the `font-family` declarations in `index.html` (no Google Fonts `<link>`/`@import` — that trips lint and risks a render-time navigation timeout).
+- **Paper texture:** implemented — a shared, non-clip `paper-grain` SVG noise layer at 0.04 opacity, full-bleed across the whole composition (see `index.html`). Do not duplicate it per-scene.
 - **9:16 / 1:1 not yet documented** — this project is locked to 16:9 (YouTube long-form) per `BRIEF.md`; add aspect-ratio guidance here only if the destination changes.
