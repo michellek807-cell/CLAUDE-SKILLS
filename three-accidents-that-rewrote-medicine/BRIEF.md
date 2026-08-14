@@ -105,3 +105,24 @@ stay comparable across medicines.
   `cdn.jsdelivr.net` (GSAP's CDN) is blocked by this environment's network
   policy (confirmed via repeated direct `curl` checks) — not a defect in the
   composition; re-check wherever that CDN is reachable.
+- `npm run publish` also fails in this sandbox: the publish pipeline needs
+  `api2.heygen.com`, which the same network policy blocks. No workaround
+  found; publishing needs an environment where that host is reachable.
+- **UNVERIFIED: scene-to-scene transitions.** `npx hyperframes snapshot`
+  captured the same scene-1 content at every requested timestamp, including
+  ones deep into scenes 4-9 — as if the timeline never advances past its
+  opening state. Isolated with a minimal reproduction (a 20-line, two-scene
+  composition using the exact pattern from `/hyperframes-core`'s
+  `minimal-composition.md`, nothing from this project): it shows the same
+  stuck-on-scene-1 behavior via `snapshot`, both with explicit `--at` times
+  and the tool's own default frame selection. That rules out a bug in this
+  project's specific timeline code — the failure reproduces on the simplest
+  possible version of the documented pattern. `hyperframes doctor` shows
+  this sandbox runs `chrome-headless-shell` (a stripped headless-Chrome
+  variant) in software-rendering mode (no GPU) — the likely culprit, though
+  unconfirmed. Static checks (lint/motion/contrast) all still pass and the
+  timeline code matches the documented pattern by inspection, but **the
+  actual scene transitions have not been visually confirmed working** in
+  any environment. Re-run `npx hyperframes snapshot --frames 5` (or open
+  `npm run dev`'s Studio in a real, non-headless browser) somewhere without
+  this limitation before treating the 9-scene cut as verified.
