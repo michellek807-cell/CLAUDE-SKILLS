@@ -22,9 +22,13 @@ stay comparable across medicines.
 
 ## Assets
 
-- None supplied yet. All visuals are invented paper-collage illustration (no stock
-  photography, no real footage) per the faceless-explainer-style approach carried
-  into this general-video build.
+- No external/generated media. All visuals are hand-authored inline SVG (paper-collage
+  illustration, ink-only on cream, no stock photography, no real footage, no AI-generated
+  images) — this is the final illustration approach for the project, not a placeholder.
+  AI generation (HeyGen via `/media-use`, then Higgsfield via `/higgsfield-generate`) was
+  attempted first but both require an interactive browser OAuth login this sandbox can't
+  complete, and the user is separately low on Higgsfield credits — hand-authored SVG sidesteps
+  both constraints entirely (no auth, no credits, deterministic, versioned as code).
 
 ## Customizations
 
@@ -57,10 +61,13 @@ stay comparable across medicines.
   component (which is itself yellow, so titles stay plain there), Act 3 uses the
   final/product node in each reaction-flow diagram (S9 uses its `.date-tick`
   instead, so its tank illustration stays ink-only).
-- Illustration is placeholder ink-only line art (SVG paths in `--ink` on
-  `--bg-canvas`, no third color) throughout — willow bark, paprika, adrenal gland,
-  petri dish/mold, flask, guinea-pig row, two reaction-flow diagrams, fermentation
-  tank. Real illustration assets are not yet sourced (`/media-use`, when picked up).
+- Illustration is finished hand-authored ink-only SVG line art (paths in `--ink` on
+  `--bg-canvas`, no third color) throughout — willow bark, adrenal gland, paprika
+  pods (with stem caps + ridge hatching), petri dish/mold (with bacteria/spore
+  stipple fields), chemistry flask (with bubbles + cork), four distinct guinea-pig
+  silhouettes, fermentation tank (with rivets, weld seams, a pressure gauge, and
+  support legs), plus the two coded reaction-flow diagrams. This is the final art
+  direction — not pending replacement with generated/photographic assets.
 - Motion currently front-loads each scene's beats in its first ~4-5s and holds
   static for the remainder. `/hyperframes-core` → `frame-worker-core.md` recommends
   sequencing reveals across the full shot in sync with voiceover instead — worth
