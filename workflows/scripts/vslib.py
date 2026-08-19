@@ -311,3 +311,7 @@ def smpte(seconds, fps):
     ff = f % fps_i
     total_s = f // fps_i
     return "%02d:%02d:%02d:%02d" % (total_s // 3600, (total_s // 60) % 60, total_s % 60, ff)
+
+
+def _esc_title(s):
+    return (s or "").replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")

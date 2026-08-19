@@ -1,0 +1,22 @@
+# Repo-wide transcript spelling corrections.
+#
+# LOCK: corrections live upstream, in one file, applied when the CANONICAL
+# transcript is written (workflows/scripts/make_transcript.py). The raw
+# transcript/words.json stays exactly as the model wrote it - it is evidence,
+# not a draft.
+#
+# Rules:
+#   * single-token whole-word swaps only. "rough cut -> rough-cut" is rejected.
+#   * text only, never timings. A correction can never move a word.
+#   * matching ignores case and surrounding punctuation; the replacement keeps
+#     the original's punctuation and leading capital.
+#
+# Per-job corrections go in projects/<job>/transcript/corrections.txt and are
+# merged over these.
+#
+# Format:  wrong -> right
+
+hyperfrhames -> HyperFrames
+hyperframe -> HyperFrames
+whisperex -> WhisperX
+ffmpg -> ffmpeg
