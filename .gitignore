@@ -1,0 +1,26 @@
+# Media is never committed. This is a content system: the bytes live on disk,
+# the decisions (job.json, cutlist.json, transcripts, PROJECT.md) live in git.
+projects/*/raw/*
+projects/*/audio/*
+projects/*/broll/*
+projects/*/assets/*
+projects/*/cache/*
+projects/*/outputs/*.mp4
+projects/*/outputs/*.mov
+projects/*/outputs/*.wav
+projects/*/cut/*.mkv
+projects/*/cut/*.mp4
+projects/*/cut/*.mov
+projects/*/cut/*.wav
+projects/*/hf-graphics/renders/*
+projects/*/hf-graphics/node_modules/
+projects/.selftest/
+projects/pipeline-self-test/
+
+# ...but keep the folders themselves so a cloned job still has its shape.
+!projects/*/*/.gitkeep
+
+.hf-skills-install.log
+.DS_Store
+__pycache__/
+*.pyc
