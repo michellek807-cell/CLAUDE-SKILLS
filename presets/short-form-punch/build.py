@@ -118,11 +118,21 @@ def _fit(text, sizes, chars_per_line):
 
 
 def _emphasise(text):
-    """Lift the last word into the accent colour. One highlight, never two."""
-    parts = _esc(text).rsplit(" ", 1)
+    """Lift the last real word into the accent colour. One highlight, never two.
+
+    A trailing ellipsis from a truncated beat is not a word - highlighting it
+    puts the accent on the punctuation, which is the one place it cannot mean
+    anything.
+    """
+    body, tail = _esc(text), ""
+    for suffix in ("...", "\u2026"):
+        if body.endswith(suffix):
+            body, tail = body[: -len(suffix)].rstrip(), suffix
+            break
+    parts = body.rsplit(" ", 1)
     if len(parts) == 1:
-        return parts[0]
-    return '%s <span class="hi">%s</span>' % (parts[0], parts[1])
+        return parts[0] + tail
+    return '%s <span class="hi">%s%s</span>' % (parts[0], parts[1], tail)
 
 
 def beat(b, canvas, uid):

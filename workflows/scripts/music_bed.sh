@@ -74,7 +74,10 @@ GRAPH="[1:a]aformat=sample_fmts=fltp:sample_rates=48000:channel_layouts=stereo"
 GRAPH="$GRAPH,atrim=0:$DUR,asetpts=PTS-STARTPTS,volume=${LEVEL}dB"
 GRAPH="$GRAPH,afade=t=in:st=0:d=$FADE_IN,afade=t=out:st=$FADE_AT:d=$FADE_OUT[bed];"
 GRAPH="$GRAPH[0:a]aformat=sample_fmts=fltp:sample_rates=48000:channel_layouts=stereo[voice];"
-GRAPH="$GRAPH[voice][bed]amix=inputs=2:duration=first:dropout_transition=0:normalize=0[sum];"
+# duration=longest, NOT first: with `first`, amix ends on the first input's
+# last whole frame and drops ~50 ms off the tail. The bed is already
+# atrimmed to the voice length, so `longest` is exactly the voice length.
+GRAPH="$GRAPH[voice][bed]amix=inputs=2:duration=longest:dropout_transition=0:normalize=0[sum];"
 GRAPH="$GRAPH[sum]$AF[out]"
 
 ffmpeg -hide_banner -loglevel error -stats -nostdin -y \

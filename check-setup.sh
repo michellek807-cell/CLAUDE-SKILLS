@@ -180,7 +180,13 @@ say ""
 say "workspace"
 [ -d "$ROOT/projects" ] && row_ok "projects/" "$(ls "$ROOT/projects" 2>/dev/null | grep -v '^\.' | wc -l | tr -d ' ') job(s)" \
   || row_miss "projects/" "mkdir -p projects"
-[ -d "$ROOT/presets" ]   && row_ok "presets/"   "$(ls "$ROOT/presets"/*.md 2>/dev/null | wc -l | tr -d ' ') locked look(s)" || row_opt "presets/" "no presets yet"
+PRESETS=$(ls -d "$ROOT/presets"/*/build.py 2>/dev/null | wc -l | tr -d ' ')
+[ "${PRESETS:-0}" -gt 0 ] && row_ok "presets/" "$PRESETS locked look(s)" || row_opt "presets/" "no presets yet"
+if [ -f "$ROOT/workflows/vendor/gsap.min.js" ]; then
+  row_ok "gsap (vendored)" "v$(cat "$ROOT/workflows/vendor/gsap.version" 2>/dev/null || echo '?') - renders never hit a CDN"
+else
+  row_miss "gsap (vendored)" "workflows/scripts/vendor_gsap.sh"
+fi
 if [ -w "$ROOT" ]; then row_ok "writable" "builds live in the job folder, never /tmp"; else row_miss "writable" "repo is not writable"; fi
 
 # --------------------------------------------------------------- summary -----

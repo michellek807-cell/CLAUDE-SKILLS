@@ -54,6 +54,8 @@ def ensure_gsap(root, shared_dir):
 MAX_CARD_GAP = 0.45      # a pause this long ends the card
 MAX_CARD_SPAN = 2.6
 HIGHLIGHT_MIN_LEN = 5    # only lift words worth lifting
+HOLD_THROUGH = 0.50      # hold a card across a gap shorter than this
+CARD_TAIL = 0.22         # how long a card lingers after its last word
 
 
 def load_preset(root, name):
@@ -78,7 +80,19 @@ def make_cards(words, per_card):
         cur.append(w)
     if cur:
         cards.append(cur)
-    return cards
+
+    # A one-word card is a flash, not a caption. Fold it back into its
+    # neighbour whenever the merged card still reads in one glance.
+    merged = []
+    for card in cards:
+        if (merged and len(card) == 1
+                and len(merged[-1]) < per_card + 1
+                and card[-1]["e"] - merged[-1][0]["s"] <= MAX_CARD_SPAN + 0.6
+                and card[0]["s"] - merged[-1][-1]["e"] <= MAX_CARD_GAP):
+            merged[-1].extend(card)
+        else:
+            merged.append(card)
+    return merged
 
 
 def highlight_index(card):
@@ -166,10 +180,16 @@ def main():
         # the renderer has two clips fighting for the same frames.
         for ci, card in enumerate(mine):
             card_in = max(0.0, round(card[0]["s"] - t0 - 0.06, 3))
-            card_out = min(round(t1 - t0, 3), round(card[-1]["e"] - t0 + 0.22, 3))
+            card_out = round(card[-1]["e"] - t0 + CARD_TAIL, 3)
             if ci + 1 < len(mine):
                 next_in = max(0.0, round(mine[ci + 1][0]["s"] - t0 - 0.06, 3))
+                # Hold this card until the next one arrives when the gap is
+                # short. Dropping to nothing for 200 ms reads as a glitch;
+                # dropping out across a real pause reads as intentional.
+                if next_in - card_out <= HOLD_THROUGH:
+                    card_out = next_in
                 card_out = min(card_out, round(next_in - 0.001, 3))
+            card_out = min(round(t1 - t0, 3), card_out)
             card_out = max(card_out, card_in + 0.25)
             uid = "%s-c%02d" % (comp, ci)
             built = preset.caption_card(

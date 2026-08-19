@@ -48,9 +48,11 @@ for u in ("B", "KB", "MB", "GB"):
 PYEOF
 }
 
-dir_bytes() {
-  [ -d "$1" ] || { printf '0\n'; return; }
-  du -sk "$1" 2>/dev/null | awk '{print $1 * 1024}'
+# Size of a file OR a directory, in bytes. `du -sk` handles both; the earlier
+# -d guard here silently reported 0 for every file it was about to delete.
+path_bytes() {
+  [ -e "$1" ] || { printf '0\n'; return; }
+  du -sk "$1" 2>/dev/null | awk '{print $1 * 1024}' | head -1
 }
 
 prune_one() {
@@ -87,7 +89,7 @@ prune_one() {
     case " $PROTECTED " in
       *" $_top "*) vs_warn "refusing to touch $_rel"; continue ;;
     esac
-    _b=$(dir_bytes "$t")
+    _b=$(path_bytes "$t")
     _freed=$((_freed + _b))
     if [ "$DRY" = 1 ]; then
       vs_dim "would remove  $_rel  ($(human "$_b"))"

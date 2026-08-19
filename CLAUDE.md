@@ -77,10 +77,18 @@ comes from apt (`python3-pil`), never bare pip. `./check-setup.sh` verifies ever
 dependency and says exactly what is missing, with the install line for the
 machine it is on.
 
-**The only platform branch in this system is the video encoder** -
+**The only platform branch in the media pipeline is the video encoder** -
 `h264_videotoolbox` on macOS, `libx264` elsewhere - and it lives in one function,
-`vs_video_encoder_args` in `workflows/lib/common.sh`. Everything else is
-identical on both. Shell scripts run under stock bash 3.2 (macOS) and bash 5.
+`vs_video_encoder_args` in `workflows/lib/common.sh`. Every ffmpeg invocation,
+every path, every filter is identical on both. Shell scripts run under stock
+bash 3.2 (macOS) and bash 5.
+
+Two things outside the pipeline are OS-aware because they cannot be anything
+else: `check-setup.sh` prints the right install line for the machine it is on,
+and `to_editing_app.sh` can only *launch* a GUI app on macOS - everywhere else it
+prints the path, because a WSL2 shell cannot reliably start a Windows app and
+guessing is worse than saying where the file is. If you find yourself writing a
+third `uname` test, you are probably solving the wrong problem.
 
 ## Graphics engine
 
@@ -225,3 +233,24 @@ checking a lie, and a four-line headline sails past it into the caption zone.
 
 **Fold a runt tail part back into its neighbour.** A 0.4 s part is all render
 overhead and no benefit.
+
+**`amix=duration=first` ends on the first input's last whole frame** and drops
+~50 ms off the tail. The music bed uses `duration=longest` with the bed already
+atrimmed to the voice length, which is exactly the voice length. Caught by the
+QA pass's drift check, which is the entire reason that check exists.
+
+**`prune.sh` measured directories only.** `[ -d ]` before `du` silently reported
+0 B for every *file* it was about to delete, so the one big reclaim in a job -
+the PCM splice - looked free. Size helpers take `-e`, not `-d`.
+
+**A one-word caption card is a flash, not a caption**, and dropping captions to
+nothing for 200 ms between cards reads as a glitch. Fold runt cards into their
+neighbour and hold a card across any gap under 0.5 s.
+
+**Don't put the accent on punctuation.** Highlighting "the last word" of a
+truncated headline highlights the ellipsis - the one place an accent cannot mean
+anything.
+
+**Weights downloads fail deep inside huggingface_hub** and the traceback says
+nothing actionable. `transcribe.py` catches proxy/DNS/403 failures and prints
+what to do instead.

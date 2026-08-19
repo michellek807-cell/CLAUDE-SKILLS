@@ -18,8 +18,8 @@ live in transcript/corrections.txt and are applied when the canonical
 transcript is written (see make_transcript.py).
 """
 import argparse
+import contextlib
 import datetime
-import json
 import os
 import sys
 
@@ -27,6 +27,34 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import vslib  # noqa: E402
 
 SCHEMA = "video-system/words@1"
+
+
+@contextlib.contextmanager
+def _weights(what):
+    """Turn a failed weights fetch into one actionable line, not a traceback.
+
+    The first run of a machine downloads several GB from Hugging Face. Behind a
+    proxy or a locked-down network that fails deep inside huggingface_hub, and
+    the stack trace says nothing about what to do.
+    """
+    try:
+        yield
+    except Exception as exc:                      # noqa: BLE001 - re-raised below
+        text = "%s: %s" % (type(exc).__name__, exc)
+        if any(k in text for k in ("Proxy", "ConnectionError", "MaxRetry", "Tunnel",
+                                   "Temporary failure", "getaddrinfo", "403", "OfflineMode")):
+            vslib.die(
+                "could not download %s from Hugging Face.\n"
+                "       This machine cannot reach huggingface.co right now.\n"
+                "       %s\n"
+                "       Fixes, in order of preference:\n"
+                "         - run this once on a network that allows huggingface.co;\n"
+                "           the weights cache in %s and every later job reuses them\n"
+                "         - point HF_HOME at a cache you already have\n"
+                "         - set HF_HUB_OFFLINE=1 if the weights are already cached"
+                % (what, text.split("(Request ID")[0].strip(),
+                   os.environ.get("HF_HOME", os.path.expanduser("~/.cache/huggingface"))))
+        raise
 
 
 def pick_device(requested):
@@ -113,10 +141,11 @@ def main():
                   "         uv run workflows/scripts/transcribe.py --job-dir <dir>" % exc)
 
     audio = whisperx.load_audio(raw)
-    model = whisperx.load_model(
-        a.model, device, compute_type=compute_type,
-        language=(None if a.language in ("", "auto") else a.language),
-    )
+    with _weights("the %s weights" % a.model):
+        model = whisperx.load_model(
+            a.model, device, compute_type=compute_type,
+            language=(None if a.language in ("", "auto") else a.language),
+        )
     result = model.transcribe(audio, batch_size=a.batch_size)
     lang = result.get("language") or a.language
     vslib.ok("transcribed: %d segments, language=%s" % (len(result.get("segments", [])), lang))
@@ -130,7 +159,8 @@ def main():
         pass
 
     vslib.step("forced word alignment")
-    align_model, meta = whisperx.load_align_model(language_code=lang, device=device)
+    with _weights("the %s alignment model" % lang):
+        align_model, meta = whisperx.load_align_model(language_code=lang, device=device)
     aligned = whisperx.align(result["segments"], align_model, meta, audio, device,
                              return_char_alignments=False)
 
