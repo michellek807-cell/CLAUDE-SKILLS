@@ -12,7 +12,7 @@ Built for Higgsfield's **video explainer** workflow:
 |---|---|
 | Length | **60 seconds = 6 blocks.** Explainer only runs in whole minutes, so the 75s plan was tightened. |
 | Aspect | 16:9 master (1280×720). Make a 9:16 version later as a separate run, not a crop. |
-| Character | MamaCarrie host. Greets in Block 1 with mouth closed, cameo in Block 5, waves goodbye in Block 6. No lip-sync. |
+| Character | MamaCarrie host in scrubs. Greets in Block 1 with mouth closed, walks in her lifted shoe in Block 5, waves goodbye in Block 6. No lip-sync. |
 | Style | Warm flat 2D editorial illustration (descriptor below) |
 | Language | English |
 | Subtitles | Off in Higgsfield. Add captions in CapCut using your Signature Captions style. |
@@ -37,15 +37,17 @@ clean flat 2D editorial illustration, soft warm cream backgrounds, smooth charco
 
 ## Style key — mascot image (Nano Banana Pro / `nano_banana_2`, 16:9, 2k)
 
-Attach your best MamaCarrie still as a reference for likeness only.
+Attach `refs/REF_E_mamacarrie_turnaround_black_shoes.jpg` (likeness, wardrobe, black shoes) and `refs/REF_D_mamacarrie_scrubs_character_sheet.png` (face, jewelry, stethoscope details).
 
 ```
 Make an Animated Explainer. Take only the visual render style and color grading of the input image(s); mix the styles if there is more than one image. Never use the characters, inscriptions, etc. from the input image(s) unless the instructions below ask you to. Use only the render style, and follow the user's instructions below:
-clean flat 2D editorial illustration, soft warm cream backgrounds, smooth charcoal outlines of even weight, solid flat fills with one gentle shadow tone, muted burgundy and warm gold accents, matte finish, non-photorealistic, illustrated, not a photo, no live-action, no realism. Full-body character: MamaCarrie, a warm, confident, mature Black woman narrator modeled on the reference likeness, short natural hair as in the reference, wearing a tailored black blazer over a black top, small gold hoop earrings and a delicate gold cross necklace, calm knowing smile with mouth closed, looking at camera, centered, simple cream background. Recurring-character design. No text, no logos, no watermark.
+clean flat 2D editorial illustration, soft warm cream backgrounds, smooth charcoal outlines of even weight, solid flat fills with one gentle shadow tone, muted burgundy and warm gold accents, matte finish, non-photorealistic, illustrated, not a photo, no live-action, no realism. Full-body character: MamaCarrie, a warm, confident, mature Black woman nurse narrator modeled on the reference likeness: very long, voluminous black curly hair past her shoulders with soft gray streaks at the front hairline, warm brown skin, gentle smile with mouth closed. She wears ceil-blue scrubs (short-sleeve top with a notched V-neck and chest pockets, straight-leg scrub pants with small side slits at the hem), a black-and-silver stethoscope around her neck, small gold hoop earrings, a delicate gold cross necklace, and plain black running shoes. Looking at camera, centered, simple cream background. Recurring-character design. No text, no logos, no watermark.
 ```
 Approve this image before anything else. Every clip uses it.
 
-**Before you run it:** match her hair and features to your established MamaCarrie look. "Short natural hair" is only a placeholder.
+**Wardrobe lock (from REF_D / REF_E):** ceil-blue scrubs, stethoscope, gold hoops, gold cross, **black running shoes only**. Ignore the navy-and-white sneakers in parts of REF_D; they conflict with the black Brooks shoes in REF_A and REF_E.
+
+**One MamaCarrie per frame.** She is both host and walker. Never show two of her together.
 
 ---
 
@@ -112,10 +114,10 @@ NEGATIVE: color drift, photorealism, 3D render, captions, on-screen text, number
 ```
 Block 5
 STYLE REFERENCE: Match the attached reference image EXACTLY. Replicate its look precisely: clean flat 2D editorial illustration, soft warm cream backgrounds, smooth charcoal outlines of even weight, solid flat fills with one gentle shadow tone, muted burgundy and warm gold accents, matte finish, calm uncluttered composition, non-photorealistic, illustrated, not a photo, no live-action, no realism. Every element below rendered in that identical style.
-SCENE: Side view, waist down, of an adult woman in ceil-blue scrub pants and black socks. Her LEFT side faces the viewer and she walks toward the left of frame with relaxed, even steps on a plain cream floor. Her LEFT shoe, nearest the viewer, has the black lift layer built into the sole; her RIGHT shoe is the same black running shoe with a normal sole. MamaCarrie watches warmly from the right edge of the frame, mouth closed.
+SCENE: Full-body side view of MamaCarrie, the only person in the frame, in her ceil-blue scrubs and stethoscope. Her LEFT side faces the viewer and she walks toward the left of frame with relaxed, even steps on a plain cream floor, a calm smile with mouth closed. Her LEFT shoe, nearest the viewer, has the black lift layer built into the sole; her RIGHT shoe is the same black running shoe with a normal sole.
 MOTION: Locked camera; smooth, natural, simplified walk cycle with clear heel contact and toe-off; no speed changes.
 AUDIO: Soft piano and light footsteps on a smooth floor, no voice.
-NEGATIVE: color drift, photorealism, 3D render, lip-sync, captions, on-screen text, logos, watermark, limping, sliding feet, extra legs, lift on the wrong foot, mirrored shot.
+NEGATIVE: color drift, photorealism, 3D render, lip-sync, captions, on-screen text, logos, watermark, limping, sliding feet, extra legs, lift on the wrong foot, mirrored shot, second person, duplicate MamaCarrie.
 ```
 
 ```
@@ -144,7 +146,8 @@ NEGATIVE: color drift, photorealism, 3D render, lip-sync, talking mouth, caption
 
 - [ ] Lift is on the LEFT shoe in Blocks 4 and 5; no mirrored clips
 - [ ] Only one shoe in the box in Block 3
-- [ ] MamaCarrie looks the same in Blocks 1, 5 and 6 and never lip-syncs
+- [ ] MamaCarrie looks the same in Blocks 1, 5 and 6, appears only once per frame, and never lip-syncs
+- [ ] Scrubs, stethoscope, gold hoops and cross match; shoes are black, never navy
 - [ ] No garbled text or invented logos in any clip
 - [ ] No prices, delivery times or medical promises anywhere
 - [ ] Each voice line fits inside its 10-second block; brand and URL pronounced correctly
