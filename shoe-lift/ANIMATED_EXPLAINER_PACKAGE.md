@@ -41,11 +41,11 @@ Attach `refs/REF_E_mamacarrie_turnaround_black_shoes.jpg` (likeness, wardrobe, b
 
 ```
 Make an Animated Explainer. Take only the visual render style and color grading of the input image(s); mix the styles if there is more than one image. Never use the characters, inscriptions, etc. from the input image(s) unless the instructions below ask you to. Use only the render style, and follow the user's instructions below:
-clean flat 2D editorial illustration, soft warm cream backgrounds, smooth charcoal outlines of even weight, solid flat fills with one gentle shadow tone, muted burgundy and warm gold accents, matte finish, non-photorealistic, illustrated, not a photo, no live-action, no realism. Full-body character: MamaCarrie, a warm, confident, mature Black woman nurse narrator modeled on the reference likeness: very long, voluminous black curly hair past her shoulders with soft gray streaks at the front hairline, warm brown skin, gentle smile with mouth closed. She wears ceil-blue scrubs (short-sleeve top with a notched V-neck and chest pockets, straight-leg scrub pants with small side slits at the hem), a black-and-silver stethoscope around her neck, small gold hoop earrings, a delicate gold cross necklace, and plain black running shoes. Looking at camera, centered, simple cream background. Recurring-character design. No text, no logos, no watermark.
+clean flat 2D editorial illustration, soft warm cream backgrounds, smooth charcoal outlines of even weight, solid flat fills with one gentle shadow tone, muted burgundy and warm gold accents, matte finish, non-photorealistic, illustrated, not a photo, no live-action, no realism. Full-body character: MamaCarrie, a warm, confident, mature Black woman nurse narrator modeled on the reference likeness: very long, voluminous, fully jet-black curly hair past her shoulders with no gray or silver strands anywhere, warm brown skin, gentle smile with mouth closed. She wears ceil-blue scrubs (short-sleeve top with a notched V-neck and chest pockets, straight-leg scrub pants with small side slits at the hem), a black-and-silver stethoscope around her neck, small gold hoop earrings, a delicate gold cross necklace, and plain black running shoes. Looking at camera, centered, simple cream background. Recurring-character design. No text, no logos, no watermark.
 ```
 Approve this image before anything else. Every clip uses it.
 
-**Wardrobe lock (from REF_D / REF_E):** ceil-blue scrubs, stethoscope, gold hoops, gold cross, **black running shoes only**. Ignore the navy-and-white sneakers in parts of REF_D; they conflict with the black Brooks shoes in REF_A and REF_E.
+**Wardrobe lock (from REF_D / REF_E):** ceil-blue scrubs, stethoscope, gold hoops, gold cross, **black running shoes only**. **Hair is fully black**: ignore the gray streaks at the front hairline in REF_D and REF_E. Ignore the navy-and-white sneakers in parts of REF_D; they conflict with the black Brooks shoes in REF_A and REF_E.
 
 **One MamaCarrie per frame.** She is both host and walker. Never show two of her together.
 
@@ -81,7 +81,7 @@ STYLE REFERENCE: Match the attached reference image EXACTLY. Replicate its look 
 SCENE: MamaCarrie stands beside a small cream pedestal holding a single black running shoe, the LEFT shoe shown from its outer side with the toe pointing left. She greets the viewer with a warm open-hand gesture, mouth closed, then gestures toward the shoe.
 MOTION: Gentle slow push-in from medium shot toward the shoe; soft easing; subtle idle breathing motion on the character.
 AUDIO: Soft warm piano and light room tone only, no voice, dialogue, or narration.
-NEGATIVE: color drift, photorealism, 3D render, lip-sync, talking mouth, captions, on-screen text, logos, watermark, second shoe, extra fingers.
+NEGATIVE: color drift, photorealism, 3D render, lip-sync, talking mouth, gray hair, captions, on-screen text, logos, watermark, second shoe, extra fingers.
 ```
 
 ```
@@ -117,7 +117,7 @@ STYLE REFERENCE: Match the attached reference image EXACTLY. Replicate its look 
 SCENE: Full-body side view of MamaCarrie, the only person in the frame, in her ceil-blue scrubs and stethoscope. Her LEFT side faces the viewer and she walks toward the left of frame with relaxed, even steps on a plain cream floor, a calm smile with mouth closed. Her LEFT shoe, nearest the viewer, has the black lift layer built into the sole; her RIGHT shoe is the same black running shoe with a normal sole.
 MOTION: Locked camera; smooth, natural, simplified walk cycle with clear heel contact and toe-off; no speed changes.
 AUDIO: Soft piano and light footsteps on a smooth floor, no voice.
-NEGATIVE: color drift, photorealism, 3D render, lip-sync, captions, on-screen text, logos, watermark, limping, sliding feet, extra legs, lift on the wrong foot, mirrored shot, second person, duplicate MamaCarrie.
+NEGATIVE: color drift, photorealism, 3D render, lip-sync, captions, on-screen text, logos, watermark, limping, sliding feet, extra legs, lift on the wrong foot, mirrored shot, second person, duplicate MamaCarrie, gray hair.
 ```
 
 ```
@@ -126,7 +126,7 @@ STYLE REFERENCE: Match the attached reference image EXACTLY. Replicate its look 
 SCENE: MamaCarrie stands centered on a cream background with clear empty space on the left side of the frame for a title card. She places a hand over her heart, then gives a warm goodbye wave, mouth closed.
 MOTION: Slow gentle pull-back; soft easing; subtle idle breathing.
 AUDIO: Soft piano resolves to a warm final chord, no voice.
-NEGATIVE: color drift, photorealism, 3D render, lip-sync, talking mouth, captions, on-screen text, logos, watermark, extra fingers.
+NEGATIVE: color drift, photorealism, 3D render, lip-sync, talking mouth, gray hair, captions, on-screen text, logos, watermark, extra fingers.
 ```
 
 ---
@@ -147,6 +147,7 @@ NEGATIVE: color drift, photorealism, 3D render, lip-sync, talking mouth, caption
 - [ ] Lift is on the LEFT shoe in Blocks 4 and 5; no mirrored clips
 - [ ] Only one shoe in the box in Block 3
 - [ ] MamaCarrie looks the same in Blocks 1, 5 and 6, appears only once per frame, and never lip-syncs
+- [ ] Hair is fully black in every block, with no gray streaks
 - [ ] Scrubs, stethoscope, gold hoops and cross match; shoes are black, never navy
 - [ ] No garbled text or invented logos in any clip
 - [ ] No prices, delivery times or medical promises anywhere
