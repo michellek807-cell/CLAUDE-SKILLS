@@ -2,6 +2,8 @@
 
 Version 1 · October 13, 2026 · **Independent spec concept** for @MamaCarrieOfficial (not a commissioned American Heelers ad)
 
+> **Superseded for prompts:** use `RUN_SHEET.md`. Style is now the semi-realistic painted look, not flat 2D.
+
 Built for Higgsfield's **video explainer** workflow:
 - One style key, six 10-second blocks
 - One voice take and one clip per block, assembled server-side
