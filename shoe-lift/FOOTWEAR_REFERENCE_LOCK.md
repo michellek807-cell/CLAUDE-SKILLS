@@ -37,9 +37,11 @@ Version 2 · October 13, 2026 · Independent spec concept for @MamaCarrieOfficia
 
 **Never flip or mirror a clip.** Mirroring moves the lift to the right foot.
 
+Ownership: REF_B and REF_C are Michelle's own shoes (confirmed October 13, 2026), so the real photos can be used directly.
+
 ## Recommended production split
 
-- **Static shoe detail (00:00–00:07, 01:03–01:10):** Use the real REF_C photo with the arrow and label removed, if American Heelers gives permission. Otherwise use Prompt 1.
+- **Static shoe detail (00:00–00:07, 01:03–01:10):** Use the real REF_C photo with the arrow and "5/8 inch" label removed. Prompt 1 is only a backup.
 - **Before/after reveal:** Crossfade REF_B → REF_C in CapCut, aligned on the upper. No AI is needed.
 - **Workshop, packing and gait:** AI shots from the locked still, one action per clip.
 
