@@ -22,13 +22,14 @@ This approved image is your **STYLE KEY**. Attach it to every clip below.
 ## STEP 2: Voiceover (ElevenLabs, MamaCarrie voice, one file per line)
 
 Each line must be under 9.5 seconds. Name the files VO_01 to VO_06.
+Lines are trimmed to 18–20 words so they fit at MamaCarrie's warm, unhurried pace (about 130 words per minute). If a file still runs past 9.5s, regenerate it with Speed at 1.05 rather than cutting words.
 
 ```
-VO_01: Need a lift? Keep the shoes you already love. American Heelers adds an external lift to your own shoe, built to your specifications.
-VO_02: Start at orthopedic shoe lift dot com. Fill out the order form with the correct side and the lift height your clinician recommends.
-VO_03: Pack only the shoe that needs the lift, along with your printed form. Then follow the site's link to print a shipping label.
-VO_04: At the workshop, the lift layer is built in between the midsole and the outsole, and the edges are finished to match.
-VO_05: Your shoe comes back looking like yours, the same upper and the same laces, now with the lift built right into the sole.
+VO_01: Need a lift? Keep the shoes you love. American Heelers adds a custom external lift to your own shoe.
+VO_02: Start at orthopedic shoe lift dot com. On the form, choose the correct side and your clinician's recommended lift height.
+VO_03: Pack only the shoe that needs the lift, plus your printed form. Then print your shipping label from the site.
+VO_04: At the workshop, the lift is built in between the midsole and outsole, and the edges are finished to match.
+VO_05: Your shoe comes back looking like yours, same upper, same laces, with the lift built right into the sole.
 VO_06: Every body is different, so confirm your lift with a qualified clinician. Learn more at orthopedic shoe lift dot com.
 ```
 
