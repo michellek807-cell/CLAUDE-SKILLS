@@ -63,6 +63,26 @@ Consistency: Semi-realistic digital painted illustration exactly like Image 1, w
 No subtitles. No BGM; environmental sounds only.
 ```
 
+### Clip 1B: Measuring with the block test (plays between Clip 1 and Clip 2)
+Adds 10 seconds, so the film becomes 70 seconds. No person and no feet, so nothing for the AI to get wrong.
+
+Voiceover (record as VO_01B):
+```
+VO_01B: Not sure of your lift height? The site explains a standing block test, and your clinician should confirm the measurement.
+```
+
+Still (Nano Banana Pro, attach the MamaCarrie character image for style only, 16:9):
+```
+Semi-realistic painted illustration in the same art style as the reference image. On a plain light wood floor against a warm cream wall: a small neat stack of three flat wooden blocks of slightly different thicknesses, a wooden ruler standing upright beside the stack, and a clipboard with a blank sheet of paper leaning nearby. Soft warm lighting from the left. No people, no feet, no shoes. No text, numbers or markings on the ruler, blocks or paper. No logos, no watermark.
+```
+
+CapCut (no video credits needed):
+1. 0–4s: the still with a slow zoom-in.
+2. 4–10s: your **real screen recording of the Standing Block Test page** on orthopedicshoelift.com, scrolling slowly. Hold on the **"8. Consult a Medical Professional"** section at the end.
+3. On-screen note during the page: "Guide only. Confirm your measurement with a clinician."
+
+**Keep it responsible:** don't read out the steps or the "1 inch → ¾ inch" example, and don't show anyone measuring themselves on camera. The page is shown as a resource the business provides, and the clinician line stays in.
+
 ### Clip 2: Order online
 ```
 Image 1 sets the painted illustration art style and the warm skin tone of the hand.
