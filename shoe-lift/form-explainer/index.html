@@ -1,0 +1,587 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <title>Shoe Lift Order Forms</title>
+    <script src="assets/gsap.min.js"></script>
+    <style>
+      @font-face { font-family: "Inter"; font-weight: 400; src: url("assets/fonts/inter-latin-400-normal.woff2") format("woff2"); }
+      @font-face { font-family: "Inter"; font-weight: 600; src: url("assets/fonts/inter-latin-600-normal.woff2") format("woff2"); }
+      @font-face { font-family: "Inter"; font-weight: 800; src: url("assets/fonts/inter-latin-800-normal.woff2") format("woff2"); }
+      @font-face { font-family: "Playfair Display"; font-weight: 700; src: url("assets/fonts/playfair-display-latin-700-normal.woff2") format("woff2"); }
+      @font-face { font-family: "Playfair Display"; font-weight: 700; font-style: italic; src: url("assets/fonts/playfair-display-latin-700-italic.woff2") format("woff2"); }
+
+      :root {
+        --cream: #f6efe3;
+        --cream-2: #efe4d0;
+        --burgundy: #6e1e2b;
+        --gold: #c9a24a;
+        --gold-soft: #f3d98c;
+        --ink: #2a1e1a;
+        --muted: #6d5e55;
+        --green: #2e7d4f;
+        --red: #b3261e;
+        --slate: #5b6b7a;
+        --navy: #1b2a5e;
+      }
+      body { margin: 0; background: var(--cream); color: var(--ink); font-family: "Inter", sans-serif; }
+      #root { position: relative; width: 100%; height: 100%; overflow: hidden; background: var(--cream); }
+      #bg {
+        position: absolute; inset: 0;
+        background:
+          radial-gradient(1200px 900px at 85% -10%, rgba(201, 162, 74, 0.22), transparent 60%),
+          radial-gradient(1000px 800px at -10% 110%, rgba(110, 30, 43, 0.14), transparent 60%),
+          var(--cream);
+      }
+      .clip { position: absolute; inset: 0; }
+
+      /* ---------- shared header ---------- */
+      .hdr { position: absolute; left: 60px; right: 60px; top: 90px; }
+      .steps { display: flex; gap: 14px; }
+      .pill {
+        font-weight: 600; font-size: 24px; letter-spacing: 0.06em; text-transform: uppercase;
+        padding: 10px 20px; border-radius: 999px; border: 2px solid rgba(110, 30, 43, 0.25); color: var(--muted);
+      }
+      .pill.on { background: var(--burgundy); border-color: var(--burgundy); color: var(--cream); }
+      .pill.done { border-color: var(--green); color: var(--green); }
+      .hdr h2 {
+        margin: 26px 0 0; font-family: "Playfair Display", serif; font-weight: 700; font-size: 72px;
+        line-height: 1.05; color: var(--burgundy);
+      }
+      .hdr p { margin: 12px 0 0; font-size: 32px; color: var(--muted); }
+
+      /* ---------- form viewport + camera ---------- */
+      .vp {
+        position: absolute; left: 40px; top: 380px; width: 1000px; height: 1040px; overflow: hidden;
+        background: #fff; border-radius: 28px;
+        box-shadow: 0 30px 70px rgba(42, 30, 26, 0.18), 0 0 0 3px rgba(201, 162, 74, 0.55);
+      }
+      .cam { position: absolute; left: 0; top: 0; }
+      .cam img { position: absolute; left: 0; top: 0; width: 100%; height: 100%; display: block; }
+      .ring { position: absolute; box-sizing: border-box; opacity: 0; }
+      .ring.req { border-style: solid; border-color: var(--gold); background: rgba(243, 217, 140, 0.18); }
+      .ring.opt { border-style: dashed; border-color: var(--slate); background: rgba(91, 107, 122, 0.06); }
+      .ring.skip { border-style: solid; border-color: var(--red); background: rgba(179, 38, 30, 0.10); }
+      .tag {
+        position: absolute; left: 0; white-space: nowrap; font-weight: 800; letter-spacing: 0.05em;
+        color: #fff; border-radius: 999px;
+      }
+      .req .tag { background: var(--red); }
+      .opt .tag { background: var(--slate); }
+      .skip .tag { background: var(--red); }
+      .typed {
+        position: absolute; white-space: nowrap; font-weight: 600; color: var(--navy);
+        clip-path: inset(0 100% 0 0);
+      }
+      .badge { position: absolute; opacity: 0; }
+      .tick { position: absolute; overflow: visible; }
+
+      /* ---------- callout card ---------- */
+      .callout {
+        position: absolute; left: 60px; right: 60px; top: 1470px; min-height: 300px; box-sizing: border-box;
+        padding: 34px 40px; background: #fff; border-radius: 28px; border-left: 12px solid var(--burgundy);
+        box-shadow: 0 18px 40px rgba(42, 30, 26, 0.12); opacity: 0;
+      }
+      .callout .k {
+        display: inline-block; font-weight: 800; font-size: 26px; letter-spacing: 0.08em; padding: 8px 18px;
+        border-radius: 999px; color: #fff; background: var(--red);
+      }
+      .callout .k.opt { background: var(--slate); }
+      .callout .k.tip { background: var(--gold); color: var(--ink); }
+      .callout .k.ok { background: var(--green); }
+      .callout h3 { margin: 18px 0 0; font-weight: 800; font-size: 50px; line-height: 1.12; color: var(--ink); }
+      .callout p { margin: 12px 0 0; font-size: 33px; line-height: 1.35; color: var(--muted); }
+
+      /* ---------- hook ---------- */
+      #s0 .big {
+        position: absolute; left: 70px; right: 70px; top: 360px; font-family: "Playfair Display", serif;
+        font-weight: 700; font-size: 124px; line-height: 1.02; color: var(--burgundy);
+      }
+      #s0 .big em { color: #a6863d; font-style: italic; }
+      #s0 .lede { position: absolute; left: 70px; right: 70px; top: 720px; font-size: 46px; line-height: 1.3; color: var(--ink); }
+      #s0 .rule { position: absolute; left: 70px; top: 690px; width: 300px; height: 6px; background: var(--gold); border-radius: 3px; }
+      .card3 {
+        position: absolute; left: 70px; right: 70px; height: 170px; display: flex; align-items: center; gap: 34px;
+        background: #fff; border-radius: 26px; padding: 0 36px; box-sizing: border-box;
+        box-shadow: 0 14px 34px rgba(42, 30, 26, 0.10);
+      }
+      .num {
+        flex: 0 0 96px; height: 96px; border-radius: 50%; background: var(--burgundy); color: var(--gold-soft);
+        font-family: "Playfair Display", serif; font-weight: 700; font-size: 54px; display: flex; align-items: center; justify-content: center;
+      }
+      .card3 .t { font-weight: 800; font-size: 42px; color: var(--ink); }
+      .card3 .d { font-size: 30px; color: var(--muted); margin-top: 6px; }
+
+      /* ---------- pack ---------- */
+      #s4 .stage { position: absolute; left: 40px; top: 380px; width: 1000px; height: 760px; }
+      .chk {
+        position: absolute; left: 70px; right: 70px; height: 150px; display: flex; align-items: center; gap: 30px;
+        background: #fff; border-radius: 24px; padding: 0 34px; box-sizing: border-box; opacity: 0;
+        box-shadow: 0 10px 26px rgba(42, 30, 26, 0.10);
+      }
+      .chk .box {
+        flex: 0 0 64px; height: 64px; border-radius: 16px; border: 4px solid var(--green); box-sizing: border-box;
+        position: relative;
+      }
+      .chk .t { font-weight: 800; font-size: 38px; color: var(--ink); }
+      .chk .d { font-size: 28px; color: var(--muted); margin-top: 4px; }
+
+      /* ---------- outro ---------- */
+      #s5 .shot {
+        position: absolute; left: 160px; top: 160px; width: 760px; height: 1270px; border-radius: 26px; overflow: hidden;
+        box-shadow: 0 30px 70px rgba(42, 30, 26, 0.25); opacity: 0;
+      }
+      #s5 .shot img { width: 100%; display: block; }
+      #s5 .panel {
+        position: absolute; left: 60px; right: 60px; top: 1080px; padding: 50px 50px 56px; box-sizing: border-box;
+        background: var(--burgundy); border-radius: 32px; color: var(--cream); opacity: 0;
+      }
+      #s5 h2 { margin: 0; font-family: "Playfair Display", serif; font-weight: 700; font-size: 74px; line-height: 1.05; }
+      #s5 .url { margin-top: 24px; font-weight: 800; font-size: 44px; color: var(--gold-soft); }
+      #s5 .note { margin-top: 26px; font-size: 30px; line-height: 1.4; color: rgba(246, 239, 227, 0.85); }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-width="1080" data-height="1920" data-duration="63" data-fps="30">
+      <div id="bg"></div>
+
+      <!-- ===== HOOK ===== -->
+      <section id="s0" class="clip" data-start="0" data-duration="4.6" data-track-index="1">
+        <div class="big" id="s0-big">Ordering a <em>shoe lift?</em></div>
+        <div class="rule" id="s0-rule"></div>
+        <div class="lede" id="s0-lede">Here’s exactly what to fill in, form by form.</div>
+        <div class="card3" id="s0-c1" style="top: 960px"><div class="num">1</div><div><div class="t">15% Off Form</div><div class="d">First-time customers · online</div></div></div>
+        <div class="card3" id="s0-c2" style="top: 1160px"><div class="num">2</div><div><div class="t">Order Form</div><div class="d">Printed · ships inside the box</div></div></div>
+        <div class="card3" id="s0-c3" style="top: 1360px"><div class="num">3</div><div><div class="t">USPS Return Label</div><div class="d">Printed · taped on the box</div></div></div>
+      </section>
+
+      <!-- ===== STEP 1: OFFER FORM ===== -->
+      <section id="s1" class="clip" data-start="4.6" data-duration="12.4" data-track-index="1">
+        <div class="hdr" id="s1-hdr">
+          <div class="steps"><span class="pill on">1 Offer</span><span class="pill">2 Order</span><span class="pill">3 Label</span><span class="pill">4 Ship</span></div>
+          <h2>Claim your 15% off</h2>
+          <p>Special offer form · first-time customers</p>
+        </div>
+        <div class="vp" id="s1-vp"><div class="cam" data-layout-allow-overflow id="s1-cam" style="width: 511px; height: 661px"><img src="assets/form-offer.png" alt="Special offer form" /></div></div>
+      </section>
+
+      <!-- ===== STEP 2: ORDER FORM ===== -->
+      <section id="s2" class="clip" data-start="17" data-duration="23" data-track-index="1">
+        <div class="hdr" id="s2-hdr">
+          <div class="steps"><span class="pill done">1 Offer</span><span class="pill on">2 Order</span><span class="pill">3 Label</span><span class="pill">4 Ship</span></div>
+          <h2>Fill out the Order Form</h2>
+          <p>Print it · it travels inside the box with your shoe</p>
+        </div>
+        <div class="vp" id="s2-vp"><div class="cam" data-layout-allow-overflow id="s2-cam" style="width: 1119px; height: 1336px"><img src="assets/form-order.png" alt="American Heelers order form" /></div></div>
+      </section>
+
+      <!-- ===== STEP 3: USPS LABEL ===== -->
+      <section id="s3" class="clip" data-start="40" data-duration="11" data-track-index="1">
+        <div class="hdr" id="s3-hdr">
+          <div class="steps"><span class="pill done">1 Offer</span><span class="pill done">2 Order</span><span class="pill on">3 Label</span><span class="pill">4 Ship</span></div>
+          <h2>Print your USPS label</h2>
+          <p>USPS Returns · Customer Self-Service</p>
+        </div>
+        <div class="vp" id="s3-vp"><div class="cam" data-layout-allow-overflow id="s3-cam" style="width: 1603px; height: 1212px"><img src="assets/form-usps.png" alt="USPS returns label form" /></div></div>
+      </section>
+
+      <!-- ===== STEP 4: PACK ===== -->
+      <section id="s4" class="clip" data-start="51" data-duration="6.4" data-track-index="1">
+        <div class="hdr" id="s4-hdr">
+          <div class="steps"><span class="pill done">1 Offer</span><span class="pill done">2 Order</span><span class="pill done">3 Label</span><span class="pill on">4 Ship</span></div>
+          <h2>Pack it &amp; ship it</h2>
+          <p>Before you seal the box, check all four</p>
+        </div>
+        <svg class="stage" id="s4-stage" viewBox="0 0 1000 760">
+          <ellipse cx="500" cy="700" rx="360" ry="34" fill="rgba(42,30,26,0.12)" />
+          <!-- shoe (drops in) -->
+          <g id="s4-shoe">
+            <path d="M330 470 L330 390 Q370 384 410 350 L470 312 Q500 336 560 346 L660 372 Q700 384 704 420 L704 470 Z" fill="#1e1e22" />
+            <rect x="326" y="470" width="382" height="26" rx="10" fill="#d9d4cc" />
+            <rect x="326" y="496" width="382" height="22" rx="8" fill="#3a3a3f" />
+            <rect x="326" y="518" width="382" height="14" rx="7" fill="#1e1e22" />
+            <path d="M440 345 L520 372 M455 335 L535 360" stroke="#f6efe3" stroke-width="5" stroke-linecap="round" />
+          </g>
+          <!-- order form sheet -->
+          <g id="s4-sheet">
+            <rect x="560" y="250" width="200" height="260" rx="10" fill="#ffffff" stroke="#c9a24a" stroke-width="4" />
+            <rect x="585" y="280" width="150" height="16" rx="8" fill="#6e1e2b" />
+            <rect x="585" y="316" width="150" height="10" rx="5" fill="#d8cdbb" />
+            <rect x="585" y="342" width="120" height="10" rx="5" fill="#d8cdbb" />
+            <rect x="585" y="368" width="150" height="10" rx="5" fill="#d8cdbb" />
+            <rect x="585" y="394" width="100" height="10" rx="5" fill="#d8cdbb" />
+          </g>
+          <!-- box -->
+          <g id="s4-box">
+            <rect x="220" y="440" width="560" height="260" rx="14" fill="#c8955a" />
+            <rect x="220" y="440" width="560" height="40" fill="#b07c45" />
+            <rect x="470" y="440" width="60" height="260" fill="#e3c27e" opacity="0.8" />
+          </g>
+          <g id="s4-flapL"><path d="M220 440 L500 440 L470 380 L250 380 Z" fill="#b8844d" /></g>
+          <g id="s4-flapR"><path d="M500 440 L780 440 L750 380 L530 380 Z" fill="#b8844d" /></g>
+          <!-- label -->
+          <g id="s4-label">
+            <rect x="580" y="530" width="170" height="130" rx="8" fill="#ffffff" stroke="#1b2a5e" stroke-width="4" />
+            <rect x="598" y="548" width="70" height="20" rx="3" fill="#1b2a5e" />
+            <rect x="598" y="582" width="134" height="8" rx="4" fill="#9aa3b8" />
+            <rect x="598" y="600" width="110" height="8" rx="4" fill="#9aa3b8" />
+            <rect x="598" y="620" width="134" height="22" fill="#2a1e1a" opacity="0.85" />
+          </g>
+        </svg>
+        <div class="chk" id="s4-k1" style="top: 1140px"><div class="box"></div><div><div class="t">Only the shoe that needs the lift</div><div class="d">You don’t need to send its mate</div></div></div>
+        <div class="chk" id="s4-k2" style="top: 1310px"><div class="box"></div><div><div class="t">Printed Order Form inside</div><div class="d">Lift height filled in</div></div></div>
+        <div class="chk" id="s4-k3" style="top: 1480px"><div class="box"></div><div><div class="t">USPS label taped outside</div><div class="d">Flat, with the barcode fully visible</div></div></div>
+        <div class="chk" id="s4-k4" style="top: 1650px"><div class="box"></div><div><div class="t">Keep your tracking number</div><div class="d">Snap a photo of the label first</div></div></div>
+      </section>
+
+      <!-- ===== OUTRO ===== -->
+      <section id="s5" class="clip" data-start="57.4" data-duration="5.6" data-track-index="1">
+        <div class="shot" id="s5-shot"><img src="assets/blog-grid.png" alt="Shoe lift guides" /></div>
+        <div class="panel" id="s5-panel">
+          <h2>Questions before you order?</h2>
+          <div class="url">orthopedicshoelift.com</div>
+          <div class="note">Read the shoe lift guides on the blog, and confirm your lift height with your clinician first.</div>
+        </div>
+      </section>
+    </div>
+
+    <script>
+      (function () {
+        const tl = gsap.timeline({ paused: true });
+        const VW = 1000, VH = 1040;
+        const NS = "http://www.w3.org/2000/svg";
+
+        // ---------- helpers ----------
+        function el(tag, cls, parent, css) {
+          const e = document.createElement(tag);
+          if (cls) e.className = cls;
+          if (css) Object.assign(e.style, css);
+          parent.appendChild(e);
+          return e;
+        }
+
+        function makeCam(id, iw, ih) {
+          const cam = document.getElementById(id + "-cam");
+          const fit = Math.min(VW / iw, VH / ih) * 0.96;
+          function pose(box, maxS) {
+            if (!box) return { scale: fit, x: (VW - iw * fit) / 2, y: (VH - ih * fit) / 2 };
+            const [x1, y1, x2, y2] = box;
+            let s = Math.min((VW * 0.86) / (x2 - x1), (VH * 0.55) / (y2 - y1), maxS || 2.4);
+            s = Math.max(s, fit);
+            let x = VW / 2 - (s * (x1 + x2)) / 2;
+            let y = VH / 2 - (s * (y1 + y2)) / 2;
+            x = s * iw <= VW ? (VW - s * iw) / 2 : Math.min(0, Math.max(VW - s * iw, x));
+            y = s * ih <= VH ? (VH - s * ih) / 2 : Math.min(0, Math.max(VH - s * ih, y));
+            return { scale: s, x, y };
+          }
+          tl.set(cam, Object.assign({ transformOrigin: "0 0" }, pose(null)), 0);
+          return {
+            cam,
+            go(t, box, maxS) {
+              const p = pose(box, maxS);
+              tl.to(cam, { scale: p.scale, x: p.x, y: p.y, duration: 0.85, ease: "power3.inOut" }, t);
+              return p.scale;
+            },
+          };
+        }
+
+        function ring(cam, t, box, kind, s, label) {
+          const [x1, y1, x2, y2] = box;
+          const pad = 7 / s;
+          const r = el("div", "ring " + kind, cam, {
+            left: x1 - pad + "px", top: y1 - pad + "px",
+            width: x2 - x1 + pad * 2 + "px", height: y2 - y1 + pad * 2 + "px",
+            borderWidth: 4.5 / s + "px", borderRadius: 9 / s + "px",
+          });
+          if (label) {
+            const tg = el("div", "tag", r, {
+              fontSize: 17 / s + "px", padding: 4 / s + "px " + 12 / s + "px", top: -34 / s + "px",
+            });
+            tg.textContent = label;
+          }
+          tl.fromTo(r, { opacity: 0, scale: 1.12 }, { opacity: 1, scale: 1, duration: 0.4, ease: "back.out(2)" }, t);
+          if (kind === "req") {
+            tl.fromTo(r, { boxShadow: "0 0 0px rgba(201,162,74,0)" },
+              { boxShadow: "0 0 " + 22 / s + "px rgba(201,162,74,0.95)", duration: 0.35, repeat: 3, yoyo: true, ease: "sine.inOut" }, t + 0.3);
+          }
+          return r;
+        }
+
+        function done(r, t) {
+          tl.to(r, { borderColor: "#2e7d4f", backgroundColor: "rgba(46,125,79,0.10)", duration: 0.3 }, t);
+        }
+
+        function typeIn(cam, t, box, text, dur, bg) {
+          const [x1, y1, x2, y2] = box;
+          const h = y2 - y1;
+          const e = el("div", "typed", cam, {
+            left: x1 + h * 0.3 + "px", top: y1 + "px", height: h + "px", lineHeight: h + "px", fontSize: h * 0.6 + "px",
+          });
+          e.textContent = text;
+          if (bg) Object.assign(e.style, { background: bg, left: x1 + "px", width: x2 - x1 + "px", paddingLeft: h * 0.3 + "px", boxSizing: "border-box" });
+          tl.to(e, { clipPath: "inset(0 0% 0 0)", duration: dur || 0.6, ease: "steps(" + Math.max(4, text.length) + ")" }, t);
+          return e;
+        }
+
+        function badge(cam, t, box) {
+          const [x1, y1, x2, y2] = box;
+          const d = (y2 - y1) * 0.78;
+          const b = document.createElementNS(NS, "svg");
+          b.setAttribute("viewBox", "0 0 40 40");
+          b.setAttribute("class", "badge");
+          Object.assign(b.style, { left: x2 - d * 1.25 + "px", top: y1 + (y2 - y1 - d) / 2 + "px", width: d + "px", height: d + "px" });
+          b.innerHTML = '<circle cx="20" cy="20" r="19" fill="#2e7d4f"/><path d="M11 21 L17.5 27 L29 14" fill="none" stroke="#fff" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>';
+          cam.appendChild(b);
+          tl.fromTo(b, { opacity: 0, scale: 0 }, { opacity: 1, scale: 1, duration: 0.35, ease: "back.out(3)", transformOrigin: "50% 50%" }, t);
+        }
+
+        function tick(cam, t, box, color) {
+          const [x1, y1, x2, y2] = box;
+          const w = x2 - x1, h = y2 - y1;
+          const s = document.createElementNS(NS, "svg");
+          s.setAttribute("viewBox", "0 0 20 20");
+          s.setAttribute("class", "tick");
+          Object.assign(s.style, { left: x1 + "px", top: y1 + "px", width: w + "px", height: h + "px" });
+          s.innerHTML = '<path d="M3 10.5 L8 15.5 L18 3" fill="none" stroke="' + (color || "#2e7d4f") + '" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="26" stroke-dashoffset="26"/>';
+          cam.appendChild(s);
+          tl.to(s.querySelector("path"), { strokeDashoffset: 0, duration: 0.35, ease: "power2.out" }, t);
+        }
+
+        function cross(cam, t, box) {
+          const [x1, y1, x2, y2] = box;
+          const s = document.createElementNS(NS, "svg");
+          s.setAttribute("viewBox", "0 0 100 100");
+          s.setAttribute("preserveAspectRatio", "none");
+          s.setAttribute("class", "tick");
+          Object.assign(s.style, { left: x1 + "px", top: y1 + "px", width: x2 - x1 + "px", height: y2 - y1 + "px" });
+          s.innerHTML = '<path d="M8 8 L92 92" stroke="#b3261e" stroke-width="3" vector-effect="non-scaling-stroke" stroke-dasharray="130" stroke-dashoffset="130" style="stroke-width:10px"/><path d="M92 8 L8 92" stroke="#b3261e" vector-effect="non-scaling-stroke" stroke-dasharray="130" stroke-dashoffset="130" style="stroke-width:10px"/>';
+          cam.appendChild(s);
+          const p = s.querySelectorAll("path");
+          tl.to(p[0], { strokeDashoffset: 0, duration: 0.3, ease: "power2.in" }, t);
+          tl.to(p[1], { strokeDashoffset: 0, duration: 0.3, ease: "power2.in" }, t + 0.2);
+        }
+
+        // Callout cards: one shown at a time per scene.
+        function callouts(sceneId, end, items) {
+          const scene = document.getElementById(sceneId);
+          items.forEach((c, i) => {
+            const card = el("div", "callout", scene);
+            card.innerHTML =
+              '<span class="k ' + (c.cls || "") + '">' + c.k + "</span><h3>" + c.h + "</h3>" + (c.p ? "<p>" + c.p + "</p>" : "");
+            const tIn = c.t;
+            const tOut = i + 1 < items.length ? items[i + 1].t : end;
+            tl.fromTo(card, { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.4, ease: "power3.out" }, tIn);
+            if (i + 1 < items.length) tl.to(card, { opacity: 0, y: -20, duration: 0.25, ease: "power2.in" }, tOut - 0.25);
+          });
+        }
+
+        function sceneIn(id, t) {
+          tl.fromTo("#" + id + "-hdr", { opacity: 0, y: -30 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, t);
+          tl.fromTo("#" + id + "-vp", { opacity: 0, y: 60, scale: 0.96 }, { opacity: 1, y: 0, scale: 1, duration: 0.6, ease: "power3.out" }, t + 0.1);
+        }
+        function sceneOut(id, t) {
+          tl.to("#" + id + " > *", { opacity: 0, duration: 0.3, ease: "power2.in" }, t);
+        }
+
+        // ================= HOOK (0 – 4.6) =================
+        tl.fromTo("#s0-big", { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: 0.7, ease: "power3.out" }, 0.2);
+        tl.fromTo("#s0-rule", { scaleX: 0 }, { scaleX: 1, duration: 0.5, ease: "power2.out", transformOrigin: "0 50%" }, 0.7);
+        tl.fromTo("#s0-lede", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 0.9);
+        tl.fromTo(["#s0-c1", "#s0-c2", "#s0-c3"], { opacity: 0, x: 80 }, { opacity: 1, x: 0, duration: 0.5, ease: "power3.out", stagger: 0.3 }, 1.6);
+        sceneOut("s0", 4.25);
+
+        // ================= STEP 1: OFFER FORM (4.6 – 17) =================
+        {
+          const T = 4.6, c = makeCam("s1", 511, 661), cam = c.cam;
+          sceneIn("s1", T);
+          let s;
+          s = c.go(T + 1.3, [30, 88, 450, 130]);
+          const r1 = ring(cam, T + 1.9, [30, 107, 450, 127], "req", s, "REQUIRED");
+          typeIn(cam, T + 2.3, [30, 107, 450, 127], "Jane Doe", 0.5);
+          badge(cam, T + 2.9, [30, 107, 450, 127]); done(r1, T + 2.9);
+
+          s = c.go(T + 3.4, [30, 285, 450, 371]);
+          const r2 = ring(cam, T + 3.9, [30, 303, 450, 323], "req", s, "REQUIRED");
+          typeIn(cam, T + 4.2, [30, 303, 450, 323], "(330) 555-0142", 0.6);
+          badge(cam, T + 4.9, [30, 303, 450, 323]); done(r2, T + 4.9);
+          const r3 = ring(cam, T + 5.2, [30, 348, 450, 369], "req", s, "REQUIRED");
+          typeIn(cam, T + 5.5, [30, 348, 450, 369], "jane@email.com", 0.6);
+          badge(cam, T + 6.2, [30, 348, 450, 369]); done(r3, T + 6.2);
+
+          s = c.go(T + 6.9, null);
+          const sf = Math.min(VW / 511, VH / 661) * 0.96;
+          [[30, 150, 450, 279], [28, 393, 112, 407], [30, 433, 450, 503], [30, 555, 450, 603]].forEach((b, i) =>
+            ring(cam, T + 7.4 + i * 0.25, b, "opt", sf, i === 0 ? "OPTIONAL" : null)
+          );
+          tick(cam, T + 8.4, [31, 396, 39, 404], "#2e7d4f");
+
+          s = c.go(T + 9.6, [30, 540, 450, 640], 2.0);
+          const r4 = ring(cam, T + 10.2, [30, 614, 450, 631], "req", s, "TAP TO SEND");
+          done(r4, T + 11.2);
+
+          callouts("s1", T + 12.4, [
+            { t: T + 0.9, k: "STEP 1", cls: "tip", h: "First order? Start here.", p: "This online form claims your 15% first-time discount." },
+            { t: T + 1.6, k: "REQUIRED", h: "Full Name", p: "Type your name exactly as you want it on your order." },
+            { t: T + 3.6, k: "REQUIRED", h: "Phone & Email", p: "They’ll use these to reach you about your order and invoice." },
+            { t: T + 7.1, k: "OPTIONAL", cls: "opt", h: "Address, new customer, upload, notes", p: "Helpful extras. You can attach a prescription or a photo of your shoe (jpg or png)." },
+            { t: T + 9.8, k: "LAST STEP", cls: "ok", h: "Tap Submit", p: "That locks in your 15% off before you send your shoe." },
+          ]);
+          sceneOut("s1", T + 12.05);
+        }
+
+        // ================= STEP 2: ORDER FORM (17 – 40) =================
+        {
+          const T = 17, c = makeCam("s2", 1119, 1336), cam = c.cam;
+          sceneIn("s2", T);
+          let s;
+          // customer info
+          s = c.go(T + 1.2, [525, 88, 1022, 265], 2.0);
+          const rc = ring(cam, T + 1.7, [528, 112, 1020, 263], "req", s, "FILL EVERY LINE");
+          typeIn(cam, T + 2.0, [579, 116, 1018, 138], "Jane Doe", 0.4);
+          typeIn(cam, T + 2.45, [677, 147, 1018, 170], "123 Main St", 0.45);
+          typeIn(cam, T + 2.95, [608, 179, 1018, 201], "Akron, OH 44308", 0.5);
+          typeIn(cam, T + 3.5, [579, 211, 736, 233], "(330) 555-0142", 0.5);
+          typeIn(cam, T + 4.0, [788, 211, 1018, 233], "jane@email.com", 0.5);
+          typeIn(cam, T + 4.5, [596, 239, 736, 261], "10/14/26", 0.4);
+          done(rc, T + 5.0);
+
+          // check if applicable
+          s = c.go(T + 5.3, [160, 270, 840, 345], 2.0);
+          const rk = ring(cam, T + 5.8, [168, 291, 320, 337], "req", s, "CHECK ONE");
+          tick(cam, T + 6.4, [172, 295, 188, 311]);
+          done(rk, T + 6.8);
+
+          // lift height
+          s = c.go(T + 7.3, [160, 360, 640, 412], 1.9);
+          const rl = ring(cam, T + 7.8, [395, 378, 615, 404], "req", s, "REQUIRED");
+          typeIn(cam, T + 8.6, [395, 378, 615, 404], "3/4 in", 0.5);
+          badge(cam, T + 9.4, [395, 378, 615, 404]); done(rl, T + 9.4);
+
+          // add-ons
+          s = c.go(T + 10.8, [160, 410, 1022, 565], 1.5);
+          ring(cam, T + 11.2, [168, 442, 422, 534], "opt", s, "OPTIONAL");
+          ring(cam, T + 11.4, [632, 415, 1020, 512], "opt", s, null);
+          ring(cam, T + 11.6, [168, 542, 365, 564], "opt", s, null);
+
+          // shoe detail
+          s = c.go(T + 12.8, [660, 620, 1022, 795], 2.2);
+          const rs = ring(cam, T + 13.3, [668, 650, 1020, 734], "req", s, "WHICH SHOE?");
+          tick(cam, T + 13.7, [673, 655, 689, 671]);
+          typeIn(cam, T + 14.0, [712, 683, 838, 705], "W 9", 0.35);
+          typeIn(cam, T + 14.4, [732, 708, 838, 730], "Brooks", 0.4);
+          done(rs, T + 14.9);
+          const rt = ring(cam, T + 15.3, [784, 770, 800, 790], "req", s, null);
+          done(rt, T + 15.9);
+
+          // doctor info
+          s = c.go(T + 16.6, [160, 780, 1028, 890], 1.4);
+          ring(cam, T + 17.1, [163, 786, 1025, 884], "opt", s, "OPTIONAL");
+
+          // office use only
+          s = c.go(T + 18.4, [630, 1040, 1090, 1250], 1.6);
+          ring(cam, T + 18.9, [642, 1052, 1078, 1238], "skip", s, "LEAVE BLANK");
+          cross(cam, T + 19.3, [660, 1080, 1060, 1230]);
+
+          // back out
+          c.go(T + 20.4, null);
+
+          callouts("s2", T + 23, [
+            { t: T + 0.8, k: "STEP 2", cls: "tip", h: "Print this form first", p: "Fill it in by hand. It goes inside the box with your shoe." },
+            { t: T + 1.5, k: "REQUIRED", h: "Customer Info", p: "Name, shipping address, city/state/ZIP, phone, email, and the date you mail it." },
+            { t: T + 5.5, k: "CHECK ONE", h: "New or Repeat customer?", p: "Also check change of address, warranty/redo, or expedite if they apply." },
+            { t: T + 7.5, k: "REQUIRED", h: "Shoe Lift Height", p: "Use the height your clinician recommends, in inches (¾\") or millimeters (19 mm)." },
+            { t: T + 11.0, k: "OPTIONAL", cls: "opt", h: "Add-ons & custom tapering", p: "Honeycomb design, heavy-duty material, specialty shoes. Prices are on the form." },
+            { t: T + 13.0, k: "DON’T SKIP", h: "Which shoe gets the lift?", p: "Check LEFT or RIGHT, add size and brand, then circle total shoes sent." },
+            { t: T + 16.8, k: "OPTIONAL", cls: "opt", h: "Doctor Info", p: "Your clinician’s name, address, and phone, if you want them included." },
+            { t: T + 18.6, k: "SKIP", h: "For Office Use Only", p: "Leave this box blank. The shop fills it in." },
+            { t: T + 20.6, k: "DONE", cls: "ok", h: "Print it. Pack it inside.", p: "The order form ships with your shoe." },
+          ]);
+          sceneOut("s2", T + 22.65);
+        }
+
+        // ================= STEP 3: USPS LABEL (40 – 51) =================
+        {
+          const T = 40, c = makeCam("s3", 1603, 1212), cam = c.cam;
+          sceneIn("s3", T);
+          let s;
+          s = c.go(T + 1.2, [540, 400, 1060, 470], 1.6);
+          const rm = ring(cam, T + 1.6, [620, 420, 975, 452], "req", s, "CONFIRM");
+          done(rm, T + 2.4);
+
+          s = c.go(T + 2.8, [530, 665, 1400, 745], 1.3);
+          const rn = ring(cam, T + 3.2, [541, 694, 1394, 736], "req", s, "REQUIRED");
+          typeIn(cam, T + 3.5, [541, 694, 1394, 736], "Jane Doe", 0.45);
+          badge(cam, T + 4.1, [541, 694, 1394, 736]); done(rn, T + 4.1);
+
+          s = c.go(T + 4.5, [530, 745, 1400, 905], 1.3);
+          const rst = ring(cam, T + 4.9, [541, 775, 1095, 817], "req", s, "REQUIRED");
+          typeIn(cam, T + 5.2, [541, 775, 1095, 817], "123 Main St", 0.45);
+          ring(cam, T + 5.4, [1140, 775, 1394, 817], "opt", s, "OPTIONAL");
+          done(rst, T + 5.8);
+          const rcy = ring(cam, T + 6.0, [541, 855, 1394, 897], "req", s, "REQUIRED");
+          typeIn(cam, T + 6.3, [541, 855, 1394, 897], "Akron", 0.35);
+          done(rcy, T + 6.8);
+
+          s = c.go(T + 7.2, [530, 905, 1400, 990], 1.3);
+          const rsa = ring(cam, T + 7.6, [541, 936, 1095, 978], "req", s, "REQUIRED");
+          typeIn(cam, T + 7.9, [546, 940, 1060, 974], "Ohio", 0.3, "#fff");
+          done(rsa, T + 8.3);
+          const rz = ring(cam, T + 8.3, [1140, 936, 1394, 978], "req", s, "ADD IT");
+          typeIn(cam, T + 8.6, [1140, 936, 1394, 978], "44308", 0.35);
+          done(rz, T + 9.1);
+
+          s = c.go(T + 9.3, [1100, 1000, 1560, 1150], 1.4);
+          const rx = ring(cam, T + 9.7, [1328, 1069, 1508, 1119], "req", s, "THEN PRINT");
+          done(rx, T + 10.4);
+
+          callouts("s3", T + 11, [
+            { t: T + 0.8, k: "STEP 3", cls: "tip", h: "Open the USPS return link", p: "Use the USPS return label link American Heelers gives you." },
+            { t: T + 1.4, k: "CHECK", cls: "tip", h: "Merchant: AMERICAN HEELERS", p: "Make sure you’re on the right merchant page before you type." },
+            { t: T + 3.0, k: "REQUIRED *", h: "Your name & street address", p: "Apt / Suite is optional. Use the address you’re shipping from." },
+            { t: T + 7.4, k: "REQUIRED *", h: "City, State & ZIP", p: "ZIP isn’t starred, but add it anyway so your label is accurate." },
+            { t: T + 9.5, k: "LAST STEP", cls: "ok", h: "Tap Next, then print", p: "Tape the label flat on the outside of the box." },
+          ]);
+          sceneOut("s3", T + 10.65);
+        }
+
+        // ================= STEP 4: PACK (51 – 57.4) =================
+        {
+          const T = 51;
+          tl.fromTo("#s4-hdr", { opacity: 0, y: -30 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, T);
+          tl.fromTo("#s4-box", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, T + 0.2);
+          tl.fromTo(["#s4-flapL", "#s4-flapR"], { opacity: 0 }, { opacity: 1, duration: 0.3 }, T + 0.2);
+          tl.fromTo("#s4-shoe", { y: -420, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6, ease: "bounce.out" }, T + 0.6);
+          tl.fromTo("#s4-sheet", { y: -460, rotation: -8, opacity: 0 }, { y: 0, rotation: 4, opacity: 1, duration: 0.6, ease: "power2.out", svgOrigin: "660 380" }, T + 1.8);
+          tl.to(["#s4-shoe", "#s4-sheet"], { y: 120, opacity: 0, duration: 0.4, ease: "power2.in" }, T + 3.0);
+          tl.to("#s4-flapL", { scaleY: -1, duration: 0.4, ease: "power2.inOut", svgOrigin: "360 440" }, T + 3.3);
+          tl.to("#s4-flapR", { scaleY: -1, duration: 0.4, ease: "power2.inOut", svgOrigin: "640 440" }, T + 3.4);
+          tl.fromTo("#s4-label", { scale: 1.6, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.35, ease: "back.out(2)", svgOrigin: "665 595" }, T + 3.9);
+
+          ["#s4-k1", "#s4-k2", "#s4-k3", "#s4-k4"].forEach((sel, i) => {
+            const t = [T + 0.8, T + 2.0, T + 4.0, T + 4.9][i];
+            const card = document.querySelector(sel);
+            const svg = document.createElementNS(NS, "svg");
+            svg.setAttribute("viewBox", "0 0 20 20");
+            Object.assign(svg.style, { position: "absolute", left: "6px", top: "6px", width: "44px", height: "44px", overflow: "visible" });
+            svg.innerHTML = '<path d="M3 10.5 L8 15.5 L18 3" fill="none" stroke="#2e7d4f" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="26" stroke-dashoffset="26"/>';
+            card.querySelector(".box").appendChild(svg);
+            tl.fromTo(card, { opacity: 0, x: 60 }, { opacity: 1, x: 0, duration: 0.4, ease: "power3.out" }, t);
+            tl.to(svg.querySelector("path"), { strokeDashoffset: 0, duration: 0.3, ease: "power2.out" }, t + 0.35);
+          });
+          sceneOut("s4", T + 6.05);
+        }
+
+        // ================= OUTRO (57.4 – 63) =================
+        {
+          const T = 57.4;
+          tl.fromTo("#s5-shot", { opacity: 0, y: 80, rotation: -3 }, { opacity: 0.55, y: 0, rotation: -3, duration: 0.8, ease: "power3.out" }, T);
+          tl.to("#s5-shot img", { y: -260, duration: 5.2, ease: "none" }, T);
+          tl.fromTo("#s5-panel", { opacity: 0, y: 60 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, T + 0.6);
+        }
+
+        window.__timelines["main"] = tl;
+      })();
+    </script>
+  </body>
+</html>

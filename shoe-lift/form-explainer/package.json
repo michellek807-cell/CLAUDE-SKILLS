@@ -1,0 +1,9 @@
+{
+  "name": "shoe-lift-form-explainer",
+  "private": true,
+  "scripts": {
+    "check": "npx hyperframes@0.8.157 check",
+    "preview": "npx hyperframes@0.8.157 preview",
+    "render": "npx hyperframes@0.8.157 render --quality looks --output renders/form-explainer.mp4"
+  }
+}
