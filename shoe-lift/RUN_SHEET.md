@@ -78,6 +78,23 @@ Consistency: Semi-realistic digital painted illustration exactly like Image 1, w
 No subtitles. No BGM; environmental sounds only.
 ```
 
+### Clip 2B: Order on a computer (optional alternate)
+Use it on its own, or split Clip 2 in CapCut: about 4.5s of phone, then about 4.5s of laptop ("on your phone or computer").
+**Make the still first (cheap), then animate it.** Don't go straight to video.
+
+Still (Nano Banana Pro, attach the MamaCarrie character image for style only, 16:9):
+```
+Semi-realistic painted illustration in the same art style as the reference image. A silver laptop sits on a light wood desk, seen perfectly straight-on from the front at eye level, the screen facing the viewer squarely and filling the center of the frame. The screen is plain white with a few empty light-gray rectangles like a blank form, with no words, letters or numbers. Two warm-brown hands rest on the keyboard below the screen. Soft warm cream wall behind, a small potted plant at the far left edge. Bare wrists, no rings. No text, no logos, no watermark.
+```
+
+Motion (Seedance, first-frame mode with the approved still, 10s):
+```
+Locked camera, no camera movement. 0–4 seconds: the hands type gently on the keyboard. 4–7 seconds: one hand moves to the trackpad and clicks once. 7–10 seconds: the hands rest still. The laptop screen stays perfectly still, flat and squarely facing the camera the whole time, plain white with empty gray boxes. The laptop, desk and background never change.
+No subtitles. No BGM; environmental sounds only.
+```
+
+CapCut: drop your **desktop screen recording** of orthopedicshoelift.com over the laptop screen (Picture-in-Picture). The screen is straight-on, so it fits by just resizing, with no angle to match. Crop the recording to the page only (no browser tabs or bookmarks) and keep form fields empty.
+
 ### Clip 3: Pack the shoe
 ```
 Image 1 sets the painted illustration art style and the warm skin tone of the hands.
