@@ -1,0 +1,167 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+    }
+    #s9-flash {
+      position: absolute;
+      left: -380px;
+      top: -530px;
+      width: 3200px;
+      height: 2400px;
+      background: radial-gradient(circle at 50% 50%, rgba(220, 205, 255, 1) 0%, rgba(122, 92, 255, 0.95) 22%, rgba(42, 42, 143, 0.9) 50%, rgba(5, 8, 22, 0) 75%);
+    }
+    #s9-card {
+      position: absolute;
+      left: 310px;
+      top: 110px;
+      width: 1300px;
+      height: 860px;
+    }
+    #s9-h {
+      position: absolute;
+      left: 60px;
+      top: 46px;
+      display: flex;
+      gap: 18px;
+      align-items: center;
+      font-family: var(--font-display), sans-serif;
+      font-weight: 700;
+      font-size: 54px;
+    }
+    #s9-ringwrap {
+      position: absolute;
+      left: 60px;
+      top: 160px;
+      width: 220px;
+      height: 220px;
+    }
+    #s9-pct {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      font-family: var(--font-display), sans-serif;
+      font-weight: 700;
+      font-size: 60px;
+    }
+    .s9-label {
+      position: absolute;
+      font-size: 28px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--color-muted);
+    }
+    #s9-sum {
+      position: absolute;
+      left: 330px;
+      top: 210px;
+      width: 900px;
+      font-size: 38px;
+      line-height: 1.35;
+    }
+    #s9-sum .word {
+      color: #2a3060;
+    }
+    .s9-line {
+      position: absolute;
+      left: 60px;
+      right: 60px;
+      height: 1.5px;
+      background: rgba(255, 255, 255, 0.1);
+    }
+    #s9-risk {
+      position: absolute;
+      left: 60px;
+      top: 490px;
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      font-size: 34px;
+      padding: 14px 26px;
+      border-radius: 18px;
+      background: rgba(255, 77, 109, 0.12);
+      border: 1.5px solid rgba(255, 77, 109, 0.5);
+    }
+    #s9-risk i {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: #ff4d6d;
+      box-shadow: 0 0 14px #ff4d6d;
+    }
+    .s9-step {
+      position: absolute;
+      left: 60px;
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      font-size: 34px;
+    }
+    .s9-box {
+      position: relative;
+      width: 46px;
+      height: 46px;
+      border-radius: 12px;
+      border: 3px solid rgba(255, 255, 255, 0.4);
+    }
+    .s9-box b {
+      position: absolute;
+      inset: -3px;
+      border-radius: 12px;
+      background: #2fd98b;
+      display: grid;
+      place-items: center;
+    }
+    #s9-chip {
+      right: 150px;
+      top: 64px;
+    }
+  </style>
+  <div id="root" data-composition-id="s09" data-width="1920" data-height="1080" data-layout-allow-overlap>
+    <div id="s9-card" class="glass-dark">
+      <div id="s9-h"><svg width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="#b48cff" stroke-width="2"><path d="M12 3l2 5 5 2-5 2-2 5-2-5-5-2 5-2z" /></svg>AI Insights</div>
+      <div id="s9-ringwrap">
+        <svg width="220" height="220" viewBox="0 0 100 100">
+          <defs><linearGradient id="s9-g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#38d6ff" /><stop offset="1" stop-color="#9b5cff" /></linearGradient></defs>
+          <circle cx="50" cy="50" r="42" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="9" />
+          <circle id="s9-arc" cx="50" cy="50" r="42" fill="none" stroke="url(#s9-g)" stroke-width="9" stroke-linecap="round" stroke-dasharray="263.9" stroke-dashoffset="263.9" transform="rotate(-90 50 50)" />
+        </svg>
+        <div id="s9-pct">0%</div>
+      </div>
+      <div class="s9-label" style="left: 330px; top: 166px">Summary</div>
+      <p id="s9-sum"><span class="word">The</span> <span class="word">project</span> <span class="word">is</span> <span class="word">75%</span> <span class="word">complete</span> <span class="word">and</span> <span class="word">on</span> <span class="word">track</span> <span class="word">for</span> <span class="word">delivery.</span> <span class="word">One</span> <span class="word">risk</span> <span class="word">has</span> <span class="word">been</span> <span class="word">identified.</span></p>
+      <div class="s9-line" style="top: 410px"></div>
+      <div class="s9-label" style="left: 60px; top: 440px">Key risk</div>
+      <div id="s9-risk"><i></i>Design approval delayed</div>
+      <div class="s9-label" style="left: 60px; top: 600px">Suggested next steps</div>
+      <div class="s9-step" style="top: 645px"><div class="s9-box"><b><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.5"><path d="M5 12l5 5 9-10" /></svg></b></div>Follow up with the client today</div>
+      <div class="s9-step" style="top: 715px"><div class="s9-box"><b><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.5"><path d="M5 12l5 5 9-10" /></svg></b></div>Finalize mobile designs</div>
+      <div class="s9-step" style="top: 785px"><div class="s9-box"><b><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.5"><path d="M5 12l5 5 9-10" /></svg></b></div>Prepare the launch checklist</div>
+    </div>
+    <div id="s9-flash"></div>
+    <div id="s9-chip" class="chip"><span class="dot"></span>Done in seconds</div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    // the orb's light clears to reveal what it made
+    tl.fromTo("#s9-flash", { opacity: 1, scale: 1 }, { opacity: 0, scale: 1.3, duration: 0.6, ease: "power2.out" }, 0);
+    tl.fromTo("#s9-card", { scale: 0.92, filter: "blur(10px)" }, { scale: 1, filter: "blur(0px)", duration: 0.6, ease: "expo.out" }, 0.05);
+    tl.fromTo("#s9-chip", { opacity: 0, y: -20, scale: 0.9 }, { opacity: 1, y: 0, scale: 1, duration: 0.45, ease: "back.out(1.8)" }, 0.45);
+    tl.fromTo("#s9-arc", { attr: { "stroke-dashoffset": 263.9 } }, { attr: { "stroke-dashoffset": 66 }, duration: 1.2, ease: "power3.out" }, 0.6);
+    const pct = document.querySelector("#s9-pct");
+    const o = { v: 0 };
+    tl.to(o, { v: 75, duration: 1.2, ease: "power3.out", onUpdate: () => (pct.textContent = Math.round(o.v) + "%") }, 0.6);
+    tl.to("#s9-sum .word", { color: "#e8ecff", duration: 0.2, stagger: 0.07, ease: "power2.out" }, 0.7);
+    tl.fromTo("#s9-risk", { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: 0.45, ease: "expo.out" }, 1.9);
+    tl.fromTo(".s9-step", { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: 0.45, stagger: 0.12, ease: "expo.out" }, 2.4);
+    tl.fromTo(".s9-box b", { scale: 0 }, { scale: 1, duration: 0.35, stagger: 0.45, ease: "back.out(2.5)" }, 3.3);
+    // carried across into the dashboard
+    tl.to("#s9-chip", { opacity: 0, duration: 0.15 }, 7.3);
+    tl.to("#s9-card", { scale: 0.45, x: 380, y: 60, opacity: 0, filter: "blur(6px)", duration: 0.55, ease: "power3.in" }, 7.4);
+    window.__timelines["s09"] = tl;
+  </script>
+</template>

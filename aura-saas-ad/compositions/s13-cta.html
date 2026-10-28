@@ -1,0 +1,113 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+    }
+    #s13-burst {
+      position: absolute;
+      left: 560px;
+      top: 140px;
+      width: 800px;
+      height: 800px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(220, 205, 255, 0.95) 0%, rgba(120, 110, 255, 0.4) 25%, rgba(79, 123, 255, 0) 62%);
+    }
+    #s13-lockup {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 250px;
+      height: 230px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 30px;
+    }
+    #s13-mark {
+      width: 200px;
+      height: 200px;
+      filter: drop-shadow(0 0 40px rgba(120, 110, 255, 0.7));
+    }
+    #s13-word {
+      font-family: var(--font-display), sans-serif;
+      font-weight: 600;
+      font-size: 200px;
+      letter-spacing: -0.04em;
+      line-height: 1;
+    }
+    #s13-tag {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 545px;
+      text-align: center;
+      font-family: var(--font-display), sans-serif;
+      font-weight: 500;
+      font-size: 58px;
+      color: #dfe4ff;
+    }
+    #s13-btn {
+      position: absolute;
+      left: 710px;
+      top: 700px;
+      width: 500px;
+      height: 112px;
+      border-radius: 56px;
+      display: grid;
+      place-items: center;
+      font-family: var(--font-display), sans-serif;
+      font-weight: 800;
+      font-size: 42px;
+      letter-spacing: 0.06em;
+      color: #fff;
+      background: linear-gradient(120deg, #4f7bff, #9b5cff);
+      border: 2px solid rgba(255, 255, 255, 0.5);
+      box-shadow: 0 24px 60px rgba(79, 123, 255, 0.55), inset 0 2px 0 rgba(255, 255, 255, 0.5);
+      overflow: hidden;
+    }
+    #s13-btn .sheen {
+      border-radius: 56px;
+    }
+  </style>
+  <div id="root" data-composition-id="s13" data-width="1920" data-height="1080" data-layout-allow-overlap>
+    <div id="s13-burst"></div>
+    <div id="s13-lockup">
+      <svg id="s13-mark" viewBox="0 0 100 100">
+        <defs>
+          <linearGradient id="s13-g" x1="0" y1="1" x2="1" y2="0">
+            <stop offset="0" stop-color="#4f7bff" />
+            <stop offset="0.6" stop-color="#9b5cff" />
+            <stop offset="1" stop-color="#c7a8ff" />
+          </linearGradient>
+        </defs>
+        <path d="M50 6 L95 94 H72 L50 48 L28 94 H5 Z" fill="url(#s13-g)" />
+        <path d="M50 48 L72 94 H60 L50 72 Z" fill="#ffffff" opacity="0.28" />
+      </svg>
+      <div id="s13-word">aura</div>
+    </div>
+    <p id="s13-tag"><span class="word">A</span> <span class="word">simpler</span> <span class="word">way</span> <span class="word">to</span> <span class="word">manage</span> <span class="word">your</span> <span class="word grad-text">business.</span></p>
+    <div id="s13-btn">BOOK A DEMO<div class="sheen"></div></div>
+    <svg id="s13-cursor" class="cursor" viewBox="0 0 32 32" style="left: 0; top: 0"><path d="M5 3 L5 26 L11 20 L15 29 L19.5 27 L15.5 18.5 L23.5 18.5 Z" fill="#fff" stroke="#0a0f2c" stroke-width="1.8" stroke-linejoin="round" /></svg>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    // the light from the folders becomes the mark; it lands on the impact at 1.12
+    tl.fromTo("#s13-burst", { opacity: 1, scale: 0.4 }, { opacity: 0, scale: 1.5, duration: 1.4, ease: "power2.out" }, 0);
+    tl.fromTo("#s13-mark", { scale: 2.6, opacity: 0, filter: "blur(18px)", x: 180 }, { scale: 1, opacity: 1, filter: "blur(0px)", x: 180, duration: 1.0, ease: "expo.out" }, 0.1);
+    // mark slides aside as the wordmark wipes in
+    tl.to("#s13-mark", { x: 0, duration: 0.55, ease: "power3.inOut" }, 1.15);
+    tl.fromTo("#s13-word", { clipPath: "inset(0 100% 0 0)", opacity: 1 }, { clipPath: "inset(0 0% 0 0)", duration: 0.55, ease: "power3.inOut" }, 1.2);
+    tl.fromTo("#s13-tag .word", { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.13, stagger: 0.067, ease: "power4.out" }, 1.6);
+    tl.fromTo("#s13-btn", { y: 40, opacity: 0, scale: 0.9 }, { y: 0, opacity: 1, scale: 1, duration: 0.55, ease: "back.out(1.6)" }, 2.1);
+    // the cursor clicks the call to action at 3.23
+    tl.fromTo("#s13-cursor", { x: 1500, y: 1120 }, { x: 1010, y: 760, duration: 0.85, ease: "power2.inOut" }, 2.3);
+    tl.to("#s13-cursor", { scale: 0.85, duration: 0.08, ease: "power2.in" }, 3.15);
+    tl.to("#s13-cursor", { scale: 1, duration: 0.18 }, 3.23);
+    tl.to("#s13-btn", { scale: 0.95, duration: 0.08 }, 3.15);
+    tl.to("#s13-btn", { scale: 1, duration: 0.35, ease: "back.out(2.2)" }, 3.23);
+    tl.fromTo("#s13-btn .sheen", { backgroundPosition: "120% 0" }, { backgroundPosition: "-60% 0", duration: 0.8, ease: "power2.inOut" }, 3.25);
+    window.__timelines["s13"] = tl;
+  </script>
+</template>

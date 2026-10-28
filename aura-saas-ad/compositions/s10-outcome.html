@@ -1,0 +1,205 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+    }
+    #s10-cam {
+      position: absolute;
+      inset: 0;
+    }
+    #s10-app {
+      left: 120px;
+      top: 70px;
+      width: 1680px;
+      height: 700px;
+    }
+    .s10-abs {
+      position: absolute;
+    }
+    #s10-h {
+      left: 296px;
+      top: 34px;
+      font-family: var(--font-display), sans-serif;
+      font-weight: 700;
+      font-size: 46px;
+    }
+    .s10-kpi {
+      top: 110px;
+      width: 312px;
+      height: 150px;
+      padding: 22px 26px;
+      border-radius: 22px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1.5px solid rgba(255, 255, 255, 0.1);
+    }
+    .s10-kpi strong {
+      display: block;
+      font-family: var(--font-display), sans-serif;
+      font-weight: 700;
+      font-size: 60px;
+      line-height: 1.05;
+    }
+    .s10-kpi span {
+      font-size: 28px;
+      color: var(--color-muted);
+    }
+    .s10-card {
+      top: 290px;
+      height: 370px;
+      border-radius: 22px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1.5px solid rgba(255, 255, 255, 0.1);
+      padding: 24px 28px;
+    }
+    .s10-card h4 {
+      font-size: 28px;
+      font-weight: 700;
+    }
+    #s10-bars {
+      position: absolute;
+      left: 28px;
+      right: 28px;
+      bottom: 26px;
+      height: 250px;
+      display: flex;
+      align-items: flex-end;
+      gap: 16px;
+    }
+    .s10-bar {
+      flex: 1;
+      border-radius: 8px 8px 3px 3px;
+      background: linear-gradient(180deg, #8fb0ff, #6a4dff);
+      transform-origin: 50% 100%;
+    }
+    .s10-bar.hot {
+      background: linear-gradient(180deg, #7fe7ff, #38a3ff);
+      box-shadow: 0 0 24px rgba(56, 214, 255, 0.6);
+    }
+    .s10-leg {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 28px;
+      margin-bottom: 14px;
+    }
+    .s10-leg i {
+      width: 16px;
+      height: 16px;
+      border-radius: 5px;
+    }
+    .s10-tab {
+      position: absolute;
+      top: 840px;
+      width: 520px;
+      height: 150px;
+      display: grid;
+      place-items: center;
+      border-radius: 10px 26px 26px 26px;
+      font-family: var(--font-display), sans-serif;
+      font-weight: 800;
+      font-size: 50px;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      text-align: center;
+      line-height: 1;
+    }
+    .s10-tab::before {
+      content: "";
+      position: absolute;
+      left: -1.5px;
+      top: -30px;
+      width: 170px;
+      height: 32px;
+      border-radius: 14px 18px 0 0;
+      background: linear-gradient(170deg, rgba(160, 180, 255, 0.4), rgba(255, 255, 255, 0.12));
+      border: 1.5px solid rgba(255, 255, 255, 0.28);
+      border-bottom: none;
+    }
+    .s10-toast {
+      position: absolute;
+      right: 150px;
+      padding: 18px 28px;
+      border-radius: 20px;
+      font-size: 28px;
+      font-weight: 600;
+      display: flex;
+      gap: 14px;
+      align-items: center;
+      white-space: nowrap;
+    }
+  </style>
+  <div id="root" data-composition-id="s10" data-width="1920" data-height="1080" data-layout-allow-overlap>
+    <div id="s10-cam">
+      <div id="s10-app" class="app glass-dark">
+        <div class="app-side" data-layout-ignore>
+          <div class="app-logo"><svg viewBox="0 0 100 100"><defs><linearGradient id="s10-g" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#4f7bff" /><stop offset="1" stop-color="#b48cff" /></linearGradient></defs><path d="M50 6 L95 94 H72 L50 48 L28 94 H5 Z" fill="url(#s10-g)" /></svg>aura</div>
+          <div class="nav on"><i></i>Home</div>
+          <div class="nav"><i></i>Projects</div>
+          <div class="nav"><i></i>Analytics</div>
+          <div class="nav"><i></i>Settings</div>
+        </div>
+        <div id="s10-h" class="s10-abs">Dashboard</div>
+        <div class="s10-abs s10-kpi" style="left: 296px"><strong>128</strong><span>Active Projects</span></div>
+        <div class="s10-abs s10-kpi" style="left: 630px"><strong id="s10-tasks">24</strong><span>Pending Tasks</span></div>
+        <div class="s10-abs s10-kpi" style="left: 964px"><strong>12</strong><span>New Leads</span></div>
+        <div class="s10-abs s10-kpi" style="left: 1298px"><strong id="s10-rev">$48K</strong><span>Revenue</span></div>
+        <div class="s10-abs s10-card" style="left: 296px; width: 820px">
+          <h4>Revenue, last 12 weeks</h4>
+          <div id="s10-bars">
+            <div class="s10-bar" style="height: 30%"></div><div class="s10-bar" style="height: 42%"></div><div class="s10-bar" style="height: 38%"></div><div class="s10-bar" style="height: 50%"></div><div class="s10-bar" style="height: 46%"></div><div class="s10-bar" style="height: 58%"></div><div class="s10-bar" style="height: 55%"></div><div class="s10-bar" style="height: 66%"></div><div class="s10-bar" style="height: 62%"></div><div class="s10-bar" style="height: 74%"></div><div class="s10-bar" style="height: 80%"></div><div class="s10-bar hot" id="s10-last" style="height: 96%"></div>
+          </div>
+        </div>
+        <div class="s10-abs s10-card" style="left: 1140px; width: 500px">
+          <h4>Projects by status</h4>
+          <svg style="position: absolute; left: 26px; top: 90px" width="230" height="230" viewBox="0 0 100 100">
+            <circle cx="50" cy="50" r="38" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="14" />
+            <circle class="s10-seg" cx="50" cy="50" r="38" fill="none" stroke="#2fd98b" stroke-width="14" stroke-dasharray="238.8" stroke-dashoffset="238.8" transform="rotate(-90 50 50)" data-to="119" />
+            <circle class="s10-seg" cx="50" cy="50" r="38" fill="none" stroke="#4f7bff" stroke-width="14" stroke-dasharray="238.8" stroke-dashoffset="238.8" transform="rotate(90 50 50)" data-to="167" />
+            <circle class="s10-seg" cx="50" cy="50" r="38" fill="none" stroke="#ffb547" stroke-width="14" stroke-dasharray="238.8" stroke-dashoffset="238.8" transform="rotate(198 50 50)" data-to="214" />
+          </svg>
+          <div style="position: absolute; left: 290px; top: 120px">
+            <div class="s10-leg"><i style="background: #2fd98b"></i>On track</div>
+            <div class="s10-leg"><i style="background: #4f7bff"></i>In progress</div>
+            <div class="s10-leg"><i style="background: #ffb547"></i>Review</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="s10-tab1" class="s10-tab glass" style="left: 140px">Less<br />searching</div>
+    <div id="s10-tab2" class="s10-tab glass" style="left: 700px">Fewer<br />manual steps</div>
+    <div id="s10-tab3" class="s10-tab glass" style="left: 1260px"><span class="grad-text">More<br />clarity</span></div>
+    <div id="s10-toast1" class="s10-toast glass" style="top: 100px"><svg width="32" height="32" viewBox="0 0 50 50"><circle cx="25" cy="25" r="22" fill="#9b5cff" /><path d="M25 12l3 9 9 3-9 3-3 9-3-9-9-3 9-3z" fill="#fff" /></svg>3 tasks automated</div>
+    <div id="s10-toast2" class="s10-toast glass" style="top: 190px"><svg width="32" height="32" viewBox="0 0 50 50"><circle cx="25" cy="25" r="22" fill="#2fd98b" /><path d="M14 26l7 7 15-16" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" /></svg>Client approved the design</div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    // pull back to the whole workspace
+    tl.fromTo("#s10-cam", { scale: 1.25, opacity: 0, filter: "blur(10px)" }, { scale: 1, opacity: 1, filter: "blur(0px)", duration: 0.8, ease: "expo.out" }, 0);
+    tl.fromTo(".s10-kpi", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.5, stagger: 0.06, ease: "expo.out" }, 0.3);
+    tl.fromTo(".s10-bar", { scaleY: 0 }, { scaleY: 1, duration: 0.7, stagger: 0.05, ease: "expo.out" }, 0.5);
+    gsap.utils.toArray(".s10-seg").forEach((s, i) => {
+      tl.fromTo(s, { attr: { "stroke-dashoffset": 238.8 } }, { attr: { "stroke-dashoffset": Number(s.dataset.to) }, duration: 0.9, ease: "power3.out" }, 0.7 + i * 0.15);
+    });
+    // the three outcomes land with the voice
+    [["#s10-tab1", 0.75], ["#s10-tab2", 2.0], ["#s10-tab3", 3.4]].forEach(([s, t]) => {
+      tl.fromTo(s, { y: 120, opacity: 0, filter: "blur(10px)" }, { y: 0, opacity: 1, filter: "blur(0px)", duration: 0.6, ease: "expo.out" }, t);
+    });
+    tl.set(["#s10-toast1", "#s10-toast2"], { opacity: 0 }, 0);
+    // the business keeps moving while the line settles
+    tl.fromTo("#s10-cam", { x: 0 }, { x: -24, duration: 8, ease: "sine.inOut" }, 1);
+    tl.fromTo("#s10-toast1", { opacity: 0, x: 60 }, { opacity: 1, x: 0, duration: 0.5, ease: "expo.out" }, 5.4);
+    const tasks = document.querySelector("#s10-tasks");
+    const t = { v: 24 };
+    tl.to(t, { v: 21, duration: 0.6, ease: "power2.out", onUpdate: () => (tasks.textContent = Math.round(t.v)) }, 5.5);
+    tl.fromTo("#s10-toast2", { opacity: 0, x: 60 }, { opacity: 1, x: 0, duration: 0.5, ease: "expo.out" }, 6.9);
+    const rev = document.querySelector("#s10-rev");
+    const r = { v: 48 };
+    tl.to(r, { v: 52, duration: 1.0, ease: "power2.out", onUpdate: () => (rev.textContent = "$" + Math.round(r.v) + "K") }, 7.0);
+    tl.fromTo("#s10-last", { scaleY: 1 }, { scaleY: 1.04, duration: 0.6, ease: "back.out(2)" }, 7.0);
+    // whip up
+    tl.to(["#s10-cam", ".s10-tab", ".s10-toast"], { y: -600, opacity: 0, filter: "blur(14px)", duration: 0.32, ease: "power3.in" }, 9.6);
+    window.__timelines["s10"] = tl;
+  </script>
+</template>

@@ -1,0 +1,145 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+    }
+    #s6-cam {
+      position: absolute;
+      inset: 0;
+      transform-origin: 960px 430px;
+    }
+    #s6-app {
+      left: 160px;
+      top: 110px;
+      width: 1600px;
+      height: 860px;
+    }
+    #s6-h {
+      position: absolute;
+      left: 470px;
+      top: 170px;
+      font-family: var(--font-display), sans-serif;
+      font-weight: 700;
+      font-size: 58px;
+    }
+    #s6-table {
+      position: absolute;
+      left: 470px;
+      top: 280px;
+      width: 1230px;
+    }
+    .s6-th,
+    .s6-tr {
+      display: grid;
+      grid-template-columns: 1.6fr 1.2fr 0.8fr 0.5fr;
+      align-items: center;
+      padding: 0 28px;
+    }
+    .s6-th {
+      height: 64px;
+      font-size: 24px;
+      font-weight: 600;
+      color: var(--color-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    .s6-tr {
+      height: 118px;
+      margin-bottom: 14px;
+      border-radius: 22px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1.5px solid rgba(255, 255, 255, 0.1);
+      font-size: 32px;
+      font-weight: 600;
+    }
+    .s6-tr .pill {
+      font-size: 26px;
+      padding: 8px 18px;
+      justify-self: start;
+    }
+    .s6-tr .av {
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+    }
+    #s6-r1 {
+      position: relative;
+    }
+    #s6-ring {
+      position: absolute;
+      left: 470px;
+      top: 20px;
+      width: 214px;
+      height: 74px;
+      border-radius: 40px;
+      border: 4px solid #ff4d6d;
+      box-shadow: 0 0 30px rgba(255, 77, 109, 0.7);
+    }
+    #s6-flag {
+      position: absolute;
+      left: 905px;
+      top: 190px;
+      padding: 18px 30px;
+      border-radius: 18px;
+      background: linear-gradient(120deg, #ff4d6d, #ff7a59);
+      font-family: var(--font-display), sans-serif;
+      font-weight: 800;
+      font-size: 36px;
+      color: #fff;
+      box-shadow: 0 20px 50px rgba(255, 77, 109, 0.5);
+      white-space: nowrap;
+    }
+    #s6-flag::after {
+      content: "";
+      position: absolute;
+      left: 60px;
+      bottom: -18px;
+      border: 10px solid transparent;
+      border-top: 14px solid #ff6159;
+      border-bottom: none;
+      border-left-width: 14px;
+      border-right-width: 14px;
+    }
+  </style>
+  <div id="root" data-composition-id="s06" data-width="1920" data-height="1080" data-layout-allow-overlap>
+    <div id="s6-cam" data-layout-allow-overflow>
+      <div id="s6-app" class="app glass-dark">
+        <div class="app-side" data-layout-ignore>
+          <div class="app-logo"><svg viewBox="0 0 100 100"><defs><linearGradient id="s6-g" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#4f7bff" /><stop offset="1" stop-color="#b48cff" /></linearGradient></defs><path d="M50 6 L95 94 H72 L50 48 L28 94 H5 Z" fill="url(#s6-g)" /></svg>aura</div>
+          <div class="nav"><i></i>Home</div>
+          <div class="nav"><i></i>Accounts</div>
+          <div class="nav on"><i></i>Projects</div>
+          <div class="nav"><i></i>Analytics</div>
+          <div class="nav"><i></i>Settings</div>
+        </div>
+      </div>
+      <h2 id="s6-h">Projects</h2>
+      <div id="s6-table">
+        <div class="s6-th"><span>Name</span><span>Status</span><span>Due</span><span>Owner</span></div>
+        <div class="s6-tr" id="s6-r1"><span>Website Redesign</span><span class="pill red">● Overdue</span><span>Oct 12</span><div class="av" style="background: linear-gradient(140deg, #ffb547, #ff6b6b)"></div><div id="s6-ring"></div></div>
+        <div class="s6-tr s6-dim"><span>Q4 Marketing</span><span class="pill blue">In Progress</span><span>Oct 20</span><div class="av" style="background: linear-gradient(140deg, #38d6ff, #4f7bff)"></div></div>
+        <div class="s6-tr s6-dim"><span>Client Outreach</span><span class="pill amber">Needs Review</span><span>Oct 22</span><div class="av" style="background: linear-gradient(140deg, #c084fc, #7c3aed)"></div></div>
+        <div class="s6-tr s6-dim"><span>Product Launch</span><span class="pill green">On Track</span><span>Oct 28</span><div class="av" style="background: linear-gradient(140deg, #2fd98b, #059669)"></div></div>
+      </div>
+      <div id="s6-flag">Needs attention</div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#s6-cam", { opacity: 0, filter: "blur(10px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.25, ease: "power2.out" }, 0);
+    tl.fromTo("#s6-h", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.2, ease: "power4.out" }, 0.1);
+    tl.fromTo(".s6-th, .s6-tr", { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, stagger: 0.07, ease: "expo.out" }, 0.15);
+    // punch in on the row that is late
+    tl.to("#s6-cam", { scale: 1.32, y: 40, duration: 0.6, ease: "power2.inOut" }, 1.2);
+    tl.to(".s6-dim", { opacity: 0.32, duration: 0.4, ease: "power2.out" }, 1.4);
+    tl.fromTo("#s6-ring", { opacity: 0, scale: 1.4 }, { opacity: 1, scale: 1, duration: 0.35, ease: "expo.out" }, 1.7);
+    tl.fromTo("#s6-flag", { opacity: 0, y: -40, scale: 0.85 }, { opacity: 1, y: 0, scale: 1, duration: 0.5, ease: "back.out(1.7)" }, 1.8);
+    tl.fromTo("#s6-r1", { borderColor: "rgba(255,255,255,0.1)", backgroundColor: "rgba(255,255,255,0.05)" }, { borderColor: "rgba(255,77,109,0.55)", backgroundColor: "rgba(255,77,109,0.08)", duration: 0.4 }, 1.8);
+    // everything else falls away; the late row is what we act on next
+    tl.to("#s6-flag", { opacity: 0, y: -20, duration: 0.18, ease: "power2.in" }, 4.55);
+    tl.to(["#s6-app", "#s6-h", ".s6-th", ".s6-dim"], { opacity: 0, duration: 0.3, ease: "power2.in" }, 4.6);
+    window.__timelines["s06"] = tl;
+  </script>
+</template>

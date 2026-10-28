@@ -1,0 +1,115 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+    }
+    #s12-head {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 120px;
+      text-align: center;
+      font-size: 84px;
+      color: #fff;
+    }
+    #s12-sub {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 250px;
+      text-align: center;
+      font-family: var(--font-display), sans-serif;
+      font-weight: 500;
+      font-size: 54px;
+      color: #c9d0f0;
+    }
+    .s12-fold {
+      transform-origin: 50% 100%;
+    }
+    #s12-f1 {
+      left: 300px;
+      top: 540px;
+    }
+    #s12-f2 {
+      left: 810px;
+      top: 540px;
+    }
+    #s12-f3 {
+      left: 1320px;
+      top: 540px;
+    }
+    .s12-fold .f-front {
+      height: 190px;
+    }
+    .s12-fold .f-label {
+      font-size: 32px;
+      bottom: 24px;
+    }
+    .s12-fold .f-icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 18px;
+    }
+    .s12-fold .f-icon svg {
+      width: 36px;
+      height: 36px;
+    }
+    #s12-core {
+      position: absolute;
+      left: 810px;
+      top: 490px;
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      background: radial-gradient(circle, #ffffff 0%, rgba(180, 150, 255, 0.95) 22%, rgba(79, 123, 255, 0.5) 45%, rgba(79, 123, 255, 0) 70%);
+    }
+  </style>
+  <div id="root" data-composition-id="s12" data-width="1920" data-height="1080" data-layout-allow-overlap>
+    <h2 id="s12-head" class="display"><span class="word" id="s12-w1">One</span> <span class="word" id="s12-w2">workspace.</span> <span class="word grad-text" id="s12-w3">Smarter</span> <span class="word grad-text" id="s12-w4">automation.</span></h2>
+    <p id="s12-sub"><span class="word">A</span> <span class="word">clearer</span> <span class="word">way</span> <span class="word">to</span> <span class="word">run</span> <span class="word">your</span> <span class="word">business.</span></p>
+
+    <div id="s12-f1" class="folder s12-fold">
+      <div class="f-tab"></div><div class="f-back"></div><div class="f-paper"></div>
+      <div class="f-front"><div class="f-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><circle cx="12" cy="12" r="3.2" /><path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3M5.3 5.3l2.1 2.1M16.6 16.6l2.1 2.1M5.3 18.7l2.1-2.1M16.6 7.4l2.1-2.1" /></svg></div><div class="f-label">Automate repetitive work</div><div class="sheen"></div></div>
+    </div>
+    <div id="s12-f2" class="folder s12-fold">
+      <div class="f-tab"></div><div class="f-back"></div><div class="f-paper"></div>
+      <div class="f-front"><div class="f-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2"><path d="M5 20V12M10 20V6M15 20v-9M20 20V4" /></svg></div><div class="f-label">See what matters</div><div class="sheen"></div></div>
+    </div>
+    <div id="s12-f3" class="folder s12-fold">
+      <div class="f-tab"></div><div class="f-back"></div><div class="f-paper"></div>
+      <div class="f-front"><div class="f-icon"><svg viewBox="0 0 24 24" fill="#fff"><path d="M13 2L4 14h7l-1 8 9-12h-7z" /></svg></div><div class="f-label">Move faster</div><div class="sheen"></div></div>
+    </div>
+    <div id="s12-core"></div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    const F = ["#s12-f1", "#s12-f2", "#s12-f3"];
+    // folders rise in a row
+    F.forEach((f, i) => {
+      tl.fromTo(f, { y: 300, opacity: 0, rotationX: -40, transformPerspective: 1200, scale: 1.2 }, { y: 0, opacity: 1, rotationX: 0, scale: 1.2, duration: 0.9, ease: "back.out(1.3)" }, 0.15 + i * 0.12);
+    });
+    // headline with the voice: "One workspace." then "Smarter automation."
+    [["#s12-w1", 1.0], ["#s12-w2", 1.13], ["#s12-w3", 2.1], ["#s12-w4", 2.24]].forEach(([w, t]) => {
+      tl.fromTo(w, { opacity: 0, filter: "blur(10px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.16, ease: "power4.out" }, t);
+    });
+    tl.fromTo("#s12-sub .word", { opacity: 0, color: "#2a3060" }, { opacity: 1, color: "#c9d0f0", duration: 0.22, stagger: 0.08, ease: "power2.out" }, 3.3);
+    // each folder opens on its idea: front tips, the page rises, the glass catches light
+    F.forEach((f, i) => {
+      const t = 1.3 + i * 1.0;
+      tl.fromTo(f + " .f-front", { rotationX: 0, transformPerspective: 900 }, { rotationX: -22, duration: 0.45, ease: "power2.out" }, t);
+      tl.fromTo(f + " .f-paper", { y: 40 }, { y: -60, duration: 0.6, ease: "back.out(1.6)" }, t + 0.05);
+      tl.fromTo(f + " .sheen", { backgroundPosition: "120% 0" }, { backgroundPosition: "-60% 0", duration: 0.8, ease: "power2.inOut" }, t + 0.1);
+    });
+    // the three ideas converge into one light: the brand's mark is next
+    tl.set("#s12-core", { opacity: 0, scale: 0.2 }, 0);
+    tl.to(["#s12-head", "#s12-sub"], { opacity: 0, filter: "blur(10px)", duration: 0.22, ease: "power2.in" }, 7.9);
+    F.forEach((f, i) => {
+      tl.to(f, { x: (1 - i) * 510, y: -20, scale: 0.15, opacity: 0, duration: 0.6, ease: "power3.in" }, 8.1 + i * 0.03);
+    });
+    tl.to("#s12-core", { opacity: 1, scale: 1.4, duration: 0.45, ease: "power2.in" }, 8.4);
+    window.__timelines["s12"] = tl;
+  </script>
+</template>

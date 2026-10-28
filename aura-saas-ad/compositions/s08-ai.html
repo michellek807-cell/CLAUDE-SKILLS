@@ -1,0 +1,197 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+    }
+    #s8-cam {
+      position: absolute;
+      inset: 0;
+    }
+    #s8-panel {
+      position: absolute;
+      left: 260px;
+      top: 130px;
+      width: 1400px;
+      height: 820px;
+    }
+    #s8-h {
+      position: absolute;
+      left: 60px;
+      top: 50px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      font-family: var(--font-display), sans-serif;
+      font-weight: 700;
+      font-size: 54px;
+    }
+    #s8-input {
+      position: absolute;
+      left: 60px;
+      top: 160px;
+      width: 1280px;
+      height: 130px;
+      border-radius: 26px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 2px solid rgba(140, 160, 255, 0.4);
+      padding: 0 140px 0 36px;
+      display: flex;
+      align-items: center;
+      font-size: 34px;
+    }
+    #s8-text {
+      white-space: nowrap;
+    }
+    #s8-caret {
+      display: inline-block;
+      width: 3px;
+      height: 40px;
+      margin-left: 4px;
+      background: #8fb0ff;
+      vertical-align: middle;
+    }
+    #s8-send {
+      position: absolute;
+      right: 24px;
+      top: 24px;
+      width: 82px;
+      height: 82px;
+      border-radius: 22px;
+      background: linear-gradient(120deg, #4f7bff, #9b5cff);
+      display: grid;
+      place-items: center;
+      box-shadow: 0 12px 30px rgba(79, 123, 255, 0.5);
+    }
+    #s8-orbwrap {
+      position: absolute;
+      left: 140px;
+      top: 380px;
+      width: 340px;
+      height: 340px;
+    }
+    #s8-ring {
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      background: conic-gradient(from 0deg, #4f7bff, #9b5cff, #38d6ff, #ff7ad9, #4f7bff);
+      -webkit-mask: radial-gradient(circle, transparent 60%, #000 61%);
+      mask: radial-gradient(circle, transparent 60%, #000 61%);
+      filter: blur(1px);
+    }
+    #s8-orb {
+      position: absolute;
+      inset: 52px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 35% 30%, #ffffff 0%, #c7b5ff 18%, #7a5cff 50%, #2a2a8f 100%);
+      box-shadow: 0 0 80px rgba(155, 92, 255, 0.8), inset 0 -20px 40px rgba(20, 20, 90, 0.6);
+    }
+    .s8-sat {
+      position: absolute;
+      left: 160px;
+      top: -8px;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: #38d6ff;
+      box-shadow: 0 0 18px #38d6ff;
+    }
+    #s8-orbit {
+      position: absolute;
+      inset: -30px;
+    }
+    #s8-gen {
+      position: absolute;
+      left: 580px;
+      top: 400px;
+      font-family: var(--font-display), sans-serif;
+      font-weight: 600;
+      font-size: 46px;
+    }
+    .s8-step {
+      position: absolute;
+      left: 580px;
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      font-size: 34px;
+    }
+    .s8-dot {
+      position: relative;
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      border: 3px solid rgba(255, 255, 255, 0.3);
+    }
+    .s8-dot svg {
+      position: absolute;
+      inset: -3px;
+    }
+    #s8-chip {
+      right: 120px;
+      top: 70px;
+    }
+  </style>
+  <div id="root" data-composition-id="s08" data-width="1920" data-height="1080" data-layout-allow-overlap>
+    <div id="s8-cam">
+      <div id="s8-panel" class="glass-dark">
+        <div id="s8-h"><svg width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="#b48cff" stroke-width="2"><path d="M12 3l2 5 5 2-5 2-2 5-2-5-5-2 5-2z" /><path d="M19 15l.8 2 2 .8-2 .8-.8 2-.8-2-2-.8 2-.8z" /></svg>Ask <span class="grad-text">Aura AI</span></div>
+        <div id="s8-input">
+          <span id="s8-text"></span><span id="s8-caret"></span>
+          <div id="s8-send"><svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.6"><path d="M5 12h14M13 6l6 6-6 6" /></svg></div>
+        </div>
+        <div id="s8-orbwrap">
+          <div id="s8-ring"></div>
+          <div id="s8-orb"></div>
+          <div id="s8-orbit"><div class="s8-sat"></div><div class="s8-sat" style="left: auto; right: 30px; top: 290px; background: #ff7ad9; box-shadow: 0 0 18px #ff7ad9"></div></div>
+        </div>
+        <div id="s8-gen">Generating insights…</div>
+        <div class="s8-step" style="top: 500px"><div class="s8-dot"><svg viewBox="0 0 50 50" width="46" height="46"><circle cx="25" cy="25" r="23" fill="#2fd98b" /><path d="M14 26l7 7 15-16" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" /></svg></div>Analyzing project data</div>
+        <div class="s8-step" style="top: 580px"><div class="s8-dot"><svg viewBox="0 0 50 50" width="46" height="46"><circle cx="25" cy="25" r="23" fill="#2fd98b" /><path d="M14 26l7 7 15-16" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" /></svg></div>Identifying risks</div>
+        <div class="s8-step" style="top: 660px"><div class="s8-dot"><svg viewBox="0 0 50 50" width="46" height="46"><circle cx="25" cy="25" r="23" fill="#2fd98b" /><path d="M14 26l7 7 15-16" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" /></svg></div>Creating recommendations</div>
+      </div>
+    </div>
+    <div id="s8-chip" class="chip"><span class="dot"></span>AI handles the repetitive work</div>
+    <svg id="s8-cursor" class="cursor" viewBox="0 0 32 32" style="left: 0; top: 0"><path d="M5 3 L5 26 L11 20 L15 29 L19.5 27 L15.5 18.5 L23.5 18.5 Z" fill="#fff" stroke="#0a0f2c" stroke-width="1.8" stroke-linejoin="round" /></svg>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    // whip in from the right
+    tl.fromTo("#s8-cam", { x: 700, opacity: 0, filter: "blur(14px)" }, { x: 0, opacity: 1, filter: "blur(0px)", duration: 0.45, ease: "expo.out" }, 0);
+    tl.set(["#s8-orbwrap", "#s8-gen", ".s8-step"], { opacity: 0 }, 0);
+    tl.set(".s8-dot svg", { scale: 0 }, 0);
+
+    // the request types itself, character by character
+    const prompt = "Summarize this project, identify risks, and suggest next steps.";
+    const textEl = document.querySelector("#s8-text");
+    const o = { n: 0 };
+    tl.to(o, { n: prompt.length, duration: 1.5, ease: "none", onUpdate: () => (textEl.textContent = prompt.slice(0, Math.round(o.n))) }, 0.5);
+    tl.fromTo("#s8-caret", { opacity: 1 }, { opacity: 0, duration: 0.1 }, 2.1);
+
+    // cursor presses send at 2.73
+    tl.fromTo("#s8-cursor", { x: 1960, y: 700 }, { x: 1525, y: 336, duration: 0.9, ease: "power2.inOut" }, 1.4);
+    tl.to("#s8-cursor", { scale: 0.85, duration: 0.08, ease: "power2.in" }, 2.65);
+    tl.to("#s8-cursor", { scale: 1, duration: 0.18 }, 2.73);
+    tl.to("#s8-send", { scale: 0.9, duration: 0.08 }, 2.65);
+    tl.to("#s8-send", { scale: 1, duration: 0.3, ease: "back.out(2.4)" }, 2.73);
+    tl.to("#s8-cursor", { x: 1980, y: 420, opacity: 0, duration: 0.45, ease: "power2.in" }, 3.0);
+
+    // the work happens in the background
+    tl.fromTo("#s8-orbwrap", { opacity: 0, scale: 0.4 }, { opacity: 1, scale: 1, duration: 0.6, ease: "back.out(1.6)" }, 2.85);
+    tl.fromTo("#s8-ring", { rotation: 0 }, { rotation: 720, duration: 4.2, ease: "none" }, 2.8);
+    tl.fromTo("#s8-orbit", { rotation: 0 }, { rotation: -540, duration: 4.2, ease: "none" }, 2.8);
+    tl.fromTo("#s8-gen", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.2, ease: "power4.out" }, 3.0);
+    gsap.utils.toArray(".s8-step").forEach((s, i) => {
+      tl.fromTo(s, { opacity: 0, x: -20 }, { opacity: 0.55, x: 0, duration: 0.35, ease: "power3.out" }, 3.2 + i * 0.12);
+      tl.to(s, { opacity: 1, duration: 0.2 }, 3.8 + i * 0.75);
+      tl.to(s.querySelector("svg"), { scale: 1, duration: 0.35, ease: "back.out(2.5)" }, 3.8 + i * 0.75);
+    });
+    tl.fromTo("#s8-chip", { opacity: 0, y: -20, scale: 0.9 }, { opacity: 1, y: 0, scale: 1, duration: 0.45, ease: "back.out(1.8)" }, 3.3);
+
+    // the orb grows into the next world
+    tl.to(["#s8-chip", "#s8-gen", ".s8-step", "#s8-input", "#s8-h"], { opacity: 0, filter: "blur(8px)", duration: 0.2, ease: "power2.in" }, 6.3);
+    tl.to("#s8-orbwrap", { x: 650, y: -10, scale: 9, duration: 0.65, ease: "power2.in" }, 6.35);
+    window.__timelines["s08"] = tl;
+  </script>
+</template>

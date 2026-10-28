@@ -1,0 +1,226 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+    }
+    #s7-cam {
+      position: absolute;
+      inset: 0;
+    }
+    #s7-panel {
+      position: absolute;
+      left: 210px;
+      top: 150px;
+      width: 1500px;
+      height: 820px;
+    }
+    #s7-head {
+      position: absolute;
+      left: 60px;
+      top: 50px;
+      display: flex;
+      align-items: center;
+      gap: 26px;
+    }
+    #s7-ico {
+      width: 84px;
+      height: 84px;
+      border-radius: 22px;
+      background: rgba(255, 77, 109, 0.18);
+      border: 2px solid rgba(255, 77, 109, 0.6);
+      display: grid;
+      place-items: center;
+    }
+    #s7-title {
+      font-family: var(--font-display), sans-serif;
+      font-weight: 700;
+      font-size: 56px;
+      line-height: 1.1;
+    }
+    #s7-meta {
+      position: relative;
+      height: 36px;
+      font-size: 28px;
+      font-weight: 600;
+    }
+    #s7-meta span {
+      position: absolute;
+      left: 0;
+      top: 0;
+      white-space: nowrap;
+    }
+    #s7-tabs {
+      position: absolute;
+      left: 60px;
+      top: 190px;
+      display: flex;
+      gap: 54px;
+      font-size: 28px;
+      color: var(--color-muted);
+      font-weight: 600;
+    }
+    #s7-tabs .on {
+      color: #fff;
+      border-bottom: 4px solid #4f7bff;
+      padding-bottom: 12px;
+    }
+    .s7-task {
+      position: absolute;
+      left: 60px;
+      width: 1000px;
+      height: 96px;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      gap: 26px;
+      padding: 0 28px;
+      font-size: 32px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1.5px solid rgba(255, 255, 255, 0.1);
+    }
+    .s7-box {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      border: 3px solid rgba(255, 255, 255, 0.45);
+      position: relative;
+      flex: none;
+    }
+    #s7-assign {
+      font-weight: 700;
+    }
+    #s7-assign-bg {
+      position: absolute;
+      inset: 0;
+      border-radius: 20px;
+      background: linear-gradient(120deg, #4f7bff, #9b5cff);
+      box-shadow: 0 20px 40px rgba(79, 123, 255, 0.45);
+    }
+    #s7-assign .s7-box,
+    #s7-assign span {
+      position: relative;
+    }
+    #s7-tick {
+      position: absolute;
+      inset: -3px;
+      border-radius: 10px;
+      background: #fff;
+      display: grid;
+      place-items: center;
+    }
+    #s7-team {
+      position: absolute;
+      left: 1110px;
+      top: 270px;
+      width: 330px;
+      height: 440px;
+      border-radius: 24px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1.5px solid rgba(255, 255, 255, 0.1);
+      padding: 28px;
+    }
+    #s7-team h4 {
+      font-size: 28px;
+      margin-bottom: 26px;
+    }
+    .s7-mem {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      font-size: 28px;
+      margin-bottom: 22px;
+    }
+    .s7-mem i {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      border: 3px solid rgba(255, 255, 255, 0.7);
+    }
+    #s7-toast {
+      position: absolute;
+      left: 50%;
+      top: 900px;
+      padding: 20px 34px;
+      border-radius: 20px;
+      font-size: 30px;
+      font-weight: 600;
+      white-space: nowrap;
+      display: flex;
+      gap: 16px;
+      align-items: center;
+    }
+    #s7-chip {
+      right: 170px;
+      top: 70px;
+    }
+  </style>
+  <div id="root" data-composition-id="s07" data-width="1920" data-height="1080" data-layout-allow-overlap>
+    <div id="s7-cam">
+      <div id="s7-panel" class="glass-dark">
+        <div id="s7-head">
+          <div id="s7-ico"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#ff8aa0" stroke-width="2.2"><rect x="3" y="4" width="18" height="14" rx="2" /><path d="M8 21h8M12 18v3" /></svg></div>
+          <div>
+            <div id="s7-title">Website Redesign</div>
+            <div id="s7-meta"><span id="s7-late" style="color: #ff8aa0">● Overdue · Due Oct 12</span><span id="s7-ok" style="color: #7ff0bb">● On Track · Assigned</span></div>
+          </div>
+        </div>
+        <div id="s7-tabs"><span class="on">Details</span><span>Tasks</span><span>Files</span><span>Activity</span></div>
+        <div class="s7-task" style="top: 290px"><div class="s7-box"></div>Review design feedback</div>
+        <div class="s7-task" style="top: 400px"><div class="s7-box"></div>Update homepage copy</div>
+        <div class="s7-task" style="top: 510px"><div class="s7-box"></div>Send to client for approval</div>
+        <div class="s7-task" id="s7-assign" style="top: 620px">
+          <div id="s7-assign-bg"></div>
+          <div class="s7-box" style="border-color: #fff"><div id="s7-tick"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#6a4dff" stroke-width="3.5"><path d="M5 12l5 5 9-10" /></svg></div></div>
+          <span>Assign to Team</span>
+        </div>
+        <div id="s7-team">
+          <h4>Team</h4>
+          <div class="s7-mem"><i style="background: linear-gradient(140deg, #ffb547, #ff6b6b)"></i>Maya · Design</div>
+          <div class="s7-mem"><i style="background: linear-gradient(140deg, #38d6ff, #4f7bff)"></i>Jordan · Dev</div>
+          <div class="s7-mem"><i style="background: linear-gradient(140deg, #c084fc, #7c3aed)"></i>Andre · Copy</div>
+        </div>
+      </div>
+    </div>
+    <div id="s7-toast" class="glass"><svg width="34" height="34" viewBox="0 0 50 50"><circle cx="25" cy="25" r="22" fill="#2fd98b" /><path d="M14 26l7 7 15-16" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" /></svg>Assigned. The team has been notified.</div>
+    <div id="s7-chip" class="chip"><span class="dot"></span>Act</div>
+    <svg id="s7-cursor" class="cursor" viewBox="0 0 32 32" style="left: 0; top: 0"><path d="M5 3 L5 26 L11 20 L15 29 L19.5 27 L15.5 18.5 L23.5 18.5 Z" fill="#fff" stroke="#0a0f2c" stroke-width="1.8" stroke-linejoin="round" /></svg>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    // the late row from the table opens into its project
+    tl.fromTo("#s7-panel", { clipPath: "inset(206px 0px 458px 0px round 22px)" }, { clipPath: "inset(0px 0px 0px 0px round 30px)", duration: 0.6, ease: "power3.out" }, 0.05);
+    tl.fromTo("#s7-head", { y: 150 }, { y: 0, duration: 0.6, ease: "power3.out" }, 0.05);
+    tl.set("#s7-ok", { opacity: 0 }, 0);
+    tl.fromTo("#s7-tabs", { opacity: 0 }, { opacity: 1, duration: 0.3 }, 0.45);
+    tl.fromTo(".s7-task, #s7-team", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.45, stagger: 0.06, ease: "expo.out" }, 0.45);
+    tl.set("#s7-assign-bg", { opacity: 0 }, 0);
+    tl.set("#s7-tick", { scale: 0 }, 0);
+    tl.set(".s7-mem", { opacity: 0.25 }, 0);
+    tl.set("#s7-toast", { xPercent: -50, opacity: 0 }, 0);
+    tl.fromTo("#s7-chip", { opacity: 0, y: -20, scale: 0.9 }, { opacity: 1, y: 0, scale: 1, duration: 0.45, ease: "back.out(1.8)" }, 0.75);
+
+    // cursor to "Assign to Team", click at 2.63
+    tl.fromTo("#s7-cursor", { x: 1980, y: 1000 }, { x: 1250, y: 880, duration: 0.6, ease: "power2.out" }, 1.0);
+    tl.to("#s7-cursor", { x: 560, y: 812, duration: 0.85, ease: "power2.inOut" }, 1.65);
+    tl.to("#s7-assign-bg", { opacity: 1, duration: 0.25 }, 2.1);
+    tl.to("#s7-cursor", { scale: 0.85, duration: 0.08, ease: "power2.in" }, 2.55);
+    tl.to("#s7-cursor", { scale: 1, duration: 0.18, ease: "power2.out" }, 2.63);
+    tl.to("#s7-assign", { scale: 0.97, duration: 0.08 }, 2.55);
+    tl.to("#s7-assign", { scale: 1, duration: 0.3, ease: "back.out(2)" }, 2.63);
+    tl.to("#s7-tick", { scale: 1, duration: 0.35, ease: "back.out(2.5)" }, 2.66);
+    tl.to(".s7-mem", { opacity: 1, duration: 0.3, stagger: 0.1, ease: "power2.out" }, 2.8);
+    tl.fromTo(".s7-mem i", { scale: 0.4 }, { scale: 1, duration: 0.45, stagger: 0.1, ease: "back.out(2)" }, 2.8);
+    // status turns from late to on track
+    tl.to("#s7-late", { opacity: 0, duration: 0.15 }, 3.1);
+    tl.to("#s7-ok", { opacity: 1, duration: 0.25 }, 3.2);
+    tl.to("#s7-ico", { backgroundColor: "rgba(47,217,139,0.18)", borderColor: "rgba(47,217,139,0.6)", duration: 0.4, ease: "power2.inOut" }, 3.1);
+    tl.fromTo("#s7-toast", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.45, ease: "expo.out" }, 3.2);
+    tl.to("#s7-cursor", { x: 900, y: 1150, duration: 0.5, ease: "power2.in" }, 3.5);
+
+    // whip left
+    tl.to(["#s7-cam", "#s7-toast", "#s7-chip"], { x: -700, opacity: 0, filter: "blur(14px)", duration: 0.3, ease: "power3.in" }, 4.7);
+    window.__timelines["s07"] = tl;
+  </script>
+</template>

@@ -1,0 +1,246 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+    }
+    #s4-cam {
+      position: absolute;
+      inset: 0;
+      transform-origin: 750px 760px;
+    }
+    #s4-head {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 72px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 22px;
+      font-family: var(--font-display), sans-serif;
+      font-weight: 600;
+      font-size: 54px;
+      height: 70px;
+    }
+    #s4-spin,
+    #s4-check {
+      width: 56px;
+      height: 56px;
+    }
+    #s4-check {
+      position: absolute;
+    }
+    #s4-status-a,
+    #s4-status-b {
+      white-space: nowrap;
+    }
+    #s4-status-b {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    .s4-src {
+      position: absolute;
+      top: 210px;
+      width: 132px;
+      height: 132px;
+      border-radius: 32px;
+      display: grid;
+      place-items: center;
+    }
+    .s4-src .ic {
+      width: 76px;
+      height: 76px;
+      border-radius: 22px;
+      display: grid;
+      place-items: center;
+    }
+    .s4-src svg {
+      width: 42px;
+      height: 42px;
+    }
+    .s4-card {
+      position: absolute;
+      top: 248px;
+      width: 84px;
+      height: 58px;
+      border-radius: 12px;
+      background: linear-gradient(160deg, rgba(255, 255, 255, 0.9), rgba(205, 215, 255, 0.75));
+      border: 1.5px solid rgba(255, 255, 255, 0.9);
+      box-shadow: 0 10px 24px rgba(30, 40, 140, 0.45);
+    }
+    .s4-card::before {
+      content: "";
+      position: absolute;
+      left: 10px;
+      top: 12px;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: var(--c);
+    }
+    .s4-card::after {
+      content: "";
+      position: absolute;
+      left: 32px;
+      right: 10px;
+      top: 15px;
+      height: 8px;
+      border-radius: 4px;
+      background: #aab6e6;
+      box-shadow: 0 16px 0 #c7d0f2;
+    }
+    #s4-f1 {
+      left: 180px;
+      top: 640px;
+    }
+    #s4-f2 {
+      left: 600px;
+      top: 640px;
+    }
+    #s4-f3 {
+      left: 1020px;
+      top: 640px;
+    }
+    #s4-f4 {
+      left: 1440px;
+      top: 640px;
+    }
+    #s4-shadow {
+      position: absolute;
+      left: 140px;
+      right: 140px;
+      top: 860px;
+      height: 80px;
+      border-radius: 50%;
+      background: radial-gradient(ellipse at center, rgba(79, 123, 255, 0.35) 0%, rgba(79, 123, 255, 0) 70%);
+    }
+    #s4-chip {
+      left: 50%;
+      top: 940px;
+    }
+  </style>
+  <div id="root" data-composition-id="s04" data-width="1920" data-height="1080" data-layout-allow-overlap>
+    <div id="s4-cam" data-layout-allow-overflow>
+      <div id="s4-head">
+        <svg id="s4-spin" viewBox="0 0 50 50"><circle cx="25" cy="25" r="20" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="5" /><path d="M25 5 A20 20 0 0 1 45 25" fill="none" stroke="#38d6ff" stroke-width="5" stroke-linecap="round" /></svg>
+        <span id="s4-status-a">Importing your data…</span>
+      </div>
+      <div id="s4-head-b" style="position: absolute; left: 0; right: 0; top: 72px; height: 70px; display: flex; justify-content: center; align-items: center; gap: 22px; font-family: var(--font-display), sans-serif; font-weight: 600; font-size: 54px">
+        <svg viewBox="0 0 50 50" style="width: 56px; height: 56px"><circle cx="25" cy="25" r="22" fill="#2fd98b" /><path d="M14 26l7 7 15-16" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" /></svg>
+        <span>Organized with <span class="grad-text">AI</span></span>
+      </div>
+
+      <!-- the four connected sources -->
+      <div id="s4-s1" class="s4-src glass" style="left: 534px"><div class="ic" style="background: linear-gradient(140deg, #ff6b6b, #d6336c)"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2" /><path d="M3 7l9 6 9-6" /></svg></div></div>
+      <div id="s4-s2" class="s4-src glass" style="left: 774px"><div class="ic" style="background: linear-gradient(140deg, #34d399, #059669)"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2" /><path d="M4 10h16M4 15h16M10 4v16" /></svg></div></div>
+      <div id="s4-s3" class="s4-src glass" style="left: 1014px"><div class="ic" style="background: linear-gradient(140deg, #c084fc, #7c3aed)"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M4 5h16v11H9l-5 4z" /></svg></div></div>
+      <div id="s4-s4" class="s4-src glass" style="left: 1254px"><div class="ic" style="background: linear-gradient(140deg, #60a5fa, #2563eb)"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M7 18h10a4 4 0 0 0 0-8 6 6 0 0 0-11.6 1.5A3.5 3.5 0 0 0 7 18z" /></svg></div></div>
+
+      <div id="s4-shadow"></div>
+
+      <!-- glass folders -->
+      <div id="s4-f1" class="folder">
+        <div class="f-tab"></div><div class="f-back"></div><div class="f-paper"></div>
+        <div class="f-front"><div class="f-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2"><circle cx="12" cy="8" r="4" /><path d="M4 21c1-4 4.5-6 8-6s7 2 8 6" /></svg></div><div class="f-label">Contacts</div><div class="f-count" id="s4-c1">0</div><div class="sheen"></div></div>
+      </div>
+      <div id="s4-f2" class="folder">
+        <div class="f-tab"></div><div class="f-back"></div><div class="f-paper"></div>
+        <div class="f-front"><div class="f-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2"><rect x="3" y="4" width="5" height="16" rx="1.5" /><rect x="10" y="4" width="5" height="11" rx="1.5" /><rect x="17" y="4" width="4" height="7" rx="1.5" /></svg></div><div class="f-label">Projects</div><div class="f-count" id="s4-c2">0</div><div class="sheen"></div></div>
+      </div>
+      <div id="s4-f3" class="folder">
+        <div class="f-tab"></div><div class="f-back"></div><div class="f-paper"></div>
+        <div class="f-front"><div class="f-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2"><path d="M6 3h8l5 5v13H6z" /><path d="M14 3v5h5" /></svg></div><div class="f-label">Files</div><div class="f-count" id="s4-c3">0</div><div class="sheen"></div></div>
+      </div>
+      <div id="s4-f4" class="folder">
+        <div class="f-tab"></div><div class="f-back"></div><div class="f-paper"></div>
+        <div class="f-front"><div class="f-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2"><path d="M4 5h16v11H9l-5 4z" /></svg></div><div class="f-label">Messages</div><div class="f-count" id="s4-c4">0</div><div class="sheen"></div></div>
+      </div>
+
+      <!-- records in flight (positioned under each source) -->
+      <div class="s4-card" style="left: 558px; --c: #ff6b6b"></div>
+      <div class="s4-card" style="left: 798px; --c: #34d399"></div>
+      <div class="s4-card" style="left: 1038px; --c: #c084fc"></div>
+      <div class="s4-card" style="left: 1278px; --c: #60a5fa"></div>
+      <div class="s4-card" style="left: 558px; --c: #ff6b6b"></div>
+      <div class="s4-card" style="left: 798px; --c: #34d399"></div>
+      <div class="s4-card" style="left: 1038px; --c: #c084fc"></div>
+      <div class="s4-card" style="left: 1278px; --c: #60a5fa"></div>
+      <div class="s4-card" style="left: 558px; --c: #ff6b6b"></div>
+      <div class="s4-card" style="left: 798px; --c: #34d399"></div>
+      <div class="s4-card" style="left: 1038px; --c: #c084fc"></div>
+      <div class="s4-card" style="left: 1278px; --c: #60a5fa"></div>
+      <div class="s4-card" style="left: 558px; --c: #ff6b6b"></div>
+      <div class="s4-card" style="left: 798px; --c: #34d399"></div>
+      <div class="s4-card" style="left: 1038px; --c: #c084fc"></div>
+      <div class="s4-card" style="left: 1278px; --c: #60a5fa"></div>
+    </div>
+    <div id="s4-chip" class="chip"><span class="dot"></span>Organized automatically</div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    const folders = ["#s4-f1", "#s4-f2", "#s4-f3", "#s4-f4"];
+    const folderCx = [330, 750, 1170, 1590];
+
+    tl.fromTo("#s4-head", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.25, ease: "power4.out" }, 0.1);
+    tl.set("#s4-head-b", { opacity: 0 }, 0);
+    tl.fromTo("#s4-spin", { rotation: 0 }, { rotation: 1440, duration: 4.6, ease: "none" }, 0);
+    // sources drop in from where the last scene sent them
+    tl.fromTo(".s4-src", { y: -200, opacity: 0, scale: 0.7 }, { y: 0, opacity: 1, scale: 1, duration: 0.6, stagger: 0.05, ease: "expo.out" }, 0.0);
+    // folders rise into place
+    folders.forEach((f, i) => {
+      tl.fromTo(f, { y: 260, opacity: 0, rotationX: -40, transformPerspective: 1200 }, { y: 0, opacity: 1, rotationX: 0, duration: 0.8, ease: "back.out(1.3)" }, 0.25 + i * 0.1);
+      // the glass front tips open to receive
+      tl.fromTo(f + " .f-front", { rotationX: 0, transformPerspective: 900 }, { rotationX: -26, duration: 0.5, ease: "power2.out" }, 1.0 + i * 0.08);
+      tl.to(f + " .f-front", { rotationX: 0, duration: 0.45, ease: "back.out(1.6)" }, 4.35 + i * 0.06);
+      tl.fromTo(f + " .f-paper", { y: 40 }, { y: -30, duration: 3.0, ease: "power1.inOut" }, 1.2);
+    });
+    tl.fromTo("#s4-shadow", { opacity: 0 }, { opacity: 1, duration: 0.8 }, 0.4);
+
+    // sixteen records arc from their source into a folder
+    const cards = gsap.utils.toArray("#s4-cam .s4-card");
+    const dest = [0, 1, 3, 2, 2, 0, 1, 2, 1, 3, 3, 0, 3, 2, 1, 1];
+    cards.forEach((c, i) => {
+      const src = i % 4;
+      const sx = 534 + src * 240 + 66;
+      const d = dest[i];
+      const dx = folderCx[d] - sx;
+      const dy = 640 - 277;
+      const t0 = 1.05 + i * 0.17;
+      tl.fromTo(c, { x: 0, y: 0, opacity: 0, scale: 0.6, rotation: 0 }, { opacity: 1, scale: 1, duration: 0.15, ease: "power2.out" }, t0);
+      tl.fromTo(c, { x: 0 }, { x: dx, duration: 0.75, ease: "power1.inOut" }, t0);
+      tl.fromTo(c, { y: 0 }, { y: dy, duration: 0.75, ease: "power2.in" }, t0);
+      tl.to(c, { rotation: (d - src) * 9, duration: 0.75, ease: "power1.inOut" }, t0);
+      tl.to(c, { scale: 0.55, opacity: 0, duration: 0.2, ease: "power2.in" }, t0 + 0.58);
+    });
+
+    // counts fill as records land
+    const counts = [
+      ["#s4-c1", 1284],
+      ["#s4-c2", 128],
+      ["#s4-c3", 3402],
+      ["#s4-c4", 9816],
+    ];
+    const fmt = (n) => String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    counts.forEach(([sel, n]) => {
+      const el = document.querySelector(sel);
+      const o = { v: 0 };
+      tl.to(o, { v: n, duration: 3.1, ease: "power1.inOut", onUpdate: () => (el.textContent = fmt(o.v)) }, 1.6);
+    });
+
+    // status flips, chip lands
+    tl.to("#s4-head", { opacity: 0, filter: "blur(8px)", duration: 0.16, ease: "power2.in" }, 4.55);
+    tl.fromTo("#s4-head-b", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.18, ease: "power4.out" }, 4.7);
+    tl.fromTo("#s4-chip", { xPercent: -50, opacity: 0, y: 24, scale: 0.9 }, { xPercent: -50, opacity: 1, y: 0, scale: 1, duration: 0.45, ease: "back.out(1.8)" }, 4.8);
+    folders.forEach((f, i) => {
+      tl.fromTo(f + " .sheen", { backgroundPosition: "120% 0" }, { backgroundPosition: "-60% 0", duration: 0.9, ease: "power2.inOut" }, 4.7 + i * 0.08);
+    });
+
+    // zoom through the Projects folder
+    tl.to("#s4-chip", { opacity: 0, duration: 0.15 }, 6.35);
+    tl.to("#s4-cam", { scale: 3.2, filter: "blur(8px)", opacity: 0, duration: 0.6, ease: "power3.in" }, 6.4);
+    window.__timelines["s04"] = tl;
+  </script>
+</template>

@@ -1,0 +1,154 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+    }
+    #s5-cam {
+      position: absolute;
+      inset: 0;
+    }
+    #s5-app {
+      left: 160px;
+      top: 110px;
+      width: 1600px;
+      height: 860px;
+    }
+    #s5-hello {
+      position: absolute;
+      left: 470px;
+      top: 170px;
+      font-family: var(--font-display), sans-serif;
+      font-weight: 700;
+      font-size: 58px;
+    }
+    #s5-date {
+      position: absolute;
+      left: 470px;
+      top: 248px;
+      font-size: 28px;
+    }
+    .s5-kpi {
+      position: absolute;
+      top: 320px;
+      width: 300px;
+      height: 200px;
+      padding: 28px 30px;
+      border-radius: 26px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1.5px solid rgba(255, 255, 255, 0.12);
+    }
+    .s5-kpi strong {
+      display: block;
+      font-family: var(--font-display), sans-serif;
+      font-weight: 700;
+      font-size: 80px;
+      line-height: 1;
+      margin-bottom: 16px;
+    }
+    .s5-kpi span {
+      font-size: 28px;
+      color: var(--color-muted);
+    }
+    .s5-kpi em {
+      position: absolute;
+      right: 24px;
+      top: 26px;
+      font-style: normal;
+      font-size: 22px;
+      font-weight: 700;
+      color: #2fd98b;
+    }
+    #s5-list {
+      position: absolute;
+      left: 470px;
+      top: 560px;
+      width: 1230px;
+      height: 370px;
+      padding: 28px 32px;
+      border-radius: 26px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1.5px solid rgba(255, 255, 255, 0.1);
+    }
+    #s5-list h3 {
+      font-size: 30px;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+    .s5-row {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      height: 82px;
+      border-top: 1.5px solid rgba(255, 255, 255, 0.07);
+      font-size: 28px;
+    }
+    .s5-row .av {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+    }
+    .s5-row .t {
+      flex: 1;
+    }
+    #s5-chip {
+      right: 200px;
+      top: 160px;
+    }
+  </style>
+  <div id="root" data-composition-id="s05" data-width="1920" data-height="1080" data-layout-allow-overlap>
+    <div id="s5-cam">
+      <div id="s5-app" class="app glass-dark">
+        <div class="app-side" data-layout-ignore>
+          <div class="app-logo"><svg viewBox="0 0 100 100"><defs><linearGradient id="s5-g" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#4f7bff" /><stop offset="1" stop-color="#b48cff" /></linearGradient></defs><path d="M50 6 L95 94 H72 L50 48 L28 94 H5 Z" fill="url(#s5-g)" /></svg>aura</div>
+          <div class="nav on"><i></i>Home</div>
+          <div class="nav"><i></i>Accounts</div>
+          <div class="nav"><i></i>Projects</div>
+          <div class="nav"><i></i>Analytics</div>
+          <div class="nav"><i></i>Settings</div>
+        </div>
+      </div>
+      <h2 id="s5-hello">Good morning!</h2>
+      <p id="s5-date" class="muted">Here's everything happening across your business.</p>
+      <div class="s5-kpi" style="left: 470px"><strong id="s5-k1">0</strong><span>Active Projects</span><em>+8%</em></div>
+      <div class="s5-kpi" style="left: 780px"><strong id="s5-k2">0</strong><span>Pending Tasks</span></div>
+      <div class="s5-kpi" style="left: 1090px"><strong id="s5-k3">0</strong><span>New Leads</span><em>+3</em></div>
+      <div class="s5-kpi" style="left: 1400px"><strong id="s5-k4">$0K</strong><span>Revenue</span><em>+12%</em></div>
+      <div id="s5-list">
+        <h3>Recent activity</h3>
+        <div class="s5-row"><div class="av" style="background: linear-gradient(140deg, #ffb547, #ff6b6b)"></div><div class="t">New lead added from website form</div><span class="pill blue">New</span></div>
+        <div class="s5-row"><div class="av" style="background: linear-gradient(140deg, #38d6ff, #4f7bff)"></div><div class="t">Q4 Marketing plan updated</div><span class="pill amber">In Progress</span></div>
+        <div class="s5-row"><div class="av" style="background: linear-gradient(140deg, #2fd98b, #059669)"></div><div class="t">Invoice #1042 paid</div><span class="pill green">Completed</span></div>
+      </div>
+    </div>
+    <div id="s5-chip" class="chip"><span class="dot"></span>See</div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    // out of the folder: the workspace lands large and settles
+    tl.fromTo("#s5-cam", { scale: 1.12, opacity: 0, filter: "blur(12px)" }, { scale: 1, opacity: 1, filter: "blur(0px)", duration: 0.65, ease: "expo.out" }, 0);
+    tl.fromTo("#s5-hello", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.2, ease: "power4.out" }, 0.25);
+    tl.fromTo("#s5-date", { opacity: 0 }, { opacity: 1, duration: 0.3 }, 0.4);
+    tl.fromTo(".s5-kpi", { y: 40, opacity: 0 }, { y: 0, opacity: 1, duration: 0.55, stagger: 0.07, ease: "expo.out" }, 0.35);
+    const k = [
+      ["#s5-k1", 128, (v) => Math.round(v)],
+      ["#s5-k2", 24, (v) => Math.round(v)],
+      ["#s5-k3", 12, (v) => Math.round(v)],
+      ["#s5-k4", 48, (v) => "$" + Math.round(v) + "K"],
+    ];
+    k.forEach(([sel, n, f], i) => {
+      const el = document.querySelector(sel);
+      const o = { v: 0 };
+      tl.to(o, { v: n, duration: 1.2, ease: "power3.out", onUpdate: () => (el.textContent = f(o.v)) }, 0.45 + i * 0.07);
+    });
+    tl.fromTo("#s5-list", { y: 40, opacity: 0 }, { y: 0, opacity: 1, duration: 0.55, ease: "expo.out" }, 0.8);
+    tl.fromTo(".s5-row", { x: -30, opacity: 0 }, { x: 0, opacity: 1, duration: 0.4, stagger: 0.12, ease: "power3.out" }, 1.1);
+    tl.fromTo("#s5-chip", { opacity: 0, y: -20, scale: 0.9 }, { opacity: 1, y: 0, scale: 1, duration: 0.45, ease: "back.out(1.8)" }, 0.9);
+    // slow camera drift across the dashboard while it is read
+    tl.fromTo("#s5-cam", { x: 0 }, { x: -30, duration: 3.6, ease: "sine.inOut" }, 0.8);
+    // blur swap out
+    tl.to(["#s5-cam", "#s5-chip"], { opacity: 0, filter: "blur(10px)", duration: 0.2, ease: "power2.in" }, 4.75);
+    window.__timelines["s05"] = tl;
+  </script>
+</template>

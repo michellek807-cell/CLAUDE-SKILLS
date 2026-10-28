@@ -1,0 +1,190 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+    }
+    #s3-cam {
+      position: absolute;
+      inset: 0;
+    }
+    #s3-app {
+      left: 160px;
+      top: 110px;
+      width: 1600px;
+      height: 860px;
+    }
+    #s3-h {
+      position: absolute;
+      left: 470px;
+      top: 200px;
+      font-family: var(--font-display), sans-serif;
+      font-weight: 700;
+      font-size: 60px;
+    }
+    #s3-sub {
+      position: absolute;
+      left: 470px;
+      top: 284px;
+      font-size: 30px;
+    }
+    .s3-tile {
+      position: absolute;
+      top: 400px;
+      width: 220px;
+      height: 220px;
+      border-radius: 32px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      font-size: 28px;
+      font-weight: 600;
+    }
+    .s3-tile .ic {
+      width: 92px;
+      height: 92px;
+      border-radius: 26px;
+      display: grid;
+      place-items: center;
+      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.35);
+    }
+    .s3-tile .ic svg {
+      width: 50px;
+      height: 50px;
+    }
+    .s3-ok {
+      position: absolute;
+      top: -14px;
+      right: -14px;
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: #2fd98b;
+      border: 4px solid #0b1030;
+      display: grid;
+      place-items: center;
+    }
+    .s3-ok svg {
+      width: 26px;
+      height: 26px;
+    }
+    #s3-btn {
+      position: absolute;
+      left: 835px;
+      top: 690px;
+      width: 500px;
+      height: 96px;
+      border-radius: 24px;
+      overflow: hidden;
+      background: linear-gradient(120deg, #4f7bff, #9b5cff);
+      box-shadow: 0 20px 50px rgba(79, 123, 255, 0.5), inset 0 2px 0 rgba(255, 255, 255, 0.4);
+      display: grid;
+      place-items: center;
+      font-size: 34px;
+      font-weight: 700;
+    }
+    #s3-btn-fill {
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 100%;
+      background: linear-gradient(90deg, #2fd98b, #38d6ff);
+      transform-origin: 0 50%;
+    }
+    #s3-btn-label,
+    #s3-btn-done {
+      position: relative;
+      grid-area: 1 / 1;
+    }
+    #s3-chip {
+      right: 210px;
+      top: 160px;
+    }
+  </style>
+  <div id="root" data-composition-id="s03" data-width="1920" data-height="1080" data-layout-allow-overlap>
+    <div id="s3-cam">
+      <div id="s3-app" class="app glass-dark">
+        <div class="app-side" data-layout-ignore>
+          <div class="app-logo">
+            <svg viewBox="0 0 100 100"><defs><linearGradient id="s3-g" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#4f7bff" /><stop offset="1" stop-color="#b48cff" /></linearGradient></defs><path d="M50 6 L95 94 H72 L50 48 L28 94 H5 Z" fill="url(#s3-g)" /></svg>aura
+          </div>
+          <div class="nav"><i></i>Home</div>
+          <div class="nav on"><i></i>Accounts</div>
+          <div class="nav"><i></i>Projects</div>
+          <div class="nav"><i></i>Analytics</div>
+          <div class="nav"><i></i>Settings</div>
+        </div>
+      </div>
+      <h2 id="s3-h">Connect your account</h2>
+      <p id="s3-sub" class="muted">Bring in your data and get started in seconds.</p>
+
+      <div id="s3-t1" class="s3-tile glass" style="left: 590px">
+        <div class="ic" style="background: linear-gradient(140deg, #ff6b6b, #d6336c)"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2" /><path d="M3 7l9 6 9-6" /></svg></div>
+        Email
+        <div class="s3-ok"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.5"><path d="M5 12l5 5 9-10" /></svg></div>
+      </div>
+      <div id="s3-t2" class="s3-tile glass" style="left: 850px">
+        <div class="ic" style="background: linear-gradient(140deg, #34d399, #059669)"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2" /><path d="M4 10h16M4 15h16M10 4v16" /></svg></div>
+        Docs &amp; Sheets
+        <div class="s3-ok"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.5"><path d="M5 12l5 5 9-10" /></svg></div>
+      </div>
+      <div id="s3-t3" class="s3-tile glass" style="left: 1110px">
+        <div class="ic" style="background: linear-gradient(140deg, #c084fc, #7c3aed)"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M4 5h16v11H9l-5 4z" /></svg></div>
+        Team Chat
+        <div class="s3-ok"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.5"><path d="M5 12l5 5 9-10" /></svg></div>
+      </div>
+      <div id="s3-t4" class="s3-tile glass" style="left: 1370px">
+        <div class="ic" style="background: linear-gradient(140deg, #60a5fa, #2563eb)"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M7 18h10a4 4 0 0 0 0-8 6 6 0 0 0-11.6 1.5A3.5 3.5 0 0 0 7 18z" /></svg></div>
+        Cloud Drive
+        <div class="s3-ok"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.5"><path d="M5 12l5 5 9-10" /></svg></div>
+      </div>
+
+      <div id="s3-btn">
+        <div id="s3-btn-fill"></div>
+        <span id="s3-btn-label">Connect Account</span>
+        <span id="s3-btn-done">Connected</span>
+      </div>
+    </div>
+    <div id="s3-chip" class="chip"><span class="dot"></span>Connect</div>
+    <svg id="s3-cursor" class="cursor" viewBox="0 0 32 32" style="left: 0; top: 0"><path d="M5 3 L5 26 L11 20 L15 29 L19.5 27 L15.5 18.5 L23.5 18.5 Z" fill="#fff" stroke="#0a0f2c" stroke-width="1.8" stroke-linejoin="round" /></svg>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    // arrives from the zoom: lands slightly large and settles
+    tl.fromTo("#s3-cam", { scale: 1.08, opacity: 0, filter: "blur(10px)" }, { scale: 1, opacity: 1, filter: "blur(0px)", duration: 0.6, ease: "expo.out" }, 0);
+    tl.fromTo("#s3-h", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.2, ease: "power4.out" }, 0.3);
+    tl.fromTo("#s3-sub", { opacity: 0 }, { opacity: 1, duration: 0.3, ease: "power2.out" }, 0.45);
+    tl.fromTo(".s3-tile", { y: 60, opacity: 0, scale: 0.9 }, { y: 0, opacity: 1, scale: 1, duration: 0.6, stagger: 0.08, ease: "back.out(1.5)" }, 0.5);
+    tl.fromTo("#s3-btn", { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: "power3.out" }, 0.85);
+    tl.set(".s3-ok", { scale: 0 }, 0);
+    tl.set("#s3-btn-fill", { scaleX: 0 }, 0);
+    tl.set("#s3-btn-done", { opacity: 0 }, 0);
+    tl.fromTo("#s3-chip", { opacity: 0, y: -20, scale: 0.9 }, { opacity: 1, y: 0, scale: 1, duration: 0.45, ease: "back.out(1.8)" }, 1.0);
+
+    // cursor enters off-screen, lands on the button, clicks at 3.23
+    tl.fromTo("#s3-cursor", { x: 1960, y: 1120 }, { x: 1300, y: 900, duration: 0.7, ease: "power2.out" }, 1.6);
+    tl.to("#s3-cursor", { x: 1080, y: 738, duration: 0.8, ease: "power2.inOut" }, 2.35);
+    tl.to("#s3-cursor", { scale: 0.85, duration: 0.08, ease: "power2.in" }, 3.15);
+    tl.to("#s3-cursor", { scale: 1, duration: 0.18, ease: "power2.out" }, 3.23);
+    tl.to("#s3-btn", { scale: 0.95, duration: 0.08, ease: "power2.in" }, 3.15);
+    tl.to("#s3-btn", { scale: 1, duration: 0.3, ease: "back.out(2)" }, 3.23);
+    // the click causes the sync: progress fills the button, then each source checks in
+    tl.to("#s3-btn-label", { opacity: 0, duration: 0.15 }, 3.25);
+    tl.to("#s3-btn-fill", { scaleX: 1, duration: 0.95, ease: "power2.inOut" }, 3.25);
+    tl.to("#s3-btn-done", { opacity: 1, duration: 0.2 }, 4.1);
+    ["#s3-t1 .s3-ok", "#s3-t2 .s3-ok", "#s3-t3 .s3-ok", "#s3-t4 .s3-ok"].forEach((s, i) => {
+      tl.to(s, { scale: 1, duration: 0.4, ease: "back.out(2.5)" }, 3.55 + i * 0.18);
+    });
+    tl.to("#s3-cursor", { x: 1500, y: 960, opacity: 0, duration: 0.5, ease: "power2.in" }, 4.4);
+
+    // the four sources lift away: they are about to pour into folders
+    tl.to("#s3-chip", { opacity: 0, filter: "blur(8px)", duration: 0.18 }, 5.5);
+    tl.to(".s3-tile", { y: -330, scale: 0.6, duration: 0.45, stagger: 0.03, ease: "power3.in" }, 5.5);
+    tl.to("#s3-cam", { opacity: 0, filter: "blur(10px)", duration: 0.3, ease: "power2.in" }, 5.7);
+    window.__timelines["s03"] = tl;
+  </script>
+</template>

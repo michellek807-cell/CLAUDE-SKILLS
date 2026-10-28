@@ -1,0 +1,2549 @@
+{
+  "version": 1,
+  "historyId": "01446ab1-a7dc-4d7a-95bd-771a7bae2609",
+  "currentRevision": "155df341-b395-47f1-a609-6a3d74c18dab",
+  "pendingChanges": false,
+  "files": {
+    "AGENTS.md": {
+      "hash": "1b36171117cb7c18f4100a0db6a3782ff2e096115995733200445cc2e80a4060",
+      "content": "/root/.cache/hyperframes/history/01446ab1-a7dc-4d7a-95bd-771a7bae2609/blobs/1b/1b36171117cb7c18f4100a0db6a3782ff2e096115995733200445cc2e80a4060"
+    },
+    "CLAUDE.md": {
+      "hash": "1b36171117cb7c18f4100a0db6a3782ff2e096115995733200445cc2e80a4060",
+      "content": "/root/.cache/hyperframes/history/01446ab1-a7dc-4d7a-95bd-771a7bae2609/blobs/1b/1b36171117cb7c18f4100a0db6a3782ff2e096115995733200445cc2e80a4060"
+    },
+    "assets/sfx/CREDITS.md": {
+      "hash": "79590c7738b0427b10f362f76b02cfd2643158a40e1d5fd787f9ac6b33bcf4ce",
+      "content": "/root/.cache/hyperframes/history/01446ab1-a7dc-4d7a-95bd-771a7bae2609/blobs/79/79590c7738b0427b10f362f76b02cfd2643158a40e1d5fd787f9ac6b33bcf4ce"
+    },
+    "assets/sfx/chime.mp3": {
+      "hash": "74823b1b27703c56e0652db838f503c150ce9c2442d47d27430af3d5121d6d12",
+      "content": "/root/.cache/hyperframes/history/01446ab1-a7dc-4d7a-95bd-771a7bae2609/blobs/74/74823b1b27703c56e0652db838f503c150ce9c2442d47d27430af3d5121d6d12"
+    },
+    "assets/sfx/click.mp3": {
+      "hash": "075e17bdac5c13662a1c9530050e0046f81d4138e00eb3bf30427a7b4404103d",
+      "content": "/root/.cache/hyperframes/history/01446ab1-a7dc-4d7a-95bd-771a7bae2609/blobs/07/075e17bdac5c13662a1c9530050e0046f81d4138e00eb3bf30427a7b4404103d"
+    },
+    "assets/sfx/impact-bass-1.mp3": {
+      "hash": "634d5eda5eb7b501aca98393a64f3815eccf24157cd1d95df55aaec1b5000bd7",
+      "content": "/root/.cache/hyperframes/history/01446ab1-a7dc-4d7a-95bd-771a7bae2609/blobs/63/634d5eda5eb7b501aca98393a64f3815eccf24157cd1d95df55aaec1b5000bd7"
+    },
+    "assets/sfx/notification.mp3": {
+      "hash": "b1559967dedb7994a82371f10cec9f7f3992e6b147b4cd88d62112bcdc3f9ba3",
+      "content": "/root/.cache/hyperframes/history/01446ab1-a7dc-4d7a-95bd-771a7bae2609/blobs/b1/b1559967dedb7994a82371f10cec9f7f3992e6b147b4cd88d62112bcdc3f9ba3"
+    },
+    "assets/sfx/pop.mp3": {
+      "hash": "19ab7193f626ff57fdeef60b45543bac416fcbcec803cfb417abe4b271c1b352",
+      "content": "/root/.cache/hyperframes/history/01446ab1-a7dc-4d7a-95bd-771a7bae2609/blobs/19/19ab7193f626ff57fdeef60b45543bac416fcbcec803cfb417abe4b271c1b352"
+    },
+    "assets/sfx/riser.mp3": {
+      "hash": "d2f29d49f27dee7d3b25af22ffe5bebc39390cc5d5fb3b3e1c433499c77f3d1d",
+      "content": "/root/.cache/hyperframes/history/01446ab1-a7dc-4d7a-95bd-771a7bae2609/blobs/d2/d2f29d49f27dee7d3b25af22ffe5bebc39390cc5d5fb3b3e1c433499c77f3d1d"
+    },
+    "assets/sfx/sparkle.mp3": {
+      "hash": "a66b2829a307bcb5b1f6551d7cdc72fe45bbe9a91abfb994d28db8d5e4e42ea8",
+      "content": "/root/.cache/hyperframes/history/01446ab1-a7dc-4d7a-95bd-771a7bae2609/blobs/a6/a66b2829a307bcb5b1f6551d7cdc72fe45bbe9a91abfb994d28db8d5e4e42ea8"
+    },
+    "assets/sfx/typing.mp3": {
+      "hash": "944160652faeb7b32acc9341ede4d735a5c9a4ce3fe8509ef7eab91efb430487",
+      "content": "/root/.cache/hyperframes/history/01446ab1-a7dc-4d7a-95bd-771a7bae2609/blobs/94/944160652faeb7b32acc9341ede4d735a5c9a4ce3fe8509ef7eab91efb430487"
+    },
+    "assets/sfx/whoosh-short.mp3": {
+      "hash": "c2efd9d902a59bf9ec5019035d7deadd17762136896b6e3cb6dd99ea50997a30",
+      "content": "/root/.cache/hyperframes/history/01446ab1-a7dc-4d7a-95bd-771a7bae2609/blobs/c2/c2efd9d902a59bf9ec5019035d7deadd17762136896b6e3cb6dd99ea50997a30"
+    },
+    "assets/sfx/whoosh.mp3": {
+      "hash": "c2efd9d902a59bf9ec5019035d7deadd17762136896b6e3cb6dd99ea50997a30",
+      "content": "/root/.cache/hyperframes/history/01446ab1-a7dc-4d7a-95bd-771a7bae2609/blobs/c2/c2efd9d902a59bf9ec5019035d7deadd17762136896b6e3cb6dd99ea50997a30"
+    },
+    "assets/vo/vo01.wav": {
+      "hash": "6f1a74926ba61367f3f4904797fd2a207ea7987c8720dba698b11092a9033f5b",
+      "content": "/root/.cache/hyperframes/history/01446ab1-a7dc-4d7a-95bd-771a7bae2609/blobs/6f/6f1a74926ba61367f3f4904797fd2a207ea7987c8720dba698b11092a9033f5b"
+    },
+    "assets/vo/vo02.wav": {
+      "hash": "7b2200ce2937fd722f9138487b600c59777c62424fccba5415952265c2f2aa4b",
+      "content": "/root/.cache/hyperframes/history/01446ab1-a7dc-4d7a-95bd-771a7bae2609/blobs/7b/7b2200ce2937fd722f9138487b600c59777c62424fccba5415952265c2f2aa4b"
+    },
+    "assets/vo/vo03.wav": {
+      "hash": "d4533e522563c1831cf25ecd62ddcf887978d61378f352e226c066af8381ed34",
+      "content": "/root/.cache/hyperframes/history/01446ab1-a7dc-4d7a-95bd-771a7bae2609/blobs/d4/d4533e522563c1831cf25ecd62ddcf887978d61378f352e226c066af8381ed34"
+    },
+    "assets/vo/vo04.wav": {
+      "hash": "9003286c32b4370013411aaf30ae551141c25660a173d24271d35a009dc08a0b",
+      "content": "/root/.cache/hyperframes/history/01446ab1-a7dc-4d7a-95bd-771a7bae2609/blobs/90/9003286c32b4370013411aaf30ae551141c25660a173d24271d35a009dc08a0b"
+    },
+    "assets/vo/vo05.wav": {
+      "hash": "4d798ced9d3e9e05a0436fa67c62add9edc4a250812a6f85e1be8d1bac5e3b78",
+      "content": "/root/.cache/hyperframes/history/01446ab1-a7dc-4d7a-95bd-771a7bae2609/blobs/4d/4d798ced9d3e9e05a0436fa67c62add9edc4a250812a6f85e1be8d1bac5e3b78"
+    },
+    "assets/vo/vo06.wav": {
+      "hash": "2ebf93a89ef31fb40ad3375bb13c31f65aa0f17adcb3f749d9f964b62ae22772",
+      "content": "/root/.cache/hyperframes/history/01446ab1-a7dc-4d7a-95bd-771a7bae2609/blobs/2e/2ebf93a89ef31fb40ad3375bb13c31f65aa0f17adcb3f749d9f964b62ae22772"
+    },
+    "assets/vo/vo07.wav": {
+      "hash": "61cfd624bee97b6ac83ff1be8ea074e8ae4134e330b9832f741b55bc421b4c06",
+      "content": "/root/.cache/hyperframes/history/01446ab1-a7dc-4d7a-95bd-771a7bae2609/blobs/61/61cfd624bee97b6ac83ff1be8ea074e8ae4134e330b9832f741b55bc421b4c06"
+    },
+    "assets/vo/vo08.wav": {
+      "hash": "ca301ad8296eab5037a8b54b201e2617ab5bd04fc08f3915241e4a99ffa05303",
+      "content": "/root/.cache/hyperframes/history/01446ab1-a7dc-4d7a-95bd-771a7bae2609/blobs/ca/ca301ad8296eab5037a8b54b201e2617ab5bd04fc08f3915241e4a99ffa05303"
+    },
+    "assets/vo/vo09.wav": {
+      "hash": "033f6b4981dc3e6b82a199cd67ae22269482c6cc5246e9e2a1b18d42a71e8e54",
+      "content": "/root/.cache/hyperframes/history/01446ab1-a7dc-4d7a-95bd-771a7bae2609/blobs/03/033f6b4981dc3e6b82a199cd67ae22269482c6cc5246e9e2a1b18d42a71e8e54"
+    },
+    "assets/vo/vo10.wav": {
+      "hash": "8911d35951dce3d2633017919a24c39d490cf495ab0bc3187e056730e88a1c36",
+      "content": "/root/.cache/hyperframes/history/01446ab1-a7dc-4d7a-95bd-771a7bae2609/blobs/89/8911d35951dce3d2633017919a24c39d490cf495ab0bc3187e056730e88a1c36"
+    },
+    "assets/vo/vo11.wav": {
+      "hash": "d0eebc02f3d8de087754459ea802f6f1eb1ecad637fab2debd1fd4402538ce52",
+      "content": "/root/.cache/hyperframes/history/01446ab1-a7dc-4d7a-95bd-771a7bae2609/blobs/d0/d0eebc02f3d8de087754459ea802f6f1eb1ecad637fab2debd1fd4402538ce52"
+    },
+    "assets/vo/vo12.wav": {
+      "hash": "11d426abd8a68dbb843945b60a8571a2ac8066902e021081e7c386b54d982ac6",
+      "content": "/root/.cache/hyperframes/history/01446ab1-a7dc-4d7a-95bd-771a7bae2609/blobs/11/11d426abd8a68dbb843945b60a8571a2ac8066902e021081e7c386b54d982ac6"
+    },
+    "assets/vo/vo13.wav": {
+      "hash": "f0c969d564d6e5ed8f5c535c13c2339846cbfb8693b08b4b6ce37d308b77ad43",
+      "content": "/root/.cache/hyperframes/history/01446ab1-a7dc-4d7a-95bd-771a7bae2609/blobs/f0/f0c969d564d6e5ed8f5c535c13c2339846cbfb8693b08b4b6ce37d308b77ad43"
+    },
+    "compositions/s01-hook.html": {
+      "hash": "9bfc1bc8636d4baf5e02ed69083d076bd3af85fc8400df45215858ecb7edb275",
+      "content": "/root/.cache/hyperframes/history/01446ab1-a7dc-4d7a-95bd-771a7bae2609/blobs/9b/9bfc1bc8636d4baf5e02ed69083d076bd3af85fc8400df45215858ecb7edb275"
+    },
+    "compositions/s02-reveal.html": {
+      "hash": "5d0fbe99a5ed01a832a959130f80452cbde542864508e715890bf9d8afd1b63a",
+      "content": "/root/.cache/hyperframes/history/01446ab1-a7dc-4d7a-95bd-771a7bae2609/blobs/5d/5d0fbe99a5ed01a832a959130f80452cbde542864508e715890bf9d8afd1b63a"
+    },
+    "compositions/s03-connect.html": {
+      "hash": "3a809177987a99b420c3c463d1e9f545408db193d0019e2223830485175297c5",
+      "content": "/root/.cache/hyperframes/history/01446ab1-a7dc-4d7a-95bd-771a7bae2609/blobs/3a/3a809177987a99b420c3c463d1e9f545408db193d0019e2223830485175297c5"
+    },
+    "compositions/s04-organize.html": {
+      "hash": "7ad30d7b412b300b4dc8172e7d5dfca2b7383218abbe4006c6f3e7dcb67b163e",
+      "content": "/root/.cache/hyperframes/history/01446ab1-a7dc-4d7a-95bd-771a7bae2609/blobs/7a/7ad30d7b412b300b4dc8172e7d5dfca2b7383218abbe4006c6f3e7dcb67b163e"
+    },
+    "compositions/s05-overview.html": {
+      "hash": "a05b31e267dd4fe9e26dbd321d410db607fad19ea9139a0909a1254ad77b7473",
+      "content": "/root/.cache/hyperframes/history/01446ab1-a7dc-4d7a-95bd-771a7bae2609/blobs/a0/a05b31e267dd4fe9e26dbd321d410db607fad19ea9139a0909a1254ad77b7473"
+    },
+    "compositions/s06-attention.html": {
+      "hash": "44145ab80815ee6d7fe7f6ca7008b2275d7259331c10f153a683ede424f635dc",
+      "content": "/root/.cache/hyperframes/history/01446ab1-a7dc-4d7a-95bd-771a7bae2609/blobs/44/44145ab80815ee6d7fe7f6ca7008b2275d7259331c10f153a683ede424f635dc"
+    },
+    "compositions/s07-act.html": {
+      "hash": "b58d6c26ea496c66ad65f48a96317128579e0c98cec8f74e17d55e820e2ba6b9",
+      "content": "/root/.cache/hyperframes/history/01446ab1-a7dc-4d7a-95bd-771a7bae2609/blobs/b5/b58d6c26ea496c66ad65f48a96317128579e0c98cec8f74e17d55e820e2ba6b9"
+    },
+    "compositions/s08-ai.html": {
+      "hash": "df79dec84a9681e954f438fca33ca763eec6f01c3997c9aa37140aa84711492f",
+      "content": "/root/.cache/hyperframes/history/01446ab1-a7dc-4d7a-95bd-771a7bae2609/blobs/df/df79dec84a9681e954f438fca33ca763eec6f01c3997c9aa37140aa84711492f"
+    },
+    "compositions/s09-results.html": {
+      "hash": "bd814ee24ff41f04fa6bd7ff02d462b8798e0e9550a9cdd6df9bd11752a6705d",
+      "content": "/root/.cache/hyperframes/history/01446ab1-a7dc-4d7a-95bd-771a7bae2609/blobs/bd/bd814ee24ff41f04fa6bd7ff02d462b8798e0e9550a9cdd6df9bd11752a6705d"
+    },
+    "compositions/s10-outcome.html": {
+      "hash": "5c2637d5a0eddd4c971e5c2f715483979092c13e642bba812f03948fc16237a1",
+      "content": "/root/.cache/hyperframes/history/01446ab1-a7dc-4d7a-95bd-771a7bae2609/blobs/5c/5c2637d5a0eddd4c971e5c2f715483979092c13e642bba812f03948fc16237a1"
+    },
+    "compositions/s11-anywhere.html": {
+      "hash": "04696760869f6a67e5e8b75d49b6eed6d90d36ecd6ec0d19bd3784e3c54b58f2",
+      "content": "/root/.cache/hyperframes/history/01446ab1-a7dc-4d7a-95bd-771a7bae2609/blobs/04/04696760869f6a67e5e8b75d49b6eed6d90d36ecd6ec0d19bd3784e3c54b58f2"
+    },
+    "compositions/s12-value.html": {
+      "hash": "289968c16f6eba6f8bf0356d6b387b26eb887030fd1d0f29f7f3acc57b32d7db",
+      "content": "/root/.cache/hyperframes/history/01446ab1-a7dc-4d7a-95bd-771a7bae2609/blobs/28/289968c16f6eba6f8bf0356d6b387b26eb887030fd1d0f29f7f3acc57b32d7db"
+    },
+    "compositions/s13-cta.html": {
+      "hash": "dcf504d50c65ad70a0a9319643f514498b0d803dd20f25789e6249c478bac82b",
+      "content": "/root/.cache/hyperframes/history/01446ab1-a7dc-4d7a-95bd-771a7bae2609/blobs/dc/dcf504d50c65ad70a0a9319643f514498b0d803dd20f25789e6249c478bac82b"
+    },
+    "hyperframes.json": {
+      "hash": "53dbce1e19aa713cbb12ee0bc4d206143b45ab15e6ffbfcaa8f69572d4d24d50",
+      "content": "/root/.cache/hyperframes/history/01446ab1-a7dc-4d7a-95bd-771a7bae2609/blobs/53/53dbce1e19aa713cbb12ee0bc4d206143b45ab15e6ffbfcaa8f69572d4d24d50"
+    },
+    "index.html": {
+      "hash": "44a8a008359c18b0c5b71bc4bbae490abf3fcd9f3233c146647587acdb548cd0",
+      "content": "/root/.cache/hyperframes/history/01446ab1-a7dc-4d7a-95bd-771a7bae2609/blobs/44/44a8a008359c18b0c5b71bc4bbae490abf3fcd9f3233c146647587acdb548cd0"
+    },
+    "meta.json": {
+      "hash": "fe7bb65ea0fa819b0af552e83a259723215a15f9cbe0e2a845696f285caee889",
+      "content": "/root/.cache/hyperframes/history/01446ab1-a7dc-4d7a-95bd-771a7bae2609/blobs/fe/fe7bb65ea0fa819b0af552e83a259723215a15f9cbe0e2a845696f285caee889"
+    },
+    "package.json": {
+      "hash": "92de6989aa102af3e1319a7746400fb9a54a0b7781d95bdcd73a0883a5c06999",
+      "content": "/root/.cache/hyperframes/history/01446ab1-a7dc-4d7a-95bd-771a7bae2609/blobs/92/92de6989aa102af3e1319a7746400fb9a54a0b7781d95bdcd73a0883a5c06999"
+    },
+    "assets/presenter.mp4": {
+      "hash": "c538811827f718696b3bde5ccf20b9a104fccd9eae62d610af334c702dfe34d4",
+      "content": "/root/.cache/hyperframes/history/01446ab1-a7dc-4d7a-95bd-771a7bae2609/blobs/c5/c538811827f718696b3bde5ccf20b9a104fccd9eae62d610af334c702dfe34d4"
+    },
+    "assets/vendor/gsap.min.js": {
+      "hash": "c174bfce53a729418d57a8ad8625e7247c793a22fef8e2851e3cfa3de9cd8280",
+      "content": "/root/.cache/hyperframes/history/01446ab1-a7dc-4d7a-95bd-771a7bae2609/blobs/c1/c174bfce53a729418d57a8ad8625e7247c793a22fef8e2851e3cfa3de9cd8280"
+    }
+  },
+  "revisions": {
+    "b07c48af-38f6-44e7-811b-7b0d96d19956": {
+      "actor": {
+        "kind": "outside",
+        "name": "Outside"
+      },
+      "label": "Changed outside the app",
+      "startedAt": 1793230965971,
+      "endedAt": 1793230966004,
+      "files": {
+        "assets/vendor/gsap.min.js": {
+          "before": null,
+          "after": "/root/.cache/hyperframes/history/01446ab1-a7dc-4d7a-95bd-771a7bae2609/blobs/c1/c174bfce53a729418d57a8ad8625e7247c793a22fef8e2851e3cfa3de9cd8280"
+        },
+        "compositions/s01-hook.html": {
+          "before": "/root/.cache/hyperframes/history/01446ab1-a7dc-4d7a-95bd-771a7bae2609/blobs/f3/f339f4d7db2a899f7b8beef462df328c6d281212818a37e74872c3f402598130",
+          "after": "/root/.cache/hyperframes/history/01446ab1-a7dc-4d7a-95bd-771a7bae2609/blobs/bb/bb4e04beddc0a25b1212dbdc22c6173afd02fb60cd83c9104d284a05f29f3e41"
+        },
+        "compositions/s02-reveal.html": {
+          "before": "/root/.cache/hyperframes/history/01446ab1-a7dc-4d7a-95bd-771a7bae2609/blobs/2c/2cd2369e9473afc59c57cefe43bbd3f5ad83ac479e727f8826585e457265a1b0",
+          "after": "/root/.cache/hyperframes/history/01446ab1-a7dc-4d7a-95bd-771a7bae2609/blobs/7d/7de724a4ee5b75ce715c78a42d5713d52d96bf89628376db4079946ebea0ea18"
+        },
+        "compositions/s03-connect.html": {
+          "before": "/root/.cache/hyperframes/history/01446ab1-a7dc-4d7a-95bd-771a7bae2609/blobs/a7/a7c23755f7a4fb1f3a4221c2bb61ed00cdda350af6ae2e68e132ad6cc6bab375",
+          "after": "/root/.cache/hyperframes/history/01446ab1-a7dc-4d7a-95bd-771a7bae2609/blobs/e6/e6be16daef92ff8ca19562c60c5269412d28e59329cc89d0dd4afeeb260c6be7"
+        },
+        "compositions/s05-overview.html": {
+          "before": "/root/.cache/hyperframes/history/01446ab1-a7dc-4d7a-95bd-771a7bae2609/blobs/34/34237500e3de775ead55016d9c2c7aca064f8844816b49fcddc1baeef11719c2",
+          "after": "/root/.cache/hyperframes/history/01446ab1-a7dc-4d7a-95bd-771a7bae2609/blobs/a0/a05b31e267dd4fe9e26dbd321d410db607fad19ea9139a0909a1254ad77b7473"
+        },
+        "compositions/s06-attention.html": {
+          "before": "/root/.cache/hyperframes/history/01446ab1-a7dc-4d7a-95bd-771a7bae2609/blobs/16/16e5a7520b0590f31f49b4746c608399408815ecf54df3fb54d50265c736a8a0",
+          "after": "/root/.cache/hyperframes/history/01446ab1-a7dc-4d7a-95bd-771a7bae2609/blobs/65/65a6235c5e241f7c136e204700289dae38ed8b7f290dbe64df40eb4984605996"
+        },
+        "compositions/s07-act.html": {
+          "before": "/root/.cache/hyperframes/history/01446ab1-a7dc-4d7a-95bd-771a7bae2609/blobs/8f/8f74ed29f7a760848dafe8ce7b2d06bfd94cfca28f8bd8b996c73563bacc88fd",
+          "after": "/root/.cache/hyperframes/history/01446ab1-a7dc-4d7a-95bd-771a7bae2609/blobs/9f/9ff3a4535d8afb2515f7aa874ed07d7af8b8f2119aad42f0c56a11ff56e76564"
+        },
+        "compositions/s09-results.html": {
+          "before": "/root/.cache/hyperframes/history/01446ab1-a7dc-4d7a-95bd-771a7bae2609/blobs/e6/e6672f45441b7210dbc318392e6ac9a31351c36bbfd8b61cbbd09177135fdd89",
+          "after": "/root/.cache/hyperframes/history/01446ab1-a7dc-4d7a-95bd-771a7bae2609/blobs/bd/bd814ee24ff41f04fa6bd7ff02d462b8798e0e9550a9cdd6df9bd11752a6705d"
+        },
+        "compositions/s10-outcome.html": {
+          "before": "/root/.cache/hyperframes/history/01446ab1-a7dc-4d7a-95bd-771a7bae2609/blobs/77/7772aaa180e0286acfd7c150361d0f0d6d108d10689edffe2aa15d2b570fd599",
+          "after": "/root/.cache/hyperframes/history/01446ab1-a7dc-4d7a-95bd-771a7bae2609/blobs/5c/5c2637d5a0eddd4c971e5c2f715483979092c13e642bba812f03948fc16237a1"
+        },
+        "compositions/s11-anywhere.html": {
+          "before": "/root/.cache/hyperframes/history/01446ab1-a7dc-4d7a-95bd-771a7bae2609/blobs/ed/ed446a15a08e97e1aefb6d8cc25657087eae8583a5a4dee00c8f5b340642ea1d",
+          "after": "/root/.cache/hyperframes/history/01446ab1-a7dc-4d7a-95bd-771a7bae2609/blobs/70/7054e5091e5fe18cb4f243ef51dbb55e5b9c07facbf03f24283fc8d5f7964e07"
+        },
+        "index.html": {
+          "before": "/root/.cache/hyperframes/history/01446ab1-a7dc-4d7a-95bd-771a7bae2609/blobs/69/69450945c4920b4df82815d44f56d4b0f02a2a177213324b22cb94051eca2396",
+          "after": "/root/.cache/hyperframes/history/01446ab1-a7dc-4d7a-95bd-771a7bae2609/blobs/44/44a8a008359c18b0c5b71bc4bbae490abf3fcd9f3233c146647587acdb548cd0"
+        }
+      }
+    },
+    "8ed09553-e72a-4a5a-8968-061f28cdd395": {
+      "actor": {
+        "kind": "outside",
+        "name": "Outside"
+      },
+      "label": "Changed outside the app",
+      "startedAt": 1793230997804,
+      "endedAt": 1793230997818,
+      "files": {
+        "compositions/s03-connect.html": {
+          "before": "/root/.cache/hyperframes/history/01446ab1-a7dc-4d7a-95bd-771a7bae2609/blobs/e6/e6be16daef92ff8ca19562c60c5269412d28e59329cc89d0dd4afeeb260c6be7",
+          "after": "/root/.cache/hyperframes/history/01446ab1-a7dc-4d7a-95bd-771a7bae2609/blobs/3a/3a809177987a99b420c3c463d1e9f545408db193d0019e2223830485175297c5"
+        },
+        "compositions/s07-act.html": {
+          "before": "/root/.cache/hyperframes/history/01446ab1-a7dc-4d7a-95bd-771a7bae2609/blobs/9f/9ff3a4535d8afb2515f7aa874ed07d7af8b8f2119aad42f0c56a11ff56e76564",
+          "after": "/root/.cache/hyperframes/history/01446ab1-a7dc-4d7a-95bd-771a7bae2609/blobs/b5/b58d6c26ea496c66ad65f48a96317128579e0c98cec8f74e17d55e820e2ba6b9"
+        },
+        "compositions/s11-anywhere.html": {
+          "before": "/root/.cache/hyperframes/history/01446ab1-a7dc-4d7a-95bd-771a7bae2609/blobs/70/7054e5091e5fe18cb4f243ef51dbb55e5b9c07facbf03f24283fc8d5f7964e07",
+          "after": "/root/.cache/hyperframes/history/01446ab1-a7dc-4d7a-95bd-771a7bae2609/blobs/04/04696760869f6a67e5e8b75d49b6eed6d90d36ecd6ec0d19bd3784e3c54b58f2"
+        }
+      }
+    },
+    "155df341-b395-47f1-a609-6a3d74c18dab": {
+      "actor": {
+        "kind": "outside",
+        "name": "Outside"
+      },
+      "label": "Changed outside the app",
+      "startedAt": 1793231099989,
+      "endedAt": 1793231100003,
+      "files": {
+        "compositions/s01-hook.html": {
+          "before": "/root/.cache/hyperframes/history/01446ab1-a7dc-4d7a-95bd-771a7bae2609/blobs/bb/bb4e04beddc0a25b1212dbdc22c6173afd02fb60cd83c9104d284a05f29f3e41",
+          "after": "/root/.cache/hyperframes/history/01446ab1-a7dc-4d7a-95bd-771a7bae2609/blobs/9b/9bfc1bc8636d4baf5e02ed69083d076bd3af85fc8400df45215858ecb7edb275"
+        },
+        "compositions/s02-reveal.html": {
+          "before": "/root/.cache/hyperframes/history/01446ab1-a7dc-4d7a-95bd-771a7bae2609/blobs/7d/7de724a4ee5b75ce715c78a42d5713d52d96bf89628376db4079946ebea0ea18",
+          "after": "/root/.cache/hyperframes/history/01446ab1-a7dc-4d7a-95bd-771a7bae2609/blobs/5d/5d0fbe99a5ed01a832a959130f80452cbde542864508e715890bf9d8afd1b63a"
+        },
+        "compositions/s06-attention.html": {
+          "before": "/root/.cache/hyperframes/history/01446ab1-a7dc-4d7a-95bd-771a7bae2609/blobs/65/65a6235c5e241f7c136e204700289dae38ed8b7f290dbe64df40eb4984605996",
+          "after": "/root/.cache/hyperframes/history/01446ab1-a7dc-4d7a-95bd-771a7bae2609/blobs/44/44145ab80815ee6d7fe7f6ca7008b2275d7259331c10f153a683ede424f635dc"
+        },
+        "compositions/s12-value.html": {
+          "before": "/root/.cache/hyperframes/history/01446ab1-a7dc-4d7a-95bd-771a7bae2609/blobs/8e/8e137d948b89b67fc56600b7d98a2449758c1b75fbe3f628b098873740f86592",
+          "after": "/root/.cache/hyperframes/history/01446ab1-a7dc-4d7a-95bd-771a7bae2609/blobs/28/289968c16f6eba6f8bf0356d6b387b26eb887030fd1d0f29f7f3acc57b32d7db"
+        }
+      }
+    }
+  },
+  "checks": {
+    "latest": {
+      "revision": "b07c48af-38f6-44e7-811b-7b0d96d19956",
+      "id": "cb3b6ac9-318d-42cc-8530-1fcfbf4bc401"
+    },
+    "revisions": {
+      "b07c48af-38f6-44e7-811b-7b0d96d19956": [
+        {
+          "id": "cb3b6ac9-318d-42cc-8530-1fcfbf4bc401",
+          "scope": "project",
+          "report": "/home/user/CLAUDE-SKILLS/aura-saas-ad/.hyperframes/artifacts/checks/cb3b6ac9-318d-42cc-8530-1fcfbf4bc401.json",
+          "metadata": {
+            "ok": true,
+            "browserSkipped": false,
+            "options": {
+              "samples": 9,
+              "atTransitions": false,
+              "maxIssues": 80,
+              "collapseStatic": true,
+              "tolerance": 2,
+              "timeout": 10000,
+              "contrast": true,
+              "strict": false,
+              "snapshots": false,
+              "browserGpuMode": "auto"
+            }
+          },
+          "createdAt": 1793230986455,
+          "contentHash": "1a133fefc2940873228ce5ac1343ea48e1ff6a69c7d62b12a6608b70f5b392a3",
+          "revision": "b07c48af-38f6-44e7-811b-7b0d96d19956",
+          "inputFingerprint": "b3449e6614eb95fd84cb4269f01b0e7abfe912ba3affb7a290335bfb995b1b5a",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        }
+      ]
+    },
+    "unversioned": [
+      {
+        "id": "99f45bad-8f3c-443d-8dcd-721bbdc05ceb",
+        "scope": "project",
+        "report": "/home/user/CLAUDE-SKILLS/aura-saas-ad/.hyperframes/artifacts/checks/99f45bad-8f3c-443d-8dcd-721bbdc05ceb.json",
+        "metadata": {
+          "ok": false,
+          "browserSkipped": false,
+          "options": {
+            "samples": 9,
+            "atTransitions": false,
+            "maxIssues": 80,
+            "collapseStatic": true,
+            "tolerance": 2,
+            "timeout": 10000,
+            "contrast": true,
+            "strict": false,
+            "snapshots": false,
+            "browserGpuMode": "auto"
+          }
+        },
+        "createdAt": 1793230932819,
+        "contentHash": "b7e89eb0e5f7a7b9f0d765037fde0cd440b03e04caa3eaed3ad9f45e67ee9d51",
+        "revision": null,
+        "inputFingerprint": "9abee391fe85005ee793924b9d56ab946e5a2a9a5f84b8f34bea5dc55747c0b7",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      }
+    ]
+  },
+  "snapshots": {
+    "latest": {
+      "revision": "155df341-b395-47f1-a609-6a3d74c18dab",
+      "id": "eed37be4-76fe-41cd-8f83-5eb0eb23841f-4"
+    },
+    "revisions": {
+      "8ed09553-e72a-4a5a-8968-061f28cdd395": [
+        {
+          "scope": "full",
+          "id": "b29f2718-7a32-4a6d-977d-8b0f9c0df0a6-0",
+          "image": "/home/user/CLAUDE-SKILLS/aura-saas-ad/.hyperframes/artifacts/snapshots/8452820f-acba-4ab0-a864-ce9bee425642/beat-01-at-0.3s.png",
+          "time": 0.3,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "review": {
+              "role": "beat",
+              "label": "s01"
+            },
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1793231063181,
+          "contentHash": "2145eabc9502ce9964aa767650433026201f46ca10fd17c913c562d056904922",
+          "revision": "8ed09553-e72a-4a5a-8968-061f28cdd395",
+          "inputFingerprint": "1219eeedf87e36f85e8d3609901797c01dbca84483fbc1de9e3570115220b273",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "b29f2718-7a32-4a6d-977d-8b0f9c0df0a6-1",
+          "image": "/home/user/CLAUDE-SKILLS/aura-saas-ad/.hyperframes/artifacts/snapshots/8452820f-acba-4ab0-a864-ce9bee425642/beat-02-at-2.5s.png",
+          "time": 2.5,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "review": {
+              "role": "beat",
+              "label": "s01 mid"
+            },
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1793231063181,
+          "contentHash": "e19c025c3095541879479924c63b94961ec63b5203c87d78fd0e165f4eca79d7",
+          "revision": "8ed09553-e72a-4a5a-8968-061f28cdd395",
+          "inputFingerprint": "1219eeedf87e36f85e8d3609901797c01dbca84483fbc1de9e3570115220b273",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "b29f2718-7a32-4a6d-977d-8b0f9c0df0a6-2",
+          "image": "/home/user/CLAUDE-SKILLS/aura-saas-ad/.hyperframes/artifacts/snapshots/8452820f-acba-4ab0-a864-ce9bee425642/beat-03-at-5.3s.png",
+          "time": 5.3,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "review": {
+              "role": "beat",
+              "label": "s02"
+            },
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1793231063181,
+          "contentHash": "6ba9f6fb8156d4b6ba3cb3fbc2c3e6ae5f2f015da634c6a00d14d8dc2d06472b",
+          "revision": "8ed09553-e72a-4a5a-8968-061f28cdd395",
+          "inputFingerprint": "1219eeedf87e36f85e8d3609901797c01dbca84483fbc1de9e3570115220b273",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "b29f2718-7a32-4a6d-977d-8b0f9c0df0a6-3",
+          "image": "/home/user/CLAUDE-SKILLS/aura-saas-ad/.hyperframes/artifacts/snapshots/8452820f-acba-4ab0-a864-ce9bee425642/beat-04-at-8.5s.png",
+          "time": 8.5,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "review": {
+              "role": "beat",
+              "label": "s02 mid"
+            },
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1793231063181,
+          "contentHash": "c7882790552c55edd57113cc6f5e435333f6dfc1e1f7017387c6f51a3f5400d6",
+          "revision": "8ed09553-e72a-4a5a-8968-061f28cdd395",
+          "inputFingerprint": "1219eeedf87e36f85e8d3609901797c01dbca84483fbc1de9e3570115220b273",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "b29f2718-7a32-4a6d-977d-8b0f9c0df0a6-4",
+          "image": "/home/user/CLAUDE-SKILLS/aura-saas-ad/.hyperframes/artifacts/snapshots/8452820f-acba-4ab0-a864-ce9bee425642/beat-05-at-12.3s.png",
+          "time": 12.3,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "review": {
+              "role": "beat",
+              "label": "s03"
+            },
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1793231063181,
+          "contentHash": "f7f529ce0b30111f842d333cbbf8b14665324a9216f58ecf256b94a9e29107d0",
+          "revision": "8ed09553-e72a-4a5a-8968-061f28cdd395",
+          "inputFingerprint": "1219eeedf87e36f85e8d3609901797c01dbca84483fbc1de9e3570115220b273",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "b29f2718-7a32-4a6d-977d-8b0f9c0df0a6-5",
+          "image": "/home/user/CLAUDE-SKILLS/aura-saas-ad/.hyperframes/artifacts/snapshots/8452820f-acba-4ab0-a864-ce9bee425642/beat-06-at-15s.png",
+          "time": 15,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "review": {
+              "role": "beat",
+              "label": "s03 mid"
+            },
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1793231063181,
+          "contentHash": "d90674c6245f3685c871502b5f7c9a6d23a72a200be6a1d35a4356194a04000e",
+          "revision": "8ed09553-e72a-4a5a-8968-061f28cdd395",
+          "inputFingerprint": "1219eeedf87e36f85e8d3609901797c01dbca84483fbc1de9e3570115220b273",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "b29f2718-7a32-4a6d-977d-8b0f9c0df0a6-6",
+          "image": "/home/user/CLAUDE-SKILLS/aura-saas-ad/.hyperframes/artifacts/snapshots/8452820f-acba-4ab0-a864-ce9bee425642/beat-07-at-18.3s.png",
+          "time": 18.3,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "review": {
+              "role": "beat",
+              "label": "s04"
+            },
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1793231063181,
+          "contentHash": "aace234f4e8bf79c286180f5c362510351d1a72721f927d2a7c8bf0631894074",
+          "revision": "8ed09553-e72a-4a5a-8968-061f28cdd395",
+          "inputFingerprint": "1219eeedf87e36f85e8d3609901797c01dbca84483fbc1de9e3570115220b273",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "b29f2718-7a32-4a6d-977d-8b0f9c0df0a6-7",
+          "image": "/home/user/CLAUDE-SKILLS/aura-saas-ad/.hyperframes/artifacts/snapshots/8452820f-acba-4ab0-a864-ce9bee425642/beat-08-at-21.5s.png",
+          "time": 21.5,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "review": {
+              "role": "beat",
+              "label": "s04 mid"
+            },
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1793231063181,
+          "contentHash": "b4a617c4fb6bb089ddb428520bf0958dbf74e5f57eaf9883a618d031bb1bdc30",
+          "revision": "8ed09553-e72a-4a5a-8968-061f28cdd395",
+          "inputFingerprint": "1219eeedf87e36f85e8d3609901797c01dbca84483fbc1de9e3570115220b273",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "b29f2718-7a32-4a6d-977d-8b0f9c0df0a6-8",
+          "image": "/home/user/CLAUDE-SKILLS/aura-saas-ad/.hyperframes/artifacts/snapshots/8452820f-acba-4ab0-a864-ce9bee425642/beat-09-at-25.3s.png",
+          "time": 25.3,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "review": {
+              "role": "beat",
+              "label": "s05"
+            },
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1793231063181,
+          "contentHash": "dd714c9af059fc82fcf9f2384c77c9b9ccf8b4c4e510ea091385d6c8ff050fc3",
+          "revision": "8ed09553-e72a-4a5a-8968-061f28cdd395",
+          "inputFingerprint": "1219eeedf87e36f85e8d3609901797c01dbca84483fbc1de9e3570115220b273",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "b29f2718-7a32-4a6d-977d-8b0f9c0df0a6-9",
+          "image": "/home/user/CLAUDE-SKILLS/aura-saas-ad/.hyperframes/artifacts/snapshots/8452820f-acba-4ab0-a864-ce9bee425642/beat-10-at-27.5s.png",
+          "time": 27.5,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "review": {
+              "role": "beat",
+              "label": "s05 mid"
+            },
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1793231063181,
+          "contentHash": "257c17e0b72ba9eb11ed570e2fb6b403115e675a2df504141394343232f53ce6",
+          "revision": "8ed09553-e72a-4a5a-8968-061f28cdd395",
+          "inputFingerprint": "1219eeedf87e36f85e8d3609901797c01dbca84483fbc1de9e3570115220b273",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "b29f2718-7a32-4a6d-977d-8b0f9c0df0a6-10",
+          "image": "/home/user/CLAUDE-SKILLS/aura-saas-ad/.hyperframes/artifacts/snapshots/8452820f-acba-4ab0-a864-ce9bee425642/beat-11-at-30.3s.png",
+          "time": 30.3,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "review": {
+              "role": "beat",
+              "label": "s06"
+            },
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1793231063181,
+          "contentHash": "437344c5c85df586796c3ba5e472067b2f352d04451b8d8d98f0146c661a86aa",
+          "revision": "8ed09553-e72a-4a5a-8968-061f28cdd395",
+          "inputFingerprint": "1219eeedf87e36f85e8d3609901797c01dbca84483fbc1de9e3570115220b273",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "b29f2718-7a32-4a6d-977d-8b0f9c0df0a6-11",
+          "image": "/home/user/CLAUDE-SKILLS/aura-saas-ad/.hyperframes/artifacts/snapshots/8452820f-acba-4ab0-a864-ce9bee425642/beat-12-at-32.5s.png",
+          "time": 32.5,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "review": {
+              "role": "beat",
+              "label": "s06 mid"
+            },
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1793231063181,
+          "contentHash": "812cf96a4ef7b1fa6d0494373758aba3c9e6f83cd25fd452757c25feaa0df09b",
+          "revision": "8ed09553-e72a-4a5a-8968-061f28cdd395",
+          "inputFingerprint": "1219eeedf87e36f85e8d3609901797c01dbca84483fbc1de9e3570115220b273",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "b29f2718-7a32-4a6d-977d-8b0f9c0df0a6-12",
+          "image": "/home/user/CLAUDE-SKILLS/aura-saas-ad/.hyperframes/artifacts/snapshots/8452820f-acba-4ab0-a864-ce9bee425642/beat-13-at-35.3s.png",
+          "time": 35.3,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "review": {
+              "role": "beat",
+              "label": "s07"
+            },
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1793231063181,
+          "contentHash": "0cf12114ae17faec119537f68264c92c24bac6520aa8820f96ee50cc1f1a8ab3",
+          "revision": "8ed09553-e72a-4a5a-8968-061f28cdd395",
+          "inputFingerprint": "1219eeedf87e36f85e8d3609901797c01dbca84483fbc1de9e3570115220b273",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "b29f2718-7a32-4a6d-977d-8b0f9c0df0a6-13",
+          "image": "/home/user/CLAUDE-SKILLS/aura-saas-ad/.hyperframes/artifacts/snapshots/8452820f-acba-4ab0-a864-ce9bee425642/beat-14-at-37.5s.png",
+          "time": 37.5,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "review": {
+              "role": "beat",
+              "label": "s07 mid"
+            },
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1793231063181,
+          "contentHash": "5d97254e34a6bd4dbdfac7d02676287d418c8848bb328afa744712e91bf5df04",
+          "revision": "8ed09553-e72a-4a5a-8968-061f28cdd395",
+          "inputFingerprint": "1219eeedf87e36f85e8d3609901797c01dbca84483fbc1de9e3570115220b273",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "b29f2718-7a32-4a6d-977d-8b0f9c0df0a6-14",
+          "image": "/home/user/CLAUDE-SKILLS/aura-saas-ad/.hyperframes/artifacts/snapshots/8452820f-acba-4ab0-a864-ce9bee425642/beat-15-at-40.3s.png",
+          "time": 40.3,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "review": {
+              "role": "beat",
+              "label": "s08"
+            },
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1793231063181,
+          "contentHash": "3a13049ba2151349138766a0dc64409f9052ebeea8d38aa7c791635f4239ed53",
+          "revision": "8ed09553-e72a-4a5a-8968-061f28cdd395",
+          "inputFingerprint": "1219eeedf87e36f85e8d3609901797c01dbca84483fbc1de9e3570115220b273",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "b29f2718-7a32-4a6d-977d-8b0f9c0df0a6-15",
+          "image": "/home/user/CLAUDE-SKILLS/aura-saas-ad/.hyperframes/artifacts/snapshots/8452820f-acba-4ab0-a864-ce9bee425642/beat-16-at-43.5s.png",
+          "time": 43.5,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "review": {
+              "role": "beat",
+              "label": "s08 mid"
+            },
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1793231063181,
+          "contentHash": "5f26e063c948faeea6535cb57f77e128b8c706f74a9b9263eac179424ccd5ab0",
+          "revision": "8ed09553-e72a-4a5a-8968-061f28cdd395",
+          "inputFingerprint": "1219eeedf87e36f85e8d3609901797c01dbca84483fbc1de9e3570115220b273",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "b29f2718-7a32-4a6d-977d-8b0f9c0df0a6-16",
+          "image": "/home/user/CLAUDE-SKILLS/aura-saas-ad/.hyperframes/artifacts/snapshots/8452820f-acba-4ab0-a864-ce9bee425642/beat-17-at-47.3s.png",
+          "time": 47.3,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "review": {
+              "role": "beat",
+              "label": "s09"
+            },
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1793231063181,
+          "contentHash": "aeb32036ad0624958c8edefff7ede956f74f8d7abb9519a79e874a9554c12ef4",
+          "revision": "8ed09553-e72a-4a5a-8968-061f28cdd395",
+          "inputFingerprint": "1219eeedf87e36f85e8d3609901797c01dbca84483fbc1de9e3570115220b273",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "b29f2718-7a32-4a6d-977d-8b0f9c0df0a6-17",
+          "image": "/home/user/CLAUDE-SKILLS/aura-saas-ad/.hyperframes/artifacts/snapshots/8452820f-acba-4ab0-a864-ce9bee425642/beat-18-at-51s.png",
+          "time": 51,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "review": {
+              "role": "beat",
+              "label": "s09 mid"
+            },
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1793231063181,
+          "contentHash": "b55585c72f066459f0cbe47e15d0aa3574333f9a1005cea14e5b271dd4c94171",
+          "revision": "8ed09553-e72a-4a5a-8968-061f28cdd395",
+          "inputFingerprint": "1219eeedf87e36f85e8d3609901797c01dbca84483fbc1de9e3570115220b273",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "b29f2718-7a32-4a6d-977d-8b0f9c0df0a6-18",
+          "image": "/home/user/CLAUDE-SKILLS/aura-saas-ad/.hyperframes/artifacts/snapshots/8452820f-acba-4ab0-a864-ce9bee425642/beat-19-at-55.3s.png",
+          "time": 55.3,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "review": {
+              "role": "beat",
+              "label": "s10"
+            },
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1793231063181,
+          "contentHash": "e214b9fb008375fbd3a808be779a7bcc620cb966bd08970a67d3b6fa25263cbc",
+          "revision": "8ed09553-e72a-4a5a-8968-061f28cdd395",
+          "inputFingerprint": "1219eeedf87e36f85e8d3609901797c01dbca84483fbc1de9e3570115220b273",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "b29f2718-7a32-4a6d-977d-8b0f9c0df0a6-19",
+          "image": "/home/user/CLAUDE-SKILLS/aura-saas-ad/.hyperframes/artifacts/snapshots/8452820f-acba-4ab0-a864-ce9bee425642/beat-20-at-60s.png",
+          "time": 60,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "review": {
+              "role": "beat",
+              "label": "s10 mid"
+            },
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1793231063181,
+          "contentHash": "af94efd199b1f39fd825751dae1c463c1477ce7c195427b812f274334cfc8026",
+          "revision": "8ed09553-e72a-4a5a-8968-061f28cdd395",
+          "inputFingerprint": "1219eeedf87e36f85e8d3609901797c01dbca84483fbc1de9e3570115220b273",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "b29f2718-7a32-4a6d-977d-8b0f9c0df0a6-20",
+          "image": "/home/user/CLAUDE-SKILLS/aura-saas-ad/.hyperframes/artifacts/snapshots/8452820f-acba-4ab0-a864-ce9bee425642/beat-21-at-65.3s.png",
+          "time": 65.3,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "review": {
+              "role": "beat",
+              "label": "s11"
+            },
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1793231063181,
+          "contentHash": "02f40a4cb7ee10542235bb0ac601424588d7979cbe90c32ff0640b5264b1e0c7",
+          "revision": "8ed09553-e72a-4a5a-8968-061f28cdd395",
+          "inputFingerprint": "1219eeedf87e36f85e8d3609901797c01dbca84483fbc1de9e3570115220b273",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "b29f2718-7a32-4a6d-977d-8b0f9c0df0a6-21",
+          "image": "/home/user/CLAUDE-SKILLS/aura-saas-ad/.hyperframes/artifacts/snapshots/8452820f-acba-4ab0-a864-ce9bee425642/beat-22-at-70.5s.png",
+          "time": 70.5,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "review": {
+              "role": "beat",
+              "label": "s11 mid"
+            },
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1793231063181,
+          "contentHash": "6cfe1bd283ab598e393c3cddd0c6e9a5e5686be8f7c8ff75cb8f6252f1d45d6c",
+          "revision": "8ed09553-e72a-4a5a-8968-061f28cdd395",
+          "inputFingerprint": "1219eeedf87e36f85e8d3609901797c01dbca84483fbc1de9e3570115220b273",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "b29f2718-7a32-4a6d-977d-8b0f9c0df0a6-22",
+          "image": "/home/user/CLAUDE-SKILLS/aura-saas-ad/.hyperframes/artifacts/snapshots/8452820f-acba-4ab0-a864-ce9bee425642/beat-23-at-76.3s.png",
+          "time": 76.3,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "review": {
+              "role": "beat",
+              "label": "s12"
+            },
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1793231063181,
+          "contentHash": "9747ba6a0554ce3b7e6ffeb4b7271742c0be617c4bfb55f2d8c7403150384759",
+          "revision": "8ed09553-e72a-4a5a-8968-061f28cdd395",
+          "inputFingerprint": "1219eeedf87e36f85e8d3609901797c01dbca84483fbc1de9e3570115220b273",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "b29f2718-7a32-4a6d-977d-8b0f9c0df0a6-23",
+          "image": "/home/user/CLAUDE-SKILLS/aura-saas-ad/.hyperframes/artifacts/snapshots/8452820f-acba-4ab0-a864-ce9bee425642/beat-24-at-80.5s.png",
+          "time": 80.5,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "review": {
+              "role": "beat",
+              "label": "s12 mid"
+            },
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1793231063181,
+          "contentHash": "0cd41bac017daa079cf341b3ffb094b134db359aa6c59242ccb2c8daaca401be",
+          "revision": "8ed09553-e72a-4a5a-8968-061f28cdd395",
+          "inputFingerprint": "1219eeedf87e36f85e8d3609901797c01dbca84483fbc1de9e3570115220b273",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "b29f2718-7a32-4a6d-977d-8b0f9c0df0a6-24",
+          "image": "/home/user/CLAUDE-SKILLS/aura-saas-ad/.hyperframes/artifacts/snapshots/8452820f-acba-4ab0-a864-ce9bee425642/beat-25-at-85.3s.png",
+          "time": 85.3,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "review": {
+              "role": "beat",
+              "label": "s13"
+            },
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1793231063181,
+          "contentHash": "9e0279b738fa1ac570bb3d0f8d3adc36c990f3a7bb1ef5a7f4791655eb1c5dbd",
+          "revision": "8ed09553-e72a-4a5a-8968-061f28cdd395",
+          "inputFingerprint": "1219eeedf87e36f85e8d3609901797c01dbca84483fbc1de9e3570115220b273",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "b29f2718-7a32-4a6d-977d-8b0f9c0df0a6-25",
+          "image": "/home/user/CLAUDE-SKILLS/aura-saas-ad/.hyperframes/artifacts/snapshots/8452820f-acba-4ab0-a864-ce9bee425642/beat-26-at-87.5s.png",
+          "time": 87.5,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "review": {
+              "role": "beat",
+              "label": "s13 mid"
+            },
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1793231063181,
+          "contentHash": "545422fcbf72ffa574eb102bf9342263bc2f9ba3ae5e0d94da905aa5f7e40a8a",
+          "revision": "8ed09553-e72a-4a5a-8968-061f28cdd395",
+          "inputFingerprint": "1219eeedf87e36f85e8d3609901797c01dbca84483fbc1de9e3570115220b273",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "b29f2718-7a32-4a6d-977d-8b0f9c0df0a6-26",
+          "image": "/home/user/CLAUDE-SKILLS/aura-saas-ad/.hyperframes/artifacts/snapshots/8452820f-acba-4ab0-a864-ce9bee425642/seam-01-1-at-4.8s.png",
+          "time": 4.8,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "review": {
+              "role": "seam",
+              "label": "cut -0.2"
+            },
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1793231063182,
+          "contentHash": "e032f2e61bd2276d6c019f7ac108412cb5c8878ce3280134c33db39eaa138a4d",
+          "revision": "8ed09553-e72a-4a5a-8968-061f28cdd395",
+          "inputFingerprint": "1219eeedf87e36f85e8d3609901797c01dbca84483fbc1de9e3570115220b273",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "b29f2718-7a32-4a6d-977d-8b0f9c0df0a6-27",
+          "image": "/home/user/CLAUDE-SKILLS/aura-saas-ad/.hyperframes/artifacts/snapshots/8452820f-acba-4ab0-a864-ce9bee425642/seam-01-2-at-4.9s.png",
+          "time": 4.9,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "review": {
+              "role": "seam",
+              "label": "-0.1"
+            },
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1793231063182,
+          "contentHash": "48032f0756aeb1b0ffe0f404d0f236be94fd557d662a3d41d8f1785ad078a5e4",
+          "revision": "8ed09553-e72a-4a5a-8968-061f28cdd395",
+          "inputFingerprint": "1219eeedf87e36f85e8d3609901797c01dbca84483fbc1de9e3570115220b273",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "b29f2718-7a32-4a6d-977d-8b0f9c0df0a6-28",
+          "image": "/home/user/CLAUDE-SKILLS/aura-saas-ad/.hyperframes/artifacts/snapshots/8452820f-acba-4ab0-a864-ce9bee425642/seam-01-3-at-5s.png",
+          "time": 5,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "review": {
+              "role": "seam",
+              "label": "cut s01 -> s02"
+            },
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1793231063182,
+          "contentHash": "24877f65111f86ed8f0e8509cec936072ace6bff43cc8bccac97327d066b5c28",
+          "revision": "8ed09553-e72a-4a5a-8968-061f28cdd395",
+          "inputFingerprint": "1219eeedf87e36f85e8d3609901797c01dbca84483fbc1de9e3570115220b273",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "b29f2718-7a32-4a6d-977d-8b0f9c0df0a6-29",
+          "image": "/home/user/CLAUDE-SKILLS/aura-saas-ad/.hyperframes/artifacts/snapshots/8452820f-acba-4ab0-a864-ce9bee425642/seam-01-4-at-5.1s.png",
+          "time": 5.1,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "review": {
+              "role": "seam",
+              "label": "+0.1"
+            },
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1793231063182,
+          "contentHash": "817c6ccb80f5c2d5592fa1fd0b2deef788aee3081cebecaf397e714767adaf1c",
+          "revision": "8ed09553-e72a-4a5a-8968-061f28cdd395",
+          "inputFingerprint": "1219eeedf87e36f85e8d3609901797c01dbca84483fbc1de9e3570115220b273",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "b29f2718-7a32-4a6d-977d-8b0f9c0df0a6-30",
+          "image": "/home/user/CLAUDE-SKILLS/aura-saas-ad/.hyperframes/artifacts/snapshots/8452820f-acba-4ab0-a864-ce9bee425642/seam-01-5-at-5.2s.png",
+          "time": 5.2,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "review": {
+              "role": "seam",
+              "label": "+0.2"
+            },
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1793231063182,
+          "contentHash": "35caeff7f63f318c3d487630fb52ccab48ccaeb27874a4a6eedf539b518513a4",
+          "revision": "8ed09553-e72a-4a5a-8968-061f28cdd395",
+          "inputFingerprint": "1219eeedf87e36f85e8d3609901797c01dbca84483fbc1de9e3570115220b273",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "b29f2718-7a32-4a6d-977d-8b0f9c0df0a6-31",
+          "image": "/home/user/CLAUDE-SKILLS/aura-saas-ad/.hyperframes/artifacts/snapshots/8452820f-acba-4ab0-a864-ce9bee425642/seam-02-1-at-11.8s.png",
+          "time": 11.8,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "review": {
+              "role": "seam",
+              "label": "cut -0.2"
+            },
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1793231063182,
+          "contentHash": "2df08423e2b1362431bc3ae37db42caddefb234d50cc403632efc7fbece5bb96",
+          "revision": "8ed09553-e72a-4a5a-8968-061f28cdd395",
+          "inputFingerprint": "1219eeedf87e36f85e8d3609901797c01dbca84483fbc1de9e3570115220b273",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "b29f2718-7a32-4a6d-977d-8b0f9c0df0a6-32",
+          "image": "/home/user/CLAUDE-SKILLS/aura-saas-ad/.hyperframes/artifacts/snapshots/8452820f-acba-4ab0-a864-ce9bee425642/seam-02-2-at-11.9s.png",
+          "time": 11.9,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "review": {
+              "role": "seam",
+              "label": "-0.1"
+            },
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1793231063182,
+          "contentHash": "b620c6c55f78f35f5a7127ab19144ec9ac37a9de4171f3530655f0858fe85104",
+          "revision": "8ed09553-e72a-4a5a-8968-061f28cdd395",
+          "inputFingerprint": "1219eeedf87e36f85e8d3609901797c01dbca84483fbc1de9e3570115220b273",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "b29f2718-7a32-4a6d-977d-8b0f9c0df0a6-33",
+          "image": "/home/user/CLAUDE-SKILLS/aura-saas-ad/.hyperframes/artifacts/snapshots/8452820f-acba-4ab0-a864-ce9bee425642/seam-02-3-at-12s.png",
+          "time": 12,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "review": {
+              "role": "seam",
+              "label": "cut s02 -> s03"
+            },
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1793231063182,
+          "contentHash": "57e028b296daf1f0b8c98da36506de7f77f69d18ba546d6fa1e33117585cc5b8",
+          "revision": "8ed09553-e72a-4a5a-8968-061f28cdd395",
+          "inputFingerprint": "1219eeedf87e36f85e8d3609901797c01dbca84483fbc1de9e3570115220b273",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "b29f2718-7a32-4a6d-977d-8b0f9c0df0a6-34",
+          "image": "/home/user/CLAUDE-SKILLS/aura-saas-ad/.hyperframes/artifacts/snapshots/8452820f-acba-4ab0-a864-ce9bee425642/seam-02-4-at-12.1s.png",
+          "time": 12.1,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "review": {
+              "role": "seam",
+              "label": "+0.1"
+            },
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1793231063182,
+          "contentHash": "fee45fdaaa8b39c0098784c6781be62bd0bec24a0ffd3cb7a940ee783b81217e",
+          "revision": "8ed09553-e72a-4a5a-8968-061f28cdd395",
+          "inputFingerprint": "1219eeedf87e36f85e8d3609901797c01dbca84483fbc1de9e3570115220b273",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "b29f2718-7a32-4a6d-977d-8b0f9c0df0a6-35",
+          "image": "/home/user/CLAUDE-SKILLS/aura-saas-ad/.hyperframes/artifacts/snapshots/8452820f-acba-4ab0-a864-ce9bee425642/seam-02-5-at-12.2s.png",
+          "time": 12.2,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "review": {
+              "role": "seam",
+              "label": "+0.2"
+            },
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1793231063182,
+          "contentHash": "fa5e7a038784f47a73cdf71c009504672638b8e533d57d60ba4d9621d6563398",
+          "revision": "8ed09553-e72a-4a5a-8968-061f28cdd395",
+          "inputFingerprint": "1219eeedf87e36f85e8d3609901797c01dbca84483fbc1de9e3570115220b273",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "b29f2718-7a32-4a6d-977d-8b0f9c0df0a6-36",
+          "image": "/home/user/CLAUDE-SKILLS/aura-saas-ad/.hyperframes/artifacts/snapshots/8452820f-acba-4ab0-a864-ce9bee425642/seam-03-1-at-17.8s.png",
+          "time": 17.8,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "review": {
+              "role": "seam",
+              "label": "cut -0.2"
+            },
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1793231063182,
+          "contentHash": "0bc230951da66249cf1cf9e463c671842d2c9abe2c92147e2ffac3890d7d38cc",
+          "revision": "8ed09553-e72a-4a5a-8968-061f28cdd395",
+          "inputFingerprint": "1219eeedf87e36f85e8d3609901797c01dbca84483fbc1de9e3570115220b273",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "b29f2718-7a32-4a6d-977d-8b0f9c0df0a6-37",
+          "image": "/home/user/CLAUDE-SKILLS/aura-saas-ad/.hyperframes/artifacts/snapshots/8452820f-acba-4ab0-a864-ce9bee425642/seam-03-2-at-17.9s.png",
+          "time": 17.9,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "review": {
+              "role": "seam",
+              "label": "-0.1"
+            },
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1793231063182,
+          "contentHash": "82d7ff1a31160c4a2a6f408edaca967b62457a8b507aa62a085c22c653ea18e0",
+          "revision": "8ed09553-e72a-4a5a-8968-061f28cdd395",
+          "inputFingerprint": "1219eeedf87e36f85e8d3609901797c01dbca84483fbc1de9e3570115220b273",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "b29f2718-7a32-4a6d-977d-8b0f9c0df0a6-38",
+          "image": "/home/user/CLAUDE-SKILLS/aura-saas-ad/.hyperframes/artifacts/snapshots/8452820f-acba-4ab0-a864-ce9bee425642/seam-03-3-at-18s.png",
+          "time": 18,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "review": {
+              "role": "seam",
+              "label": "cut s03 -> s04"
+            },
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1793231063182,
+          "contentHash": "fb8b5951766b15a568386a534ad192a19c1080c87979709d344ab5da84b756c3",
+          "revision": "8ed09553-e72a-4a5a-8968-061f28cdd395",
+          "inputFingerprint": "1219eeedf87e36f85e8d3609901797c01dbca84483fbc1de9e3570115220b273",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "b29f2718-7a32-4a6d-977d-8b0f9c0df0a6-39",
+          "image": "/home/user/CLAUDE-SKILLS/aura-saas-ad/.hyperframes/artifacts/snapshots/8452820f-acba-4ab0-a864-ce9bee425642/seam-03-4-at-18.1s.png",
+          "time": 18.1,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "review": {
+              "role": "seam",
+              "label": "+0.1"
+            },
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1793231063182,
+          "contentHash": "62fdee65f26de27638a21ae6828b895176f0014ada8e9d0cc87e592d8c5f69b7",
+          "revision": "8ed09553-e72a-4a5a-8968-061f28cdd395",
+          "inputFingerprint": "1219eeedf87e36f85e8d3609901797c01dbca84483fbc1de9e3570115220b273",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "b29f2718-7a32-4a6d-977d-8b0f9c0df0a6-40",
+          "image": "/home/user/CLAUDE-SKILLS/aura-saas-ad/.hyperframes/artifacts/snapshots/8452820f-acba-4ab0-a864-ce9bee425642/seam-03-5-at-18.2s.png",
+          "time": 18.2,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "review": {
+              "role": "seam",
+              "label": "+0.2"
+            },
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1793231063182,
+          "contentHash": "f93d12186abe27504e0309f117c7b671fe3654ff3e1c1e5b04f4b0a3d78cf1d0",
+          "revision": "8ed09553-e72a-4a5a-8968-061f28cdd395",
+          "inputFingerprint": "1219eeedf87e36f85e8d3609901797c01dbca84483fbc1de9e3570115220b273",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "b29f2718-7a32-4a6d-977d-8b0f9c0df0a6-41",
+          "image": "/home/user/CLAUDE-SKILLS/aura-saas-ad/.hyperframes/artifacts/snapshots/8452820f-acba-4ab0-a864-ce9bee425642/seam-04-1-at-24.8s.png",
+          "time": 24.8,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "review": {
+              "role": "seam",
+              "label": "cut -0.2"
+            },
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1793231063182,
+          "contentHash": "65d9bd32124c820730b5300a56f087ec22d21314989fcb67554962ef823a9d73",
+          "revision": "8ed09553-e72a-4a5a-8968-061f28cdd395",
+          "inputFingerprint": "1219eeedf87e36f85e8d3609901797c01dbca84483fbc1de9e3570115220b273",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "b29f2718-7a32-4a6d-977d-8b0f9c0df0a6-42",
+          "image": "/home/user/CLAUDE-SKILLS/aura-saas-ad/.hyperframes/artifacts/snapshots/8452820f-acba-4ab0-a864-ce9bee425642/seam-04-2-at-24.9s.png",
+          "time": 24.9,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "review": {
+              "role": "seam",
+              "label": "-0.1"
+            },
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1793231063182,
+          "contentHash": "20e162e90c6a80e405895f95c0e9e4da69fc5bd5f809eacf419553ab2b35fe16",
+          "revision": "8ed09553-e72a-4a5a-8968-061f28cdd395",
+          "inputFingerprint": "1219eeedf87e36f85e8d3609901797c01dbca84483fbc1de9e3570115220b273",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "b29f2718-7a32-4a6d-977d-8b0f9c0df0a6-43",
+          "image": "/home/user/CLAUDE-SKILLS/aura-saas-ad/.hyperframes/artifacts/snapshots/8452820f-acba-4ab0-a864-ce9bee425642/seam-04-3-at-25s.png",
+          "time": 25,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "review": {
+              "role": "seam",
+              "label": "cut s04 -> s05"
+            },
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1793231063182,
+          "contentHash": "404ffecd42433f2199a9455b1788e5fd572d99d58afc2dc1f0feb637bad7fb03",
+          "revision": "8ed09553-e72a-4a5a-8968-061f28cdd395",
+          "inputFingerprint": "1219eeedf87e36f85e8d3609901797c01dbca84483fbc1de9e3570115220b273",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "b29f2718-7a32-4a6d-977d-8b0f9c0df0a6-44",
+          "image": "/home/user/CLAUDE-SKILLS/aura-saas-ad/.hyperframes/artifacts/snapshots/8452820f-acba-4ab0-a864-ce9bee425642/seam-04-4-at-25.1s.png",
+          "time": 25.1,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "review": {
+              "role": "seam",
+              "label": "+0.1"
+            },
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1793231063182,
+          "contentHash": "758ff6f13a3200b6f53a5d447bd47bff89eec929b8dc29ec24a0644ca3252cb7",
+          "revision": "8ed09553-e72a-4a5a-8968-061f28cdd395",
+          "inputFingerprint": "1219eeedf87e36f85e8d3609901797c01dbca84483fbc1de9e3570115220b273",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "b29f2718-7a32-4a6d-977d-8b0f9c0df0a6-45",
+          "image": "/home/user/CLAUDE-SKILLS/aura-saas-ad/.hyperframes/artifacts/snapshots/8452820f-acba-4ab0-a864-ce9bee425642/seam-04-5-at-25.2s.png",
+          "time": 25.2,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "review": {
+              "role": "seam",
+              "label": "+0.2"
+            },
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1793231063182,
+          "contentHash": "b4c0e89e644d18d8d135aa537ca60f13dc15c545ab758824c234ad68bb2f96e3",
+          "revision": "8ed09553-e72a-4a5a-8968-061f28cdd395",
+          "inputFingerprint": "1219eeedf87e36f85e8d3609901797c01dbca84483fbc1de9e3570115220b273",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "b29f2718-7a32-4a6d-977d-8b0f9c0df0a6-46",
+          "image": "/home/user/CLAUDE-SKILLS/aura-saas-ad/.hyperframes/artifacts/snapshots/8452820f-acba-4ab0-a864-ce9bee425642/seam-05-1-at-29.8s.png",
+          "time": 29.8,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "review": {
+              "role": "seam",
+              "label": "cut -0.2"
+            },
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1793231063182,
+          "contentHash": "c0f6517fd69495d093fc70757d4e9a34fc38605e08c54d9d2cd71c6b04e97225",
+          "revision": "8ed09553-e72a-4a5a-8968-061f28cdd395",
+          "inputFingerprint": "1219eeedf87e36f85e8d3609901797c01dbca84483fbc1de9e3570115220b273",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "b29f2718-7a32-4a6d-977d-8b0f9c0df0a6-47",
+          "image": "/home/user/CLAUDE-SKILLS/aura-saas-ad/.hyperframes/artifacts/snapshots/8452820f-acba-4ab0-a864-ce9bee425642/seam-05-2-at-29.9s.png",
+          "time": 29.9,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "review": {
+              "role": "seam",
+              "label": "-0.1"
+            },
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1793231063182,
+          "contentHash": "797945ee448fd249bf621ae27dcbd2a8520e201f8e2b7258b54f5d1647d74554",
+          "revision": "8ed09553-e72a-4a5a-8968-061f28cdd395",
+          "inputFingerprint": "1219eeedf87e36f85e8d3609901797c01dbca84483fbc1de9e3570115220b273",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "b29f2718-7a32-4a6d-977d-8b0f9c0df0a6-48",
+          "image": "/home/user/CLAUDE-SKILLS/aura-saas-ad/.hyperframes/artifacts/snapshots/8452820f-acba-4ab0-a864-ce9bee425642/seam-05-3-at-30s.png",
+          "time": 30,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "review": {
+              "role": "seam",
+              "label": "cut s05 -> s06"
+            },
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1793231063182,
+          "contentHash": "48108a57fdf2e1467385ef5c3c1b693d4391deef401cb9de3c2afab4cb00bb3d",
+          "revision": "8ed09553-e72a-4a5a-8968-061f28cdd395",
+          "inputFingerprint": "1219eeedf87e36f85e8d3609901797c01dbca84483fbc1de9e3570115220b273",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "b29f2718-7a32-4a6d-977d-8b0f9c0df0a6-49",
+          "image": "/home/user/CLAUDE-SKILLS/aura-saas-ad/.hyperframes/artifacts/snapshots/8452820f-acba-4ab0-a864-ce9bee425642/seam-05-4-at-30.1s.png",
+          "time": 30.1,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "review": {
+              "role": "seam",
+              "label": "+0.1"
+            },
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1793231063183,
+          "contentHash": "2078ba7e4e14b7efc98b0a945756ea3857fa942c62bb0f2d8300ebfa87e27de1",
+          "revision": "8ed09553-e72a-4a5a-8968-061f28cdd395",
+          "inputFingerprint": "1219eeedf87e36f85e8d3609901797c01dbca84483fbc1de9e3570115220b273",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "b29f2718-7a32-4a6d-977d-8b0f9c0df0a6-50",
+          "image": "/home/user/CLAUDE-SKILLS/aura-saas-ad/.hyperframes/artifacts/snapshots/8452820f-acba-4ab0-a864-ce9bee425642/seam-05-5-at-30.2s.png",
+          "time": 30.2,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "review": {
+              "role": "seam",
+              "label": "+0.2"
+            },
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1793231063183,
+          "contentHash": "4fedee6cabcf59d1b207ba090587158761d03b3f508a17e817a046925c41a99d",
+          "revision": "8ed09553-e72a-4a5a-8968-061f28cdd395",
+          "inputFingerprint": "1219eeedf87e36f85e8d3609901797c01dbca84483fbc1de9e3570115220b273",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "b29f2718-7a32-4a6d-977d-8b0f9c0df0a6-51",
+          "image": "/home/user/CLAUDE-SKILLS/aura-saas-ad/.hyperframes/artifacts/snapshots/8452820f-acba-4ab0-a864-ce9bee425642/seam-06-1-at-34.8s.png",
+          "time": 34.8,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "review": {
+              "role": "seam",
+              "label": "cut -0.2"
+            },
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1793231063183,
+          "contentHash": "0bc5db32805f9af43cee6ea8575d43a83567a5633a74d56d19d386bc999a9dff",
+          "revision": "8ed09553-e72a-4a5a-8968-061f28cdd395",
+          "inputFingerprint": "1219eeedf87e36f85e8d3609901797c01dbca84483fbc1de9e3570115220b273",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "b29f2718-7a32-4a6d-977d-8b0f9c0df0a6-52",
+          "image": "/home/user/CLAUDE-SKILLS/aura-saas-ad/.hyperframes/artifacts/snapshots/8452820f-acba-4ab0-a864-ce9bee425642/seam-06-2-at-34.9s.png",
+          "time": 34.9,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "review": {
+              "role": "seam",
+              "label": "-0.1"
+            },
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1793231063183,
+          "contentHash": "5f45c156fe9291b3816dcef7362b5b1791a670240f7d503d49dfae9cf9604a97",
+          "revision": "8ed09553-e72a-4a5a-8968-061f28cdd395",
+          "inputFingerprint": "1219eeedf87e36f85e8d3609901797c01dbca84483fbc1de9e3570115220b273",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "b29f2718-7a32-4a6d-977d-8b0f9c0df0a6-53",
+          "image": "/home/user/CLAUDE-SKILLS/aura-saas-ad/.hyperframes/artifacts/snapshots/8452820f-acba-4ab0-a864-ce9bee425642/seam-06-3-at-35s.png",
+          "time": 35,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "review": {
+              "role": "seam",
+              "label": "cut s06 -> s07"
+            },
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1793231063183,
+          "contentHash": "eb82eea336b10452a7c4f4ae30e40d9cdd5e91aad364cad17aae9803ec868d22",
+          "revision": "8ed09553-e72a-4a5a-8968-061f28cdd395",
+          "inputFingerprint": "1219eeedf87e36f85e8d3609901797c01dbca84483fbc1de9e3570115220b273",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "b29f2718-7a32-4a6d-977d-8b0f9c0df0a6-54",
+          "image": "/home/user/CLAUDE-SKILLS/aura-saas-ad/.hyperframes/artifacts/snapshots/8452820f-acba-4ab0-a864-ce9bee425642/seam-06-4-at-35.1s.png",
+          "time": 35.1,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "review": {
+              "role": "seam",
+              "label": "+0.1"
+            },
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1793231063183,
+          "contentHash": "53c42c4eb31b92d8b1aa4d8879be712df754eda36ba4cb92a27097d230bb4deb",
+          "revision": "8ed09553-e72a-4a5a-8968-061f28cdd395",
+          "inputFingerprint": "1219eeedf87e36f85e8d3609901797c01dbca84483fbc1de9e3570115220b273",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "b29f2718-7a32-4a6d-977d-8b0f9c0df0a6-55",
+          "image": "/home/user/CLAUDE-SKILLS/aura-saas-ad/.hyperframes/artifacts/snapshots/8452820f-acba-4ab0-a864-ce9bee425642/seam-06-5-at-35.2s.png",
+          "time": 35.2,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "review": {
+              "role": "seam",
+              "label": "+0.2"
+            },
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1793231063183,
+          "contentHash": "d235e1de3f935b4d2b91f900aec148c5752b45d1b78bfd1b1435ac9c2ec1253c",
+          "revision": "8ed09553-e72a-4a5a-8968-061f28cdd395",
+          "inputFingerprint": "1219eeedf87e36f85e8d3609901797c01dbca84483fbc1de9e3570115220b273",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "b29f2718-7a32-4a6d-977d-8b0f9c0df0a6-56",
+          "image": "/home/user/CLAUDE-SKILLS/aura-saas-ad/.hyperframes/artifacts/snapshots/8452820f-acba-4ab0-a864-ce9bee425642/seam-07-1-at-39.8s.png",
+          "time": 39.8,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "review": {
+              "role": "seam",
+              "label": "cut -0.2"
+            },
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1793231063183,
+          "contentHash": "9b23f9fa793cc366208ebd39d30c27e43b64f9ad39839ad1454b120467d93ea5",
+          "revision": "8ed09553-e72a-4a5a-8968-061f28cdd395",
+          "inputFingerprint": "1219eeedf87e36f85e8d3609901797c01dbca84483fbc1de9e3570115220b273",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "b29f2718-7a32-4a6d-977d-8b0f9c0df0a6-57",
+          "image": "/home/user/CLAUDE-SKILLS/aura-saas-ad/.hyperframes/artifacts/snapshots/8452820f-acba-4ab0-a864-ce9bee425642/seam-07-2-at-39.9s.png",
+          "time": 39.9,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "review": {
+              "role": "seam",
+              "label": "-0.1"
+            },
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1793231063183,
+          "contentHash": "c46020fa96e3760123e077f0764c8145f9f9689fef31041e7168a1e77051eacc",
+          "revision": "8ed09553-e72a-4a5a-8968-061f28cdd395",
+          "inputFingerprint": "1219eeedf87e36f85e8d3609901797c01dbca84483fbc1de9e3570115220b273",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "b29f2718-7a32-4a6d-977d-8b0f9c0df0a6-58",
+          "image": "/home/user/CLAUDE-SKILLS/aura-saas-ad/.hyperframes/artifacts/snapshots/8452820f-acba-4ab0-a864-ce9bee425642/seam-07-3-at-40s.png",
+          "time": 40,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "review": {
+              "role": "seam",
+              "label": "cut s07 -> s08"
+            },
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1793231063183,
+          "contentHash": "87588b8bdd445b7e248ede692b3eef1fce7dfa26e33d64217c71ddf9c8e4241f",
+          "revision": "8ed09553-e72a-4a5a-8968-061f28cdd395",
+          "inputFingerprint": "1219eeedf87e36f85e8d3609901797c01dbca84483fbc1de9e3570115220b273",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "b29f2718-7a32-4a6d-977d-8b0f9c0df0a6-59",
+          "image": "/home/user/CLAUDE-SKILLS/aura-saas-ad/.hyperframes/artifacts/snapshots/8452820f-acba-4ab0-a864-ce9bee425642/seam-07-4-at-40.1s.png",
+          "time": 40.1,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "review": {
+              "role": "seam",
+              "label": "+0.1"
+            },
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1793231063183,
+          "contentHash": "66932c681cf93ae49fa878cc43d5369475c5388f6ca0ec2b914240bb3825b261",
+          "revision": "8ed09553-e72a-4a5a-8968-061f28cdd395",
+          "inputFingerprint": "1219eeedf87e36f85e8d3609901797c01dbca84483fbc1de9e3570115220b273",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "b29f2718-7a32-4a6d-977d-8b0f9c0df0a6-60",
+          "image": "/home/user/CLAUDE-SKILLS/aura-saas-ad/.hyperframes/artifacts/snapshots/8452820f-acba-4ab0-a864-ce9bee425642/seam-07-5-at-40.2s.png",
+          "time": 40.2,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "review": {
+              "role": "seam",
+              "label": "+0.2"
+            },
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1793231063183,
+          "contentHash": "3641988a9dc06fab3b91f88bfd44c2622f50c1f500ecf4e8ca012b873323f0e3",
+          "revision": "8ed09553-e72a-4a5a-8968-061f28cdd395",
+          "inputFingerprint": "1219eeedf87e36f85e8d3609901797c01dbca84483fbc1de9e3570115220b273",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "b29f2718-7a32-4a6d-977d-8b0f9c0df0a6-61",
+          "image": "/home/user/CLAUDE-SKILLS/aura-saas-ad/.hyperframes/artifacts/snapshots/8452820f-acba-4ab0-a864-ce9bee425642/seam-08-1-at-46.8s.png",
+          "time": 46.8,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "review": {
+              "role": "seam",
+              "label": "cut -0.2"
+            },
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1793231063183,
+          "contentHash": "e0f6b7295e7a0a51b94e3372cca3869b3fd78ab626047047b52c166f1f199863",
+          "revision": "8ed09553-e72a-4a5a-8968-061f28cdd395",
+          "inputFingerprint": "1219eeedf87e36f85e8d3609901797c01dbca84483fbc1de9e3570115220b273",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "b29f2718-7a32-4a6d-977d-8b0f9c0df0a6-62",
+          "image": "/home/user/CLAUDE-SKILLS/aura-saas-ad/.hyperframes/artifacts/snapshots/8452820f-acba-4ab0-a864-ce9bee425642/seam-08-2-at-46.9s.png",
+          "time": 46.9,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "review": {
+              "role": "seam",
+              "label": "-0.1"
+            },
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1793231063183,
+          "contentHash": "969713a448a602e8f2e50f464814c07f0257f15a3746af9d8a9a21230b8e6081",
+          "revision": "8ed09553-e72a-4a5a-8968-061f28cdd395",
+          "inputFingerprint": "1219eeedf87e36f85e8d3609901797c01dbca84483fbc1de9e3570115220b273",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "b29f2718-7a32-4a6d-977d-8b0f9c0df0a6-63",
+          "image": "/home/user/CLAUDE-SKILLS/aura-saas-ad/.hyperframes/artifacts/snapshots/8452820f-acba-4ab0-a864-ce9bee425642/seam-08-3-at-47s.png",
+          "time": 47,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "review": {
+              "role": "seam",
+              "label": "cut s08 -> s09"
+            },
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1793231063183,
+          "contentHash": "4f88ab69c5328ac997f1281ad2a4c7f7d269b93794e4d942d2e1834b5bde21c5",
+          "revision": "8ed09553-e72a-4a5a-8968-061f28cdd395",
+          "inputFingerprint": "1219eeedf87e36f85e8d3609901797c01dbca84483fbc1de9e3570115220b273",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "b29f2718-7a32-4a6d-977d-8b0f9c0df0a6-64",
+          "image": "/home/user/CLAUDE-SKILLS/aura-saas-ad/.hyperframes/artifacts/snapshots/8452820f-acba-4ab0-a864-ce9bee425642/seam-08-4-at-47.1s.png",
+          "time": 47.1,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "review": {
+              "role": "seam",
+              "label": "+0.1"
+            },
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1793231063183,
+          "contentHash": "72ec900f9624d7e548105354ce3c8a14fd1ac3ac89b864d30b1aeea645455817",
+          "revision": "8ed09553-e72a-4a5a-8968-061f28cdd395",
+          "inputFingerprint": "1219eeedf87e36f85e8d3609901797c01dbca84483fbc1de9e3570115220b273",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "b29f2718-7a32-4a6d-977d-8b0f9c0df0a6-65",
+          "image": "/home/user/CLAUDE-SKILLS/aura-saas-ad/.hyperframes/artifacts/snapshots/8452820f-acba-4ab0-a864-ce9bee425642/seam-08-5-at-47.2s.png",
+          "time": 47.2,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "review": {
+              "role": "seam",
+              "label": "+0.2"
+            },
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1793231063183,
+          "contentHash": "36866d60e242101ff5d65aa393734672718e8956969027efb8755f71841b2458",
+          "revision": "8ed09553-e72a-4a5a-8968-061f28cdd395",
+          "inputFingerprint": "1219eeedf87e36f85e8d3609901797c01dbca84483fbc1de9e3570115220b273",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "b29f2718-7a32-4a6d-977d-8b0f9c0df0a6-66",
+          "image": "/home/user/CLAUDE-SKILLS/aura-saas-ad/.hyperframes/artifacts/snapshots/8452820f-acba-4ab0-a864-ce9bee425642/seam-09-1-at-54.8s.png",
+          "time": 54.8,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "review": {
+              "role": "seam",
+              "label": "cut -0.2"
+            },
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1793231063183,
+          "contentHash": "07b32e4f5373ee9d0e777791e7f8bcc15554698489fd8ff0edf2f767b9bf4cf1",
+          "revision": "8ed09553-e72a-4a5a-8968-061f28cdd395",
+          "inputFingerprint": "1219eeedf87e36f85e8d3609901797c01dbca84483fbc1de9e3570115220b273",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "b29f2718-7a32-4a6d-977d-8b0f9c0df0a6-67",
+          "image": "/home/user/CLAUDE-SKILLS/aura-saas-ad/.hyperframes/artifacts/snapshots/8452820f-acba-4ab0-a864-ce9bee425642/seam-09-2-at-54.9s.png",
+          "time": 54.9,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "review": {
+              "role": "seam",
+              "label": "-0.1"
+            },
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1793231063184,
+          "contentHash": "608572ee502cc5c4b5af762a43c7048bb951eab60335cbaa071f2218fdf952cb",
+          "revision": "8ed09553-e72a-4a5a-8968-061f28cdd395",
+          "inputFingerprint": "1219eeedf87e36f85e8d3609901797c01dbca84483fbc1de9e3570115220b273",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "b29f2718-7a32-4a6d-977d-8b0f9c0df0a6-68",
+          "image": "/home/user/CLAUDE-SKILLS/aura-saas-ad/.hyperframes/artifacts/snapshots/8452820f-acba-4ab0-a864-ce9bee425642/seam-09-3-at-55s.png",
+          "time": 55,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "review": {
+              "role": "seam",
+              "label": "cut s09 -> s10"
+            },
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1793231063184,
+          "contentHash": "f1444a1633ec7a3c70b3b72ca57eb6b93bb9a4052f4d61442c30c876b762ec83",
+          "revision": "8ed09553-e72a-4a5a-8968-061f28cdd395",
+          "inputFingerprint": "1219eeedf87e36f85e8d3609901797c01dbca84483fbc1de9e3570115220b273",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "b29f2718-7a32-4a6d-977d-8b0f9c0df0a6-69",
+          "image": "/home/user/CLAUDE-SKILLS/aura-saas-ad/.hyperframes/artifacts/snapshots/8452820f-acba-4ab0-a864-ce9bee425642/seam-09-4-at-55.1s.png",
+          "time": 55.1,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "review": {
+              "role": "seam",
+              "label": "+0.1"
+            },
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1793231063184,
+          "contentHash": "f00757b34b0b49eb28f433f87e271a748d4e1a33549e88daff399d25b23e20a2",
+          "revision": "8ed09553-e72a-4a5a-8968-061f28cdd395",
+          "inputFingerprint": "1219eeedf87e36f85e8d3609901797c01dbca84483fbc1de9e3570115220b273",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "b29f2718-7a32-4a6d-977d-8b0f9c0df0a6-70",
+          "image": "/home/user/CLAUDE-SKILLS/aura-saas-ad/.hyperframes/artifacts/snapshots/8452820f-acba-4ab0-a864-ce9bee425642/seam-09-5-at-55.2s.png",
+          "time": 55.2,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "review": {
+              "role": "seam",
+              "label": "+0.2"
+            },
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1793231063184,
+          "contentHash": "274d0127ab3c85a9d2594a9525d5e42611a790d460ff631f6cb439d34cfe8353",
+          "revision": "8ed09553-e72a-4a5a-8968-061f28cdd395",
+          "inputFingerprint": "1219eeedf87e36f85e8d3609901797c01dbca84483fbc1de9e3570115220b273",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "b29f2718-7a32-4a6d-977d-8b0f9c0df0a6-71",
+          "image": "/home/user/CLAUDE-SKILLS/aura-saas-ad/.hyperframes/artifacts/snapshots/8452820f-acba-4ab0-a864-ce9bee425642/seam-10-1-at-64.8s.png",
+          "time": 64.8,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "review": {
+              "role": "seam",
+              "label": "cut -0.2"
+            },
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1793231063184,
+          "contentHash": "36c93553a7df6237150c7ceb8c4d0da1942ae275b0d8433e8f05a605dc3ac141",
+          "revision": "8ed09553-e72a-4a5a-8968-061f28cdd395",
+          "inputFingerprint": "1219eeedf87e36f85e8d3609901797c01dbca84483fbc1de9e3570115220b273",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "b29f2718-7a32-4a6d-977d-8b0f9c0df0a6-72",
+          "image": "/home/user/CLAUDE-SKILLS/aura-saas-ad/.hyperframes/artifacts/snapshots/8452820f-acba-4ab0-a864-ce9bee425642/seam-10-2-at-64.9s.png",
+          "time": 64.9,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "review": {
+              "role": "seam",
+              "label": "-0.1"
+            },
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1793231063184,
+          "contentHash": "2a56c2b0eee41ddf9e8432c8217dcf2e3608b5ff7bd69a1e6c0c087ea95aef8e",
+          "revision": "8ed09553-e72a-4a5a-8968-061f28cdd395",
+          "inputFingerprint": "1219eeedf87e36f85e8d3609901797c01dbca84483fbc1de9e3570115220b273",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "b29f2718-7a32-4a6d-977d-8b0f9c0df0a6-73",
+          "image": "/home/user/CLAUDE-SKILLS/aura-saas-ad/.hyperframes/artifacts/snapshots/8452820f-acba-4ab0-a864-ce9bee425642/seam-10-3-at-65s.png",
+          "time": 65,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "review": {
+              "role": "seam",
+              "label": "cut s10 -> s11"
+            },
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1793231063184,
+          "contentHash": "b1ba6016a17e6b8038f3184211ed0a7137a61303dae3c2f4aee14a7b11c65c3b",
+          "revision": "8ed09553-e72a-4a5a-8968-061f28cdd395",
+          "inputFingerprint": "1219eeedf87e36f85e8d3609901797c01dbca84483fbc1de9e3570115220b273",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "b29f2718-7a32-4a6d-977d-8b0f9c0df0a6-74",
+          "image": "/home/user/CLAUDE-SKILLS/aura-saas-ad/.hyperframes/artifacts/snapshots/8452820f-acba-4ab0-a864-ce9bee425642/seam-10-4-at-65.1s.png",
+          "time": 65.1,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "review": {
+              "role": "seam",
+              "label": "+0.1"
+            },
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1793231063184,
+          "contentHash": "ef198d75cd4716d9eff76435d40c8b0b5ef729bf3abe25c304e44050268af3ba",
+          "revision": "8ed09553-e72a-4a5a-8968-061f28cdd395",
+          "inputFingerprint": "1219eeedf87e36f85e8d3609901797c01dbca84483fbc1de9e3570115220b273",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "b29f2718-7a32-4a6d-977d-8b0f9c0df0a6-75",
+          "image": "/home/user/CLAUDE-SKILLS/aura-saas-ad/.hyperframes/artifacts/snapshots/8452820f-acba-4ab0-a864-ce9bee425642/seam-10-5-at-65.2s.png",
+          "time": 65.2,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "review": {
+              "role": "seam",
+              "label": "+0.2"
+            },
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1793231063184,
+          "contentHash": "510cf9674b4ed0df93e5a016875800ccdd7c27b213f9348210afcf48cbabac98",
+          "revision": "8ed09553-e72a-4a5a-8968-061f28cdd395",
+          "inputFingerprint": "1219eeedf87e36f85e8d3609901797c01dbca84483fbc1de9e3570115220b273",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "b29f2718-7a32-4a6d-977d-8b0f9c0df0a6-76",
+          "image": "/home/user/CLAUDE-SKILLS/aura-saas-ad/.hyperframes/artifacts/snapshots/8452820f-acba-4ab0-a864-ce9bee425642/seam-11-1-at-75.8s.png",
+          "time": 75.8,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "review": {
+              "role": "seam",
+              "label": "cut -0.2"
+            },
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1793231063184,
+          "contentHash": "73ff4061611c37eff6bffbbf3b97c158cb0a78d5149804ed632f0e8ea6a8323a",
+          "revision": "8ed09553-e72a-4a5a-8968-061f28cdd395",
+          "inputFingerprint": "1219eeedf87e36f85e8d3609901797c01dbca84483fbc1de9e3570115220b273",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "b29f2718-7a32-4a6d-977d-8b0f9c0df0a6-77",
+          "image": "/home/user/CLAUDE-SKILLS/aura-saas-ad/.hyperframes/artifacts/snapshots/8452820f-acba-4ab0-a864-ce9bee425642/seam-11-2-at-75.9s.png",
+          "time": 75.9,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "review": {
+              "role": "seam",
+              "label": "-0.1"
+            },
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1793231063184,
+          "contentHash": "bd4ad14765c00b39b78f686266893203184f7b81f53ffb87bb087c2e75c8ced5",
+          "revision": "8ed09553-e72a-4a5a-8968-061f28cdd395",
+          "inputFingerprint": "1219eeedf87e36f85e8d3609901797c01dbca84483fbc1de9e3570115220b273",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "b29f2718-7a32-4a6d-977d-8b0f9c0df0a6-78",
+          "image": "/home/user/CLAUDE-SKILLS/aura-saas-ad/.hyperframes/artifacts/snapshots/8452820f-acba-4ab0-a864-ce9bee425642/seam-11-3-at-76s.png",
+          "time": 76,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "review": {
+              "role": "seam",
+              "label": "cut s11 -> s12"
+            },
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1793231063184,
+          "contentHash": "b9c9fc6408d63ca7b72fda522086d00b3d9e8fb4fd88527b453af333c3ad1cce",
+          "revision": "8ed09553-e72a-4a5a-8968-061f28cdd395",
+          "inputFingerprint": "1219eeedf87e36f85e8d3609901797c01dbca84483fbc1de9e3570115220b273",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "b29f2718-7a32-4a6d-977d-8b0f9c0df0a6-79",
+          "image": "/home/user/CLAUDE-SKILLS/aura-saas-ad/.hyperframes/artifacts/snapshots/8452820f-acba-4ab0-a864-ce9bee425642/seam-11-4-at-76.1s.png",
+          "time": 76.1,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "review": {
+              "role": "seam",
+              "label": "+0.1"
+            },
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1793231063184,
+          "contentHash": "284f5fd44fc6cea9db226c199965aa7d67668478c99c845405feb2873c842d75",
+          "revision": "8ed09553-e72a-4a5a-8968-061f28cdd395",
+          "inputFingerprint": "1219eeedf87e36f85e8d3609901797c01dbca84483fbc1de9e3570115220b273",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "b29f2718-7a32-4a6d-977d-8b0f9c0df0a6-80",
+          "image": "/home/user/CLAUDE-SKILLS/aura-saas-ad/.hyperframes/artifacts/snapshots/8452820f-acba-4ab0-a864-ce9bee425642/seam-11-5-at-76.2s.png",
+          "time": 76.2,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "review": {
+              "role": "seam",
+              "label": "+0.2"
+            },
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1793231063185,
+          "contentHash": "d3f7d7914e21551b7ddf4a3ed852460c466e03d57855b98f1ad0711c67ff9897",
+          "revision": "8ed09553-e72a-4a5a-8968-061f28cdd395",
+          "inputFingerprint": "1219eeedf87e36f85e8d3609901797c01dbca84483fbc1de9e3570115220b273",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "b29f2718-7a32-4a6d-977d-8b0f9c0df0a6-81",
+          "image": "/home/user/CLAUDE-SKILLS/aura-saas-ad/.hyperframes/artifacts/snapshots/8452820f-acba-4ab0-a864-ce9bee425642/seam-12-1-at-84.8s.png",
+          "time": 84.8,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "review": {
+              "role": "seam",
+              "label": "cut -0.2"
+            },
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1793231063185,
+          "contentHash": "afb0afd6a4ca12cc5c438f6d78ec6b9bf5589b544060ec0952a5a423aff6bfc2",
+          "revision": "8ed09553-e72a-4a5a-8968-061f28cdd395",
+          "inputFingerprint": "1219eeedf87e36f85e8d3609901797c01dbca84483fbc1de9e3570115220b273",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "b29f2718-7a32-4a6d-977d-8b0f9c0df0a6-82",
+          "image": "/home/user/CLAUDE-SKILLS/aura-saas-ad/.hyperframes/artifacts/snapshots/8452820f-acba-4ab0-a864-ce9bee425642/seam-12-2-at-84.9s.png",
+          "time": 84.9,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "review": {
+              "role": "seam",
+              "label": "-0.1"
+            },
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1793231063185,
+          "contentHash": "14b5390c5be3d19bc7c8d50b8ee934c25b212ab5e6acc7e91016775c712693b6",
+          "revision": "8ed09553-e72a-4a5a-8968-061f28cdd395",
+          "inputFingerprint": "1219eeedf87e36f85e8d3609901797c01dbca84483fbc1de9e3570115220b273",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "b29f2718-7a32-4a6d-977d-8b0f9c0df0a6-83",
+          "image": "/home/user/CLAUDE-SKILLS/aura-saas-ad/.hyperframes/artifacts/snapshots/8452820f-acba-4ab0-a864-ce9bee425642/seam-12-3-at-85s.png",
+          "time": 85,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "review": {
+              "role": "seam",
+              "label": "cut s12 -> s13"
+            },
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1793231063185,
+          "contentHash": "1fc356127d3c3cbef7c60014805be87d6ae5aa81763488965c69d28d083e9f2b",
+          "revision": "8ed09553-e72a-4a5a-8968-061f28cdd395",
+          "inputFingerprint": "1219eeedf87e36f85e8d3609901797c01dbca84483fbc1de9e3570115220b273",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "b29f2718-7a32-4a6d-977d-8b0f9c0df0a6-84",
+          "image": "/home/user/CLAUDE-SKILLS/aura-saas-ad/.hyperframes/artifacts/snapshots/8452820f-acba-4ab0-a864-ce9bee425642/seam-12-4-at-85.1s.png",
+          "time": 85.1,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "review": {
+              "role": "seam",
+              "label": "+0.1"
+            },
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1793231063185,
+          "contentHash": "c050aea6284cd3a28a9d90ed540cfddbbbeb968ad453561d9fba27a8efa746ae",
+          "revision": "8ed09553-e72a-4a5a-8968-061f28cdd395",
+          "inputFingerprint": "1219eeedf87e36f85e8d3609901797c01dbca84483fbc1de9e3570115220b273",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "b29f2718-7a32-4a6d-977d-8b0f9c0df0a6-85",
+          "image": "/home/user/CLAUDE-SKILLS/aura-saas-ad/.hyperframes/artifacts/snapshots/8452820f-acba-4ab0-a864-ce9bee425642/seam-12-5-at-85.2s.png",
+          "time": 85.2,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "review": {
+              "role": "seam",
+              "label": "+0.2"
+            },
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1793231063185,
+          "contentHash": "c538ddb64e893edbc3e37a9aa56080a539c84702e855ea05a70963862405a3c7",
+          "revision": "8ed09553-e72a-4a5a-8968-061f28cdd395",
+          "inputFingerprint": "1219eeedf87e36f85e8d3609901797c01dbca84483fbc1de9e3570115220b273",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        }
+      ],
+      "155df341-b395-47f1-a609-6a3d74c18dab": [
+        {
+          "scope": "full",
+          "id": "eed37be4-76fe-41cd-8f83-5eb0eb23841f-0",
+          "image": "/home/user/CLAUDE-SKILLS/aura-saas-ad/.hyperframes/artifacts/snapshots/3639bfa7-a3d1-40a4-bb8b-d5f9189a161a/frame-00-at-8.5s.png",
+          "time": 8.5,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1793231105658,
+          "contentHash": "987b9753636f1c9f6e9d47a4709d7dafdda26b5a12d5948ba6a4282fad48d9eb",
+          "revision": "155df341-b395-47f1-a609-6a3d74c18dab",
+          "inputFingerprint": "44fba0f4d4ea3d086ab3faab01db2697b1d15798055535fb4073d5c718929c42",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "eed37be4-76fe-41cd-8f83-5eb0eb23841f-1",
+          "image": "/home/user/CLAUDE-SKILLS/aura-saas-ad/.hyperframes/artifacts/snapshots/3639bfa7-a3d1-40a4-bb8b-d5f9189a161a/frame-01-at-32.6s.png",
+          "time": 32.6,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1793231105659,
+          "contentHash": "6881388ecf6a1e7bc4c3b3690151ef61e2f5e9af28c9865aa945a88bb8920dc4",
+          "revision": "155df341-b395-47f1-a609-6a3d74c18dab",
+          "inputFingerprint": "44fba0f4d4ea3d086ab3faab01db2697b1d15798055535fb4073d5c718929c42",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "eed37be4-76fe-41cd-8f83-5eb0eb23841f-2",
+          "image": "/home/user/CLAUDE-SKILLS/aura-saas-ad/.hyperframes/artifacts/snapshots/3639bfa7-a3d1-40a4-bb8b-d5f9189a161a/frame-02-at-80.5s.png",
+          "time": 80.5,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1793231105659,
+          "contentHash": "137505134fded2aeda27334c24b3c8ec55ff616a622bc318deacfe65730908f4",
+          "revision": "155df341-b395-47f1-a609-6a3d74c18dab",
+          "inputFingerprint": "44fba0f4d4ea3d086ab3faab01db2697b1d15798055535fb4073d5c718929c42",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "eed37be4-76fe-41cd-8f83-5eb0eb23841f-3",
+          "image": "/home/user/CLAUDE-SKILLS/aura-saas-ad/.hyperframes/artifacts/snapshots/3639bfa7-a3d1-40a4-bb8b-d5f9189a161a/frame-03-at-1s.png",
+          "time": 1,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1793231105660,
+          "contentHash": "b8e88e3af041fa6c2f3615a9648333ce9e656163caa6863a03fca05b5b381ba4",
+          "revision": "155df341-b395-47f1-a609-6a3d74c18dab",
+          "inputFingerprint": "44fba0f4d4ea3d086ab3faab01db2697b1d15798055535fb4073d5c718929c42",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "eed37be4-76fe-41cd-8f83-5eb0eb23841f-4",
+          "image": "/home/user/CLAUDE-SKILLS/aura-saas-ad/.hyperframes/artifacts/snapshots/3639bfa7-a3d1-40a4-bb8b-d5f9189a161a/frame-04-at-89.75s.png",
+          "time": 89.75,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1793231105660,
+          "contentHash": "c4457ee2d2ff033f01a173dfa361c1b20f1dcdce9a2167dda8e383e702dab5e6",
+          "revision": "155df341-b395-47f1-a609-6a3d74c18dab",
+          "inputFingerprint": "44fba0f4d4ea3d086ab3faab01db2697b1d15798055535fb4073d5c718929c42",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        }
+      ]
+    },
+    "unversioned": []
+  },
+  "renders": {
+    "latest": {
+      "id": "6b8e57b4-d4dd-4044-9256-831a619abb17",
+      "completedAt": 1793231638326,
+      "output": "/home/user/CLAUDE-SKILLS/aura-saas-ad/renders/aura-saas-ad.mp4",
+      "status": "completed",
+      "revision": null
+    },
+    "retainedRevisions": []
+  },
+  "pendingArtifactCleanup": []
+}
