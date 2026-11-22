@@ -1,0 +1,22 @@
+{
+  "name": "nova-ai-demo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "25-second SaaS product demo (Nova AI) built with Remotion",
+  "scripts": {
+    "studio": "remotion studio",
+    "render": "remotion render NovaDemo out/nova-demo.mp4",
+    "render:vertical": "remotion render NovaDemoVertical out/nova-demo-vertical.mp4",
+    "still": "remotion still NovaDemo out/frame.png --frame=200"
+  },
+  "dependencies": {
+    "@remotion/cli": "4.0.290",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "remotion": "4.0.290"
+  },
+  "devDependencies": {
+    "@types/react": "18.3.12",
+    "typescript": "5.6.3"
+  }
+}
