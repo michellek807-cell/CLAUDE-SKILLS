@@ -1,0 +1,21 @@
+{
+  "_note": "Draft for engine/nowwhat.py. Check field names against engine/SPEC.md before rendering. Add a media path to each slide from carousel-inbox; with no media, the slide uses the burgundy gradient. Engine template is 5 slides, so this is the 5-slide cut (the 3-metric and 5-check list slides live only in the 7-slide preview.html stills).",
+  "slug": "likes-lie",
+  "hook_type": "Reframe",
+  "slides": [
+    {"type": "cover",  "a": ["Your post", "didn’t flop."], "b": ["You judged", "it by likes."]},
+    {"type": "dark",   "a": ["A like takes"], "b": ["half a", "second."], "sub": "The truth is in saves, sends, and how far they swipe."},
+    {"type": "dark",   "a": ["So you keep"], "b": ["starting", "over."], "sub": "Blank page every week. That’s not a talent problem. It’s a system problem."},
+    {"type": "cream",  "a": ["Don’t fix", "it all."], "b": ["Fix two", "things."], "body": ["Look at your last few posts. Find the two checks you skip the most.", "That’s your whole week. <em>Small fixes, done consistently, become a brand.</em>"]},
+    {"type": "closer", "a": ["Your worth", "was never"], "b": ["a like", "count."], "sub": "Save this for the next time a post “flops.”"}
+  ],
+  "caption_file": "caption.txt",
+  "music": {
+    "feeling": "calm power, unapologetic",
+    "attributes": ["confident", "steady", "warm"],
+    "tempo": "85-100 BPM",
+    "instrumentation": "deep bass pulse, minimal keys, soft low drums",
+    "search_terms": ["confident", "empowering", "dark cinematic", "neo soul instrumental"],
+    "audio_tip": "Instrumental only, low volume, add the track in the IG app at post time."
+  }
+}
